@@ -3,8 +3,7 @@
 >Google Docs      https://docs.google.com/document/d/1Lf5LPqnNvNzQABAKtOLZ1DJLLt6IWisBUlVqftEDTgM/edit?tab=t.v1diwsp23tj9 <br>
 >Google Sheets    ? <br>
  ------------
- <details>
-  <summary>학습 일지</summary>
+<details><summary>학습 일지</summary>
 2025-08-22 const 함수에 대해 <br>
 2025-08-23 상속(Inheritance) <br>
 상속에 들어가기에 앞서, 상속의 문법적인 이해 <br>
