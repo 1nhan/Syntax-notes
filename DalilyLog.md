@@ -4,7 +4,7 @@
 >Google Sheets    ? <br>
  ------------
  <details>
-  <summary>클릭해서 내용 보기</summary>
+  <summary>학습 일지</summary>
 > *2025-08-22 const 함수에 대해 <br>
  ------------
 > *2025-08-23 상속(Inheritance) <br>
@@ -21,3 +21,4 @@
 >*2025-08-27 가상함수(Virtual Function) <br>
 >*가상함수, 가상소멸자와 참조자의 참조 가능성, Employee 예제와 문제, Employee 1-4, Quiz에 대한 분석 <br>
 ------------
+ </details>
