@@ -1,6 +1,7 @@
+#객체지향의 전개
 <details>
 <summary>
-<h3>객체지향의 전개</h3>
+<h3>상속</h3>
 </summary>
 
 <details>
