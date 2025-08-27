@@ -1,9 +1,16 @@
 <style>
+  body {
+    font-size: 16px;
+  }
+  details, summary, h3, strong {
+    font-size: inherit;
+  }
   pre, code {
     font-size: 16px;
     font-family: Consolas, monospace;
   }
 </style>
+
 # Object-Oriented
 
 
