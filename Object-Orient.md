@@ -11,7 +11,7 @@
 <strong>급여관리 시스템 1</strong>
 </summary>
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 class PermanentWorker
 {
@@ -26,7 +26,7 @@ public:
 </code></pre><!--PermanentWorker.h-->
 this->name 정적 할당으로 선언되어있다.
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 #include"PermanentWorker.h"
 class EmployeeHandler						//Control(=handler) Class
@@ -44,7 +44,7 @@ public:
 </code></pre><!--EmployeeHandler.h-->
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #define _CRT_SECURE_NO_WARNINGS
 #include "PermanentWorker.h"
 #include <cstring>
@@ -65,7 +65,7 @@ void PermanentWorker::showSALARYinfo()const
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #include "EmployeeHandler.h"
 #include <iostream>
 using namespace std;
@@ -96,7 +96,7 @@ EmployeeHandler::~EmployeeHandler()
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #include"EmployeeHandler.h"
 #include"PermanentWorker.h"
 
@@ -154,7 +154,7 @@ int main(void)
 </table><!--테이블-->
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 class EMPLOYEE
 {
@@ -166,7 +166,7 @@ public:
 };//EMPLOYEE.h
 </code></pre>
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 #include "Employee.h"
 class PermanentWorker:public Employee
@@ -181,7 +181,7 @@ public:
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 #include"PermanentWorker.h"
 class SalesWorker:public PermanentWorker
@@ -198,7 +198,7 @@ public:
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 #include "Employee.h"
 class TemporaryWorker:public Employee
@@ -215,7 +215,7 @@ public:
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 #include"Employee.h"
 class EmployeeHandler				//Control Class
@@ -233,7 +233,7 @@ public:
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #define _CRT_SECURE_NO_WARNINGS
 #include "Employee.h"
 #include<cstring>
@@ -251,7 +251,7 @@ void Employee::showNAME()const
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #include "PermanentWorker.h"
 #include<cstring>
 #include <iostream>
@@ -272,7 +272,7 @@ void PermanentWorker::showSALARYinfo()const
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #include "SalesWorker.h"
 #include<iostream>
 using namespace std;
@@ -297,7 +297,7 @@ void SalesWorker::showSALARYinfo()const
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 #include "TemporaryWorker.h"
 #include<iostream>
 using namespace std;
@@ -321,7 +321,7 @@ void TemporaryWorker::showSALARYinfo()const
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 
 #include "EmployeeHandler.h"
 #include<cstring>
@@ -353,7 +353,7 @@ EmployeeHandler::~EmployeeHandler()
 </code></pre>
 
 
-<pre><code class="language-cpp" style="font-size:16px;>
+<pre><code class="language-cpp" style="font-size:16px;">
 
 #include"Employee.h"
 #include"EmployeeHandler.h"
