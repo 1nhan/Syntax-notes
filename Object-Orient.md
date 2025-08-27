@@ -1,3 +1,9 @@
+<style>
+  pre, code {
+    font-size: 16px;
+    font-family: Consolas, monospace;
+  }
+</style>
 # Object-Oriented
 
 
