@@ -130,8 +130,10 @@ int main(void)
 </summary>
 
 [상속 관계 구조]
->SalesWorker --> PermanentWorker --> Employee 
->TemporaryWorker --> Employee
+>SalesWorker --> PermanentWorker --> Employee<br>
+>TemporaryWorker --> Employee<br>
+>EmployeeHandler 클래스가 저장 및 관리하는 대상이 Employee 객체가 되면 이후에 Employee클래스를 직접 혹은 간접적으로 상속하는 클래스가 추가되었을때, EmployeeHandler클래스에는 변화가 발생하지 않는다.
+
 >EmployeeHandler 클래스가 저장 및 관리하는 대상이 Employee 객체가 되면 이후에 Employee클래스를 직접 혹은 간접적으로 상속하는 클래스가 추가되었을때, EmployeeHandler클래스에는 변화가 발생하지 않는다.
 
 
