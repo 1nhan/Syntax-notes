@@ -304,16 +304,16 @@ int main(void)
 /*SalesWorker*/
 #pragma once
 #include"PermanentWorker.h"
-class SalesWorker :public PermanentWorker
+class SalesWorker :public PermanentWorker				//Derived Class -> PermanentWorker (Base Class)
 {
-private:
-	int salesResult;
-	double bonusRatio;
+private:												//m_value 기본급여와 인센티브를 위한 멤버선언
+	int salesResult;			
+	double bonusRatio;			
 public:
-	SalesWorker(char* name, int money, double ratio);
-	void AddSalesResult(int value);
-	int getPAY()const;
-	void ShowSalaryInfo()const;
+	SalesWorker(char* name, int money, double ratio);	//Constructor
+	void AddSalesResult(int value);						//인센티브
+	int getPAY()const;									//Access Function getter(Function Overriding)
+	void ShowSalaryInfo()const;							//출력 함수				(Function Overriding)
 };//SalesWorker.h
 </code></pre>
 
@@ -321,16 +321,16 @@ public:
 /*TemporaryWorker*/
 #pragma once
 #include "Employee.h"
-class TemporaryWorker :public Employee
+class TemporaryWorker :public Employee					//Derived Class -> Employee (Base Class)
 {
-private:
+private:												// 시간당급여x일한시간을 위한 멤버변수선언
 	int worktime;
 	int payperhour;
 public:
-	TemporaryWorker(char* name, int pay);
-	void AddWorkTime(int time);
-	int getPAY()const;
-	void ShowSalaryInfo()const;
+	TemporaryWorker(char* name, int pay);				//Constructor
+	void AddWorkTime(int time);							//일한시간 합계를 위한 함수
+	int getPAY()const;									//Access Function getter(Function Overriding) 
+	void ShowSalaryInfo()const;							//출력 함수				(Function Overriding)
 };//TemporaryWorker.h
 
 </code></pre>
@@ -342,19 +342,19 @@ public:
 using namespace std;
 
 SalesWorker::SalesWorker(char* name, int money, double ratio)
-	:PermanentWorker(name, money), salesResult(0), bonusRatio(ratio){}
+	:PermanentWorker(name, money), salesResult(0), bonusRatio(ratio){}	//이니셜라이즈 Base Class로 name,money를 초기화,
+																		//멤버변수 salesResult를 0으로 초기화, bonusRatio에 ratio초기화
+void SalesWorker::AddSalesResult(int value){salesResult += value;}		//매게변수 value를 0으로 초기화되었던 salesResult에 합산시키는 함수
 
-void SalesWorker::AddSalesResult(int value){salesResult += value;}
-
-int SalesWorker::getPAY()const
+int SalesWorker::getPAY()const											//Access Function getter
 {
-	return PermanentWorker::getPAY()
-		+ (int)(salesResult * bonusRatio);
+	return PermanentWorker::getPAY()									//오버라이딩된 함수를 호출하는 방식
+		+ (int)(salesResult * bonusRatio);								//double형 bonusRatio의 결과를 int로 형변환(type casting)
 }
-void SalesWorker::ShowSalaryInfo()const
+void SalesWorker::ShowSalaryInfo()const									//오버라이딩된 함수
 {
-	showNAME();
-	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl &lt&lt endl;
+	showNAME();															//BaseClass에 showName()함수 호출후 출력(showName은 출력함수)
+	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl &lt&lt endl;		//클래스내 getPAY()출력
 }//SalesWorker.cpp
 
 </code></pre>
