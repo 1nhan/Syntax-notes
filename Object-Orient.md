@@ -132,7 +132,7 @@ int main(void)
 [상속구조]<br>
 >근로자(Employee) <- 정규직(PermanentWorker) <- 영업직(SalesWorker)<br>
 >근로자(Employee) <- 임시직(TemporaryWorker)<br>
-------------
+
 <table border="1">
 <tr>
 <th>고용형태</th><th>임금방식</th>
@@ -150,7 +150,7 @@ int main(void)
 <th>영업직(Sales)</th><th>기본급여x인센티브</th>
 </tr>
 </table><!--테이블-->
-------------
+
 
 <pre><code class="language-cpp">
 #pragma once
@@ -294,6 +294,7 @@ void SalesWorker::showSALARYinfo()const
 }//SalesWorker.cpp
 </code></pre>
 
+
 <pre><code class="language-cpp">
 #include "TemporaryWorker.h"
 #include<iostream>
@@ -315,8 +316,10 @@ void TemporaryWorker::showSALARYinfo()const
 	showNAME();
 	cout << "salary: " << getPAY() << endl << endl;
 }//TemporaryWorker.cpp
-
 </code></pre>
+
+
+<pre><code class="language-cpp">
 #include "EmployeeHandler.h"
 #include<cstring>
 #include <iostream>
@@ -344,9 +347,8 @@ EmployeeHandler::~EmployeeHandler()
 	for (int i = 0; i < empNUM; i++)
 		delete empLIST[i];
 }//EmployeeHandler.cpp
-<pre><code class="language-cpp">
-
 </code></pre>
+
 
 <pre><code class="language-cpp">
 #include"Employee.h"
