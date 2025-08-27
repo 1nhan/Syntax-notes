@@ -30,3 +30,121 @@ protected 선언과 세 가지 형태의 상속, 상속을 위한 조건, OOP �
 2025-08-27 가상함수(Virtual Function) <br>
 가상함수, 가상소멸자와 참조자의 참조 가능성, Employee 예제와 문제, Employee 1-4, Quiz에 대한 분석 <br>
 </details>
+<details>
+<summary>
+<strong>객체지향의 전개</strong>
+</summary>
+
+<details>
+<summary>
+<strong>급여관리 시스템 1</strong>
+</summary>
+<pre><code class="language-cpp">
+#pragma once
+class PermanentWorker
+{
+private:
+	char name[100];
+	int salary;
+public:
+	PermanentWorker(char* name, int money);
+	int getPAY()const;
+	void showSALARYinfo()const;
+};//PermanentWorker.h
+</code></pre>
+
+
+<pre><code class="language-cpp">
+#pragma once
+#include"PermanentWorker.h"
+class EmployeeHandler
+{
+private:
+	PermanentWorker* empList[50];
+	int empNUM;
+public:
+	EmployeeHandler();
+	void addEMPLOYEE(PermanentWorker* emp);
+	void showALLSALARYinfo()const;
+	void showTOTALSALARY()const;
+	~EmployeeHandler();
+};//EmployeeHandler.h
+</code></pre>
+
+
+<pre><code class="language-cpp">
+#define _CRT_SECURE_NO_WARNINGS
+#include "PermanentWorker.h"
+#include <cstring>
+#include <iostream>
+#include "EmployeeHandler.h"
+using namespace std;
+
+PermanentWorker::PermanentWorker(char* name, int money)
+	:salary(money) {strcpy(this->name, name);}
+
+int PermanentWorker::getPAY()const { return salary; }
+
+void PermanentWorker::showSALARYinfo()const
+{
+	cout << "name: " << name << endl;
+	cout << "salary: " << salary<< endl;
+}//PermanentWorker.cpp
+</code></pre>
+
+
+<pre><code class="language-cpp">
+#include "EmployeeHandler.h"
+#include <iostream>
+using namespace std;
+EmployeeHandler::EmployeeHandler():empNUM(0){}
+
+void EmployeeHandler::addEMPLOYEE(PermanentWorker* emp)
+{
+	empList[empNUM++] = emp;
+}
+
+void EmployeeHandler::showALLSALARYinfo()const
+{
+	for (int i = 0; i < empNUM; i++)
+		empList[i]->showSALARYinfo();
+}
+void EmployeeHandler::showTOTALSALARY()const
+{
+	int sum = 0;
+	for (int i = 0; i < empNUM; i++)
+		sum += empList[i]->getPAY();
+	cout << "sum: " << sum << endl;
+}
+EmployeeHandler::~EmployeeHandler()
+{
+	for (int i = 0; i < empNUM; i++)
+		delete empList[i];
+}//EmployeeHandler.cpp
+</code></pre>
+
+
+<pre><code class="language-cpp">
+#include"EmployeeHandler.h"
+#include"PermanentWorker.h"
+
+int main(void)
+{
+	/*직원관리 목적으로 설계된 컨트롤 클래스의 객체 생성*/
+	EmployeeHandler handler;
+
+	/*직원 등록*/
+	handler.addEMPLOYEE(new PermanentWorker("KIM", 1000));
+	handler.addEMPLOYEE(new PermanentWorker("Lee", 1500));
+	handler.addEMPLOYEE(new PermanentWorker("Jun", 2000));
+
+	/*이번달 급여 정보*/
+	handler.showALLSALARYinfo();
+
+	/*이번달 지불해야할 급여의 총합*/
+	handler.showTOTALSALARY();
+
+	return 0;
+}
+</code></pre>
+</detail>
