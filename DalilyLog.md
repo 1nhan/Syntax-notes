@@ -39,6 +39,7 @@ protected 선언과 세 가지 형태의 상속, 상속을 위한 조건, OOP �
 <summary>
 <strong>급여관리 시스템 1</strong>
 </summary>
+
 <pre><code class="language-cpp">
 #pragma once
 class PermanentWorker
@@ -47,29 +48,29 @@ private:
 	char name[100];
 	int salary;
 public:
-	PermanentWorker(char* name, int money);
-	int getPAY()const;
-	void showSALARYinfo()const;
+	PermanentWorker(char* name, int money);	// Constructor
+	int getPAY()const;						// Access Function
+	void showSALARYinfo()const;				// Display Function
 };//PermanentWorker.h
-</code></pre>
-
+</code></pre><!--PermanentWorker.h-->
+this->name 정적 할당으로 선언되어있다.
 
 <pre><code class="language-cpp">
 #pragma once
 #include"PermanentWorker.h"
-class EmployeeHandler
+class EmployeeHandler						//Control(=handler) Class
 {
 private:
-	PermanentWorker* empList[50];
-	int empNUM;
+	PermanentWorker* empList[50];			//PermanentWorker Object로 PermanentWorker에 접근
+	int empNUM;								//empList에 배열 순서를 저장하기 위한 변수
 public:
-	EmployeeHandler();
-	void addEMPLOYEE(PermanentWorker* emp);
-	void showALLSALARYinfo()const;
-	void showTOTALSALARY()const;
-	~EmployeeHandler();
+	EmployeeHandler();						//Constructor
+	void addEMPLOYEE(PermanentWorker* emp);	//직원 등록을 위한 클래스
+	void showALLSALARYinfo()const;			//직원 급여정보를 보기위한 클래스
+	void showTOTALSALARY()const;			//지불할 직원 급여 총합을 보기위한 클래스
+	~EmployeeHandler();						//동적 할당으로 생성된 empList를 제거하기 위한 Destructor
 };//EmployeeHandler.h
-</code></pre>
+</code></pre><!--EmployeeHandler.h-->
 
 
 <pre><code class="language-cpp">
@@ -81,7 +82,7 @@ public:
 using namespace std;
 
 PermanentWorker::PermanentWorker(char* name, int money)
-	:salary(money) {strcpy(this->name, name);}
+	:salary(money) {strcpy(this->name, name);}			
 
 int PermanentWorker::getPAY()const { return salary; }
 
@@ -148,20 +149,6 @@ int main(void)
 }
 </code></pre>
 
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-
 </details>
 
 <details>
@@ -169,27 +156,105 @@ int main(void)
 <strong>급여관리 시스템 2</strong>
 </summary>
 
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+
 </details>
+
 
 <details>
 <summary>
 <strong>급여관리 시스템 3</strong>
 </summary>
 
+
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
 </details>
+
 
 <details>
 <summary>
 <strong>급여관리 시스템 4</strong>
 </summary>
 
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
 </details>
+
 
 <details>
 <summary>
 <strong>급여관리 시스템 5</strong>
 </summary>
 
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+</details>
+
+
+<details>
+<summary>
+<strong></strong>
+</summary>
+
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
 </details>
 
 <details>
@@ -197,14 +262,20 @@ int main(void)
 <strong></strong>
 </summary>
 
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
 </details>
 
-<details>
-<summary>
-<strong></strong>
-</summary>
 
-</details>
-
-
-</details>
+</details><!--끝 -->
