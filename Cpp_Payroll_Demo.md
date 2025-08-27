@@ -348,7 +348,7 @@ void SalesWorker::AddSalesResult(int value){salesResult += value;}		//매게변�
 
 int SalesWorker::getPAY()const											//Access Function getter
 {
-	return PermanentWorker::getPAY()									//오버라이딩된 함수를 호출하는 방식
+	return PermanentWorker::getPAY()									//오버라이딩된 기초함수(PermanentWorker)를 호출하는 방식
 		+ (int)(salesResult * bonusRatio);								//double형 bonusRatio의 결과를 int로 형변환(type casting)
 }
 void SalesWorker::ShowSalaryInfo()const									//오버라이딩된 함수
@@ -365,7 +365,7 @@ void SalesWorker::ShowSalaryInfo()const									//오버라이딩된 함수
 #include&ltiostream>
 using namespace std;
 
-TemporaryWorker::TemporaryWorker(char* name, int pay)
+TemporaryWorker::TemporaryWorker(char* name, int pay)					//TemporaryWorker클래스는 PermanentWorker 클래스와 유사함.
 	:Employee(name), worktime(0), payperhour(pay){}
 
 void TemporaryWorker::AddWorkTime(int time){worktime += time;}
