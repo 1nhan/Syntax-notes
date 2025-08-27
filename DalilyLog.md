@@ -11,7 +11,7 @@ const SoSimple sim(20);	//	객체를 상수화
 
 객체를 대상으로는 const 멤버함수만 호출이 가능하다. 변경시킬 능력이 있는 함수는 아예 호출을 허용하지 않는다.<br>
 멤버변수에 저장된 값을 수정하지 않는 함수는 가급적 const로 선언해서, 객체에서도 호출이 가능하도록 할 필요가 있다.<br>
-</details><br>
+</details>
 <details><summary>const 함수 오버로딩</summary>
 ```cpp
 void numLock() {}
