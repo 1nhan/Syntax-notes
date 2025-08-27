@@ -301,3 +301,108 @@ int main(void)
 
 
 </details>
+
+
+<!--급여관리 시스템 3 -->
+
+<details>
+<summary>
+<strong>급여관리 시스템 3</strong>
+</summary>
+
+<table>
+<tr>
+<th>고용형태</th><th>급여계산</th>
+</tr>
+<tr>
+<th>PermanentWorker</th><th>기본급여</th>
+</tr>
+<tr>
+<th>TemporaryWorker</th><th>시간당급여x일한시간</th>
+</tr>
+<tr>
+<th>SalesWorker</th><th>기본급여+인센티브(bonus)</th>
+</tr>
+</table>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+/*SalesWorker*/
+#pragma once
+#include"PermanentWorker.h"
+class SalesWorker :public PermanentWorker
+{
+private:
+	int salesResult;
+	double bonusRatio;
+public:
+	SalesWorker(char* name, int money, double ratio);
+	void AddSalesResult(int value);
+	int getPAY()const;
+	void ShowSalaryInfo()const;
+};//SalesWorker.h
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+/*TemporaryWorker*/
+#pragma once
+#include "Employee.h"
+class TemporaryWorker :public Employee
+{
+private:
+	int worktime;
+	int payperhour;
+public:
+	TemporaryWorker(char* name, int pay);
+	void AddWorkTime(int time);
+	int getPAY()const;
+	void ShowSalaryInfo()const;
+};//TemporaryWorker.h
+
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+/*SalesWorker*/
+#include "SalesWorker.h"
+#include&ltiostream>
+using namespace std;
+
+SalesWorker::SalesWorker(char* name, int money, double ratio)
+	:PermanentWorker(name, money), salesResult(0), bonusRatio(ratio){}
+
+void SalesWorker::AddSalesResult(int value){salesResult += value;}
+
+int SalesWorker::getPAY()const
+{
+	return PermanentWorker::getPAY()
+		+ (int)(salesResult * bonusRatio);
+}
+void SalesWorker::ShowSalaryInfo()const
+{
+	showNAME();
+	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl &lt&lt endl;
+}//SalesWorker.cpp
+
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+/*TemporaryWorker*/
+#include "TemporaryWorker.h"	
+#include&ltiostream>
+using namespace std;
+
+TemporaryWorker::TemporaryWorker(char* name, int pay)
+	:Employee(name), worktime(0), payperhour(pay){}
+
+void TemporaryWorker::AddWorkTime(int time){worktime += time;}
+
+int TemporaryWorker::getPAY()const{return worktime * payperhour;}
+
+void TemporaryWorker::ShowSalaryInfo()const
+{
+	showNAME();
+	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl &lt&lt endl;
+}
+
+</code></pre>
+
+</details><!--급여관리 시스템 3 끝-->
