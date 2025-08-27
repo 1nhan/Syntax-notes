@@ -2,7 +2,7 @@
 
 <details>
 <summary>
-<strong>급여관리 시스템 1 | 상속의 필요성</strong>
+<strong>급여관리 시스템 1 | 상속의 필요성과 상속의 기본 개념, 오버라이딩까지</strong>
 </summary>
 
 <pre><code class="language-cpp" style="font-size:16px;">
