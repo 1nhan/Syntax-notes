@@ -182,8 +182,8 @@ public:
 <pre><code class="language-cpp" style="font-size:16px;">
 #define _CRT_SECURE_NO_WARNINGS
 #include "Employee.h"
-#include<cstring>
-#include <iostream>
+#include&ltcstring>
+#include&ltiostream>
 using namespace std;
 
 Employee::Employee(char* name)
@@ -198,8 +198,8 @@ void Employee::showNAME()const
 
 <pre><code class="language-cpp" style="font-size:16px;">
 #include "PermanentWorker.h"
-#include<cstring>
-#include <iostream>
+#include &ltcstring>
+#include &ltiostream>
 using namespace std;
 
 PermanentWorker::PermanentWorker(char* name, int money)
@@ -212,7 +212,7 @@ int PermanentWorker::getPAY()const
 void PermanentWorker::showSALARYinfo()const
 {
 	showNAME();
-	cout &lt&lt "SALARY: " &lt&lt getPAY() &lt&lt endl<<endl;
+	cout &lt&lt "SALARY: " &lt&lt getPAY() &lt&lt endl&lt&ltendl;
 }//PermanentWorker.cpp
 </code></pre>
 
