@@ -2,7 +2,7 @@
 
 <details>
 <summary>
-<strong>급여관리 시스템 1</strong>
+<strong>급여관리 시스템 1 | 상속의 필요성</strong>
 </summary>
 
 <pre><code class="language-cpp" style="font-size:16px;">
@@ -116,9 +116,31 @@ int main(void)
 >위 프로그램은 프로그램의 유연성이나 확장성의 확보가 쉽지 않다.<br>
 >영업직 클래스와 임시직 클래스를 추가하고, 영업직 객체와 임시직 객체의 저장을 위한 배열을 추가하고 각각 배열에 저장된 객체의 수를 별도로 세어보고, 정수형 변수도 멤버로 추가하는 등, 많은 것들을 바꿔줘야 한다. 또 addEMPLOYEE함수는 영업직용과 임시직 객체용을 각각 추가하고, 급여정보를 출력하는 나머지 두 멤버함수는 총 3개의 배열을 대상으로 연산을 진행하고, 반복문이 추가로 각각 두 개씩 더 삽입해야 한다. 결과적으로 확장하려면 다시 만들어야해서 위 코드는 확장성에 있어 좋지 못하다.
 ------------
+<strong>급여관리 시스템2를 이해하기 위한 필요한 개념</strong><br>
+>+상속의 방법<br>
+>+상속받은 클래스의 생성자 정의<br>
+>+용어<br>
 
->요구조건에 맞게 급여관리 시스템 2로 변경해보자.<br>>직원 고용형태가 '정규직(PermanentWorker)'하나였지만 영업직(Sales), 임시직(Temporary)등 등장했다.영업직(Sales)는 기본급여+인센티브를, 임시직(Temporary)에는 시간당 급여 x 일한 시간의 급여 계산방식이 적용이 된다.
+<talbe>
+<tr>
+	<th>상위 클래스</th> <th>&lt----></th> <th>하위 클래스(derived class)</th>
+</tr>
+<tr>
+	<th>기초 클래스(base class)</th> <th>&lt----></th> <th>유도 클래스(derived class)</th>
+</tr>
+</table>
 
+>+Derived Class의 객체 생성과정: 유도 클래스의 객체생성 과정에서는 생성자가 두 번 호출된다. 하나는 기초 클래스의 생성자이고, 다른 하나는 유도 클래스의 생성자이다.
+
+<br>+Derived Class 객체의 소멸과정: 유도 클래스의 소멸자가 진행되고 난 다음 기초 클래스의 소멸자가 실행된다. 이러한 객체소멸의 특성 때문에 상속과 연관된 클래스의 소멸자는 다음의 원칙을 지켜서 정의해야 한다. "생성자에서 동적 할당한 메모리 공간은 소멸자에서 해제한다."
+
+<br>+상속을 위한 기본 조건 IS-A관계: 상속관계가 성립하려면 기초 클래스와 유도 클래스간에 IS-A 관계가 성립해야 한다. 예를들면 무선전화기는 전화기다. 노트북 컴퓨터는 컴퓨터다. 와 같은 표현이 성립되어야 한다. 그렇지 않다면 적절한 상속의 관계가 아닐 확률이 높다.
+
+<br>+UML(Unified Modeling Language) : TabletNotebook ---> NotebookComp ---> Computer(화살표의 머리는 기초 클래스를 향하도록 표시해야 한다.)
+
+<br>+객체 포인터 변수: 객체의 주소 값을 저장하는 포인터 변수<br> <strong>Person * ptr;<br>ptr=new Person();<br></strong> 실행시 ptr은 Person 객체를 가리키게 될 뿐 아니라 Person을 상속하는 유도 클래스(Derived class)의 객체도 가리킬 수 있다. <br><strong>"Cpp에서 AAA형 포인터 변수는 AAA객체 또는 AAA를 직접 혹은 간접적으로 상속하는 모든 객체를 가리킬 수 있다.(객체의 주소 값을 저장할 수 있다.)"</strong><br>
+
+<br>+함수 오버라이딩(function overriding): 재정의(overriding)된 기초 클래스의 함수는 오버리이딩을 한 유도 클래스의 함수에 가려진다.<br><strong>PermanentWorker::getPay()</strong><br>오버라이딩 된 기초 클래스의 getPAY() 함수를 호출하는 구문이다. 클래스의 이름을 명시함으로 인해서 기초 클래스의 오버라이딩 된 함수를 호출할 수 있다.
 </details>
 
 
@@ -126,7 +148,7 @@ int main(void)
 
 <details>
 <summary>
-<strong>급여관리 시스템 2</strong>
+<strong>급여관리 시스템 2 | 객체 포인터 변수,</strong>
 </summary>
 
 [상속 관계 구조]
