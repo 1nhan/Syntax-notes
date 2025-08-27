@@ -133,7 +133,7 @@ int main(void)
 >근로자(Employee) <- 정규직(PermanentWorker) <- 영업직(SalesWorker)<br>
 >근로자(Employee) <- 임시직(TemporaryWorker)<br>
 ------------
-<table border="1>
+<table border="1">
 <tr>
 <th>고용형태</th><th>임금방식</th>
 </tr>
