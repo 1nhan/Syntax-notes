@@ -152,7 +152,7 @@ int main(void)
 </table><!--테이블-->
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #pragma once
 class EMPLOYEE
 {
@@ -162,9 +162,9 @@ public:
 	EMPLOYEE(char* name);
 	void showNAME()const;
 };//EMPLOYEE.h
-</h5></code></pre>
+</h4></code></pre>
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #pragma once
 #include "Employee.h"
 class PermanentWorker:public Employee
@@ -176,10 +176,10 @@ public:
 	int getPAY()const;
 	void showSALARYinfo()const;
 }; //PermanentWorker.h
-</h5></code></pre>
+</h4></code></pre>
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #pragma once
 #include"PermanentWorker.h"
 class SalesWorker:public PermanentWorker
@@ -193,10 +193,10 @@ public:
 	int getPAY()const;
 	void showSALARYinfo()const;
 };//SalesWorker.h
-</h5></code></pre>
+</h4></code></pre>
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #pragma once
 #include "Employee.h"
 class TemporaryWorker:public Employee
@@ -210,10 +210,10 @@ public:
 	int getPAY()const;
 	void showSALARYinfo()const;
 };//TemporaryWorker.h
-</h5></code></pre>
+</h4></code></pre>
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #pragma once
 #include"Employee.h"
 class EmployeeHandler				//Control Class
@@ -228,10 +228,10 @@ public:
 	void ShowTotalSalary()const;
 	~EmployeeHandler();
 };//EmployeeHandler.h
-</h5></code></pre>
+</h4></code></pre>
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #define _CRT_SECURE_NO_WARNINGS
 #include "Employee.h"
 #include<cstring>
@@ -246,10 +246,10 @@ void Employee::showNAME()const
 {
 	cout <<"이름: "<<name << endl;
 }//Employee.cpp
-</h5></code></pre>
+</h4></code></pre>
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #include "PermanentWorker.h"
 #include<cstring>
 #include <iostream>
@@ -267,10 +267,10 @@ void PermanentWorker::showSALARYinfo()const
 	showNAME();
 	cout << "SALARY: " << getPAY() << endl<<endl;
 }//PermanentWorker.cpp
-</h5></code></pre>
+</h4></code></pre>
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #include "SalesWorker.h"
 #include<iostream>
 using namespace std;
@@ -292,10 +292,10 @@ void SalesWorker::showSALARYinfo()const
 	showNAME();
 	cout <<"salary: "<<getPAY() << endl << endl;
 }//SalesWorker.cpp
-</h5></code></pre>
+</h4></code></pre>
 
 
-<pre><code class="language-cpp"><h5>
+<pre><code class="language-cpp"><h4>
 #include "TemporaryWorker.h"
 #include<iostream>
 using namespace std;
@@ -316,11 +316,11 @@ void TemporaryWorker::showSALARYinfo()const
 	showNAME();
 	cout << "salary: " << getPAY() << endl << endl;
 }//TemporaryWorker.cpp
-</h5></code></pre>
+</h4></code></pre>
 
 
 <pre><code class="language-cpp">
-<h5>
+<h4>
 #include "EmployeeHandler.h"
 #include<cstring>
 #include <iostream>
@@ -347,12 +347,12 @@ EmployeeHandler::~EmployeeHandler()
 {
 	for (int i = 0; i < empNUM; i++)
 		delete empLIST[i];
-}//EmployeeHandler.cpp</h5>
+}//EmployeeHandler.cpp</h4>
 </code></pre>
 
 
 <pre><code class="language-cpp">
-<h5>
+<h4>
 #include"Employee.h"
 #include"EmployeeHandler.h"
 #include"PermanentWorker.h"
@@ -374,7 +374,7 @@ int main(void)
 	handler.ShowTotalSalary();
 
 	return 0;
-}</h5>
+}</h4>
 </code></pre>
 
 </details><!--급여관리시스템2 끝-->
