@@ -32,7 +32,7 @@ protected 선언과 세 가지 형태의 상속, 상속을 위한 조건, OOP �
 </details>
 <details>
 <summary>
-<strong>객체지향의 전개</strong>
+<h3>객체지향의 전개</h3>
 </summary>
 
 <details>
@@ -147,4 +147,64 @@ int main(void)
 	return 0;
 }
 </code></pre>
-</detail>
+
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+<pre><code class="language-cpp">
+
+</code></pre>
+
+
+</details>
+
+<details>
+<summary>
+<strong>급여관리 시스템 2</strong>
+</summary>
+
+</details>
+
+<details>
+<summary>
+<strong></strong>
+</summary>
+
+</details>
+
+<details>
+<summary>
+<strong></strong>
+</summary>
+
+</details>
+
+<details>
+<summary>
+<strong></strong>
+</summary>
+
+</details>
+
+<details>
+<summary>
+<strong></strong>
+</summary>
+
+</details>
+
+<details>
+<summary>
+<strong></strong>
+</summary>
+
+</details>
+
+
+</details>
