@@ -133,11 +133,23 @@ int main(void)
 >근로자(Employee) <- 정규직(PermanentWorker) <- 영업직(SalesWorker)<br>
 >근로자(Employee) <- 임시직(TemporaryWorker)<br>
 ------------
-[임금형태]<br>
->근로자(Employee)			Base Class<br>
->정규직(PermanentWorker)	기본급여<br>
->임시직(TemporaryWorker)	시간급여x일한시간<br>
->영업직(Sales)			기본급여x인센티브<br>
+<table border="1>
+<tr>
+<th>고용형태</th><th>임금방식</th>
+</tr>
+<tr>
+<th>근로자(Employee)</th><th>Base Class</th>
+</tr>
+<tr>
+<th>정규직(PermanentWorker)</th><th>기본급여</th>
+</tr>
+<tr>
+<th>임시직(TemporaryWorker)</th><th>시간급여x일한시간</th>
+</tr>
+<tr>
+<th>영업직(Sales)</th><th>기본급여x인센티브</th>
+</tr>
+</table><!--테이블-->
 ------------
 
 <pre><code class="language-cpp">
