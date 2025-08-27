@@ -37,11 +37,6 @@ protected 선언과 세 가지 형태의 상속, 상속을 위한 조건, OOP �
 
 <details>
 <summary>
-<h3>객체지향의 전개</h3>
-</summary>
-
-<details>
-<summary>
 <strong>급여관리 시스템 1</strong>
 </summary>
 
