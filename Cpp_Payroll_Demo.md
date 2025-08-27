@@ -279,31 +279,6 @@ int main(void)
 </details><!--급여관리 시스템 2 끝-->
 
 <!--급여관리 시스템 3 -->
-<details>
-<summary>
-<strong>급여관리 시스템 3</strong>
-</summary>
-
-<table>
-<tr>
-<th>고용형태</th><th>급여계산</th>
-</tr>
-<tr>
-<th>PermanentWorker</th><th>기본급여</th>
-</tr>
-<tr>
-<th>TemporaryWorker</th><th>시간당급여x일한시간</th>
-</tr>
-<tr>
-<th>SalesWorker</th><th>기본급여+인센티브(bonus)</th>
-</tr>
-</table>
-
-
-</details>
-
-
-<!--급여관리 시스템 3 -->
 
 <details>
 <summary>
