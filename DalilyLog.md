@@ -13,12 +13,11 @@ const SoSimple sim(20);	//	객체를 상수화
 멤버변수에 저장된 값을 수정하지 않는 함수는 가급적 const로 선언해서, 객체에서도 호출이 가능하도록 할 필요가 있다.<br>
 </details>
 <details><summary>const 함수 오버로딩</summary>
-```cpp
+<pre><code class = "language-cpp">
 void numLock() {}
 void numLock() const {} // const의 선언 유무도 함수 오버로딩의 조건에 해당된다.
-```
-
-
+ 
+</code></pre>
 </details>
 
 2025-08-23 상속(Inheritance) <br>
