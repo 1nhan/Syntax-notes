@@ -1,7 +1,7 @@
-# 객체지향의 전개
+# Object-Oriented
 <details>
 <summary>
-<h3>상속</h3>
+<h3>상속(Inheritance)</h3>
 </summary>
 
 <details>
@@ -361,113 +361,8 @@ int main(void)
 }
 </code></pre>
 
+</details><!--급여관리시스템2 끝-->
 
-</details>
-
-
-<details>
-<summary>
-<strong>급여관리 시스템 3</strong>
-</summary>
-
-
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-</details>
-
-
-<details>
-<summary>
-<strong>급여관리 시스템 4</strong>
-</summary>
-
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-</details>
-
-
-<details>
-<summary>
-<strong>급여관리 시스템 5</strong>
-</summary>
-
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-</details>
-
-
-<details>
-<summary>
-<strong></strong>
-</summary>
-
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-</details>
-
-<details>
-<summary>
-<strong></strong>
-</summary>
-
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-<pre><code class="language-cpp">
-
-</code></pre>
-
-</details>
 
 
 </details><!--끝 -->
