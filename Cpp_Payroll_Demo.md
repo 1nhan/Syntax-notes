@@ -120,3 +120,158 @@ int main(void)
 >요구조건에 맞게 급여관리 시스템 2로 변경해보자.<br>>직원 고용형태가 '정규직(PermanentWorker)'하나였지만 영업직(Sales), 임시직(Temporary)등 등장했다.영업직(Sales)는 기본급여+인센티브를, 임시직(Temporary)에는 시간당 급여 x 일한 시간의 급여 계산방식이 적용이 된다.
 
 </details>
+
+
+<!--급여관리 시스템 2 -->
+
+<details>
+<summary>
+<strong>급여관리 시스템 2</strong>
+</summary>
+
+[상속 관계 구조]
+>SalesWorker --> PermanentWorker --> Employee 
+>TemporaryWorker --> Employee
+>EmployeeHandler 클래스가 저장 및 관리하는 대상이 Employee 객체가 되면 이후에 Employee클래스를 직접 혹은 간접적으로 상속하는 클래스가 추가되었을때, EmployeeHandler클래스에는 변화가 발생하지 않는다.
+
+
+</table>
+<pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+class Employee									//Base Class		
+{
+private:
+	char name[100];
+public:
+	Employee(char* name);						//Constructor
+	void showNAME()const;						//멤버변수 출력 함수
+};//Employee.h
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+#include "Employee.h"
+class PermanentWorker:public Employee			//Derived Class
+{
+private:
+	int salary;
+public:
+	PermanentWorker(char* name, int money);		//Constructor
+	int getPAY()const;							//Access Function, getter
+	void showSALARYinfo()const;					//멤버변수 출력 함수
+}; //PermanentWorker.h
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+#include"Employee.h"
+class EmployeeHandler							//Control Class
+{
+private:
+	Employee* empLIST[50];						//Employee 객체의 주소 값을 저장하는 방식으로 객체에 저장
+	int empNUM;									//empLIST[]에 Len을 위한 변수 선언
+public:
+	EmployeeHandler();							//Constructor, 멤버변수 초기화 목적
+	void AddEmployee(Employee* emp);			//직원 등록
+	void ShowAllSalaryiInfo()const;				//직원 급여정보를 보기위한 함수
+	void ShowTotalSalary()const;				//직원 급여 총합계를 보기위한 함수
+	~EmployeeHandler();							//Destructor
+};//EmployeeHandler.h
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#define _CRT_SECURE_NO_WARNINGS
+#include "Employee.h"
+#include<cstring>
+#include <iostream>
+using namespace std;
+
+Employee::Employee(char* name)
+{
+	strcpy(this->name, name);
+}
+void Employee::showNAME()const
+{
+	cout &lt&lt"이름: "&lt&ltname &lt&lt endl;
+}//Employee.cpp
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#include "PermanentWorker.h"
+#include<cstring>
+#include <iostream>
+using namespace std;
+
+PermanentWorker::PermanentWorker(char* name, int money)
+	:Employee(name),salary(money)
+{}
+int PermanentWorker::getPAY()const
+{
+	return salary;
+}
+void PermanentWorker::showSALARYinfo()const
+{
+	showNAME();
+	cout &lt&lt "SALARY: " &lt&lt getPAY() &lt&lt endl<<endl;
+}//PermanentWorker.cpp
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#include "EmployeeHandler.h"
+#include&ltcstring>
+#include&ltiostream>
+using namespace std;
+EmployeeHandler::EmployeeHandler():empNUM(0)
+{}
+void EmployeeHandler::AddEmployee(Employee* emp)
+{
+	empLIST[empNUM++] = emp;
+}
+void EmployeeHandler::ShowAllSalaryiInfo()const
+{
+	//for (int i = 0; i &lt empNUM; i++)
+	//	empLIST[i]->showSALARYinfo();
+}
+void EmployeeHandler::ShowTotalSalary()const
+{
+	int sum = 0;
+	//for (int i = 0; i &lt empNUM; i++)
+	//	sum+=empLIST[i]->getPAY();
+	cout &lt&lt "salary sum: " &lt&lt sum &lt&lt endl;
+}
+EmployeeHandler::~EmployeeHandler()
+{
+	for (int i = 0; i &lt empNUM; i++)
+		delete empLIST[i];
+}//EmployeeHandler.cpp
+</code></pre>
+<pre><code class="language-cpp" style="font-size:16px;">
+#include"Employee.h"
+#include"EmployeeHandler.h"
+#include"PermanentWorker.h"
+
+int main(void)
+{
+	
+	/* 
+	직원 관리를 목적으로 설계된 컨트롤 클래스의 객체생성
+	Employee객체의 주소 값을 저장하는 방식으로 객체 저장한다.
+	Employee 클래스를 상속하는 클래스의 객체도 이 배열에 저장이 가능하다.*/
+	EmployeeHandler handler;
+
+	//직원 등록
+	handler.AddEmployee(new PermanentWorker("Kim", 1000));
+	handler.AddEmployee(new PermanentWorker("Lim", 3000));
+	handler.AddEmployee(new PermanentWorker("Jun", 2500));
+	
+	//이번 달에 지불해야 할 급여의 정보
+	handler.ShowAllSalaryiInfo();
+	
+	//이번 달에 지불해야 할 급여의 총합
+	handler.ShowTotalSalary();
+
+	return 0;
+}
+</code></pre>
+
+</details><!--급여관리 시스템 2 끝-->
