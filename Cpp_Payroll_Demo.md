@@ -381,3 +381,85 @@ void TemporaryWorker::ShowSalaryInfo()const
 </code></pre>
 
 </details><!--급여관리 시스템 3 끝-->
+
+<!--급여관리 시스템 4 -->
+
+<details>
+<summary>
+<strong>급여관리 시스템 4</strong>
+</summary>
+
+>배열을 구성하는 포인터 변수가 Employee형 포인터 변수이므로, Employee 클래스의 멤버가 아닌 getPAY()와 ShowSalaryInfo()의 호출부분에서 컴파일 에러가 발생해서 주석처리 한 것 이다. Employee형 포인터 변수를 대상으로 이 두 함수를 호출 할 수 있도록 Employee클래스에 getPAY함수와 ShowSalaryInfo함수를 추가로 정의하고 가상함수로 선언해보자.
+<br>
+
+>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+
+class Employee
+{
+private:
+	char name[100];
+public:
+	Employee(char* name);
+	void ShowNAME()const;
+	virtual int getPAY() const;							// 직종마다 다른 임금체계를 갖고 있기 때문에 서로 다른 출력값을 유도클래스에서 
+	virtual void ShowSalaryInfo() const;				// 재정의(override)할 수 있도록 가상함수로 선언함.
+};
+</code></pre>
+<pre><code class="language-cpp" style="font-size:16px;">
+#define _CRT_SECURE_NO_WARNINGS
+#include "Employee.h"
+#include<cstring>
+#include <iostream>
+using namespace std;
+
+Employee::Employee(char* name) 							
+{ strcpy(this->name, name); }
+
+void Employee::ShowNAME()const 							
+{ cout &lt&lt "이름: " &lt&lt name &lt&lt endl; }
+
+int Employee::getPAY() const 							// Employee 클래스에서는 의미없는 값을 저장해도 된다. 순수 가상함수로 선언하는 것도 방법이다.
+{ return 0; }
+
+void Employee::ShowSalaryInfo() const {  }//Employee.cpp
+</code></pre>
+<pre><code class="language-cpp" style="font-size:16px;">
+#include"Employee.h"
+#include"EmployeeHandler.h"
+#include"PermanentWorker.h"
+#include"TemporaryWorker.h"
+#include"SalesWorker.h"
+
+int main(void)
+{
+	//핸들러 컨트롤러
+	EmployeeHandler handler;
+
+	//정규직 등록
+	handler.AddEmployee(new PermanentWorker("Kim", 1000));
+	handler.AddEmployee(new PermanentWorker("Lim", 3000));
+
+	//임시직 등록
+	TemporaryWorker* albamon = new TemporaryWorker("Jung", 699);
+	albamon->AddWorkTime(5);
+	handler.AddEmployee(albamon);
+
+	//영업직 등록
+	SalesWorker* seller = new SalesWorker("Hong", 1000, 0.1);
+	seller->AddSalesResult(7000);
+	handler.AddEmployee(seller);
+
+	//이번 달에 지불해야 할 급여의 정보
+	handler.ShowAllSalaryInfo();
+
+	//이번 달에 지불해야 할 급여의 총합
+	handler.ShowTotalSalary();
+
+	return 0;
+}
+
+</code></pre>
+</details><!--급여관리 시스템 4 끝-->
