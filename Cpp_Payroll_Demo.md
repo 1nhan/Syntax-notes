@@ -1,8 +1,8 @@
-# 급여관리 시스템으로 배워보는 상속-가상함수
+# 급여관리 시스템 정리 
 
 <details>
 <summary>
-<strong>급여관리 시스템 1 | 상속의 필요성과 상속의 기본 개념, 오버라이딩까지</strong>
+<strong>급여관리 시스템 1 | </strong>
 </summary>
 
 <pre><code class="language-cpp" style="font-size:16px;">
@@ -143,11 +143,10 @@ int main(void)
 </details>
 
 
-<!--급여관리 시스템 2 -->
 
 <details>
 <summary>
-<strong>급여관리 시스템 2 | 객체 포인터 변수,</strong>
+<strong>급여관리 시스템 2 | </strong>
 </summary>
 
 [상속 관계 구조]
