@@ -46,10 +46,9 @@ int main(void)
 	return 0;
 }
 </code></pre>
+<tr><th>구성 요소</th></tr>
+  <tr><td>obj1 객체</td></tr>
+  <tr><td>data = 15</td></tr>
+  <tr><td>void(*ShowData)(Data*)</td></tr>
+  <tr><td>void(*Add)(Data*, int)</td></tr>
 </details>
-<table>
- <tr>obj1객체</tr>
- <tr>data=15</tr>
- <tr>void(*ShowData)(Data*)</tr>
- <tr>void (*Add)(Data*,int)</tr>
-</table>
