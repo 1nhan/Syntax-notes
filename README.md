@@ -91,8 +91,8 @@ int main(void)
 	return 0;
 }
 </code></pre>
+한 개 이사으이 가상함수를 포함하는 클래스에 대해서는 컴파일러가 다음 도표와 같은 형태의 '가상함수 테이블'이란 것을 만든다. 이를 간단히 'V-Table(Virtual Table)'이라고도 하고 실제 호출되어야 할 함수의 위치정보를 담고 있는 테이블이다.
 <table>
-
  <tr>
 	 <th>key</th><th>value</th>
  </tr>
@@ -103,5 +103,22 @@ int main(void)
 	 <th>void BBB::Func2()</th><th>0x2048번지</th>
  </tr>
 </table>
- 
+<strong>[AAA클래스의 가상함수 테이블]</strong>
+key는 호출하고자 하는 함수를 구분지어주는 구분자의 역할을 하고 value는 구분자에 해당하는 함수의 주소정보를 알려주는 역할을 한다. 그래서 AAA 객체의 Func1 함수를 호출해야 할 경우, 위의 테이블에 첫 번째 행의 정보를 참조하여, 0x1024번지에 등록되어 있는 Func1 함수를 호출하게 되는 것이다.
+<table>
+ <tr>
+	 <th>key</th><th>value</th>
+ </tr>
+ <tr>
+	 <th>void BBB::Func1()</th><th>0x3072번지</th>
+ </tr>
+ <tr>
+	 <th>void AAA::Func2()</th><th>0x2048번지</th>
+ </tr>
+ <tr>
+	 <th>void BBB::Func3()</th><th>0x4096번지</th>
+ </tr>
+</table>
+<strong>[BBB클래스의 가상함수 테이블]</strong>
+위의 가상함수 테이블을 보면<br><strong>"AAA클래스의 오버라이딩 된 가상함수 Func1에 대한 정보가 존재하지 않는다."</strong><br> 오버라이딩 된 가상함수의 주소정보는 유도 클래스의 가상함수 테이블에 포함되지 않는다. 때문에 오버라이딩 된 가상함수를 호출하면, 무조건 가장 마지막에 오버라이딩을 한 유도 클래스의 멤버함수가 호출되는 것이다. 
 </details>
