@@ -46,17 +46,17 @@ int main(void)
 	return 0;
 }
 </code></pre>
-Data obj1 = { 15, ShowData,Add };
-			data = 15
-			void (*ShowData)(Data*)	----> 	void ShowData(Data*THIS){}
-			VOID (*Add)(Data*,int)	---->	void Add(Data*THIS,int num){THIS->data+=num;}
+Data obj1 = { 15, ShowData,Add };<br>
+			data = 15<br>
+			void (*ShowData)(Data*)	----> 	void ShowData(Data*THIS){}<br>
+			VOID (*Add)(Data*,int)	---->	void Add(Data*THIS,int num){THIS->data+=num;}<br>
 
-Data obj2 = { 7, ShowData,Add };
-			data = 7
-   			void (*ShowData)(Data*)	----> 	void ShowData(Data*THIS){}
-			VOID (*Add)(Data*,int)	---->	void Add(Data*THIS,int num){THIS->data+=num;}
+Data obj2 = { 7, ShowData,Add };<br>
+			data = 7<br>
+   			void (*ShowData)(Data*)	----> 	void ShowData(Data*THIS){}<br>
+			VOID (*Add)(Data*,int)	---->	void Add(Data*THIS,int num){THIS->data+=num;}<br>
 
-[obj1과 obj2의 구성]
+<strong>[obj1과 obj2의 구성]</strong><br>
 
 위의 핵심은 두 개의 구조체 변수(객체)가 함수를 공유하고 있다는 사실이다. C++의 객체와 멤버함수는 이러한 관계를 갖는다.
 <strong>객체가 생성되면 멤버변수는 객체 내에 존재하지만, 멤버함수는 메모리의 한 공간에 별도로 위치하고선 이 함수가 정의된 클래스의 모든 객체가 이를 공유하는 형태를 취한다.</strong>
