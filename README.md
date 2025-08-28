@@ -30,11 +30,11 @@ int main(void)
 typedef struct Data
 {
 	int data;
-	void (*ShowData)(Data*);		// 함수 포인터 변수
-	void(*Add)(Data*, int);			// 함수 포인터 변수
+	void (*ShowData)(Data*);		// 함수 포인터 변수는 void ShowData(Data* THIS) {}의 주소 값을 저장하기 위함
+	void(*Add)(Data*, int);			// 함수 포인터 변수는 void Add(Data* THIS, int num) {}의 주소 값을 저장하기 위함
 }Data;
-void ShowData(Data* THIS) { cout&lt;&lt;"Data: "&lt;&lt;THIS->data &lt;&lt; endl; }
-void Add(Data* THIS, int num) { THIS->data += num; }
+void ShowData(Data* THIS) { cout&lt;&lt;"Data: "&lt;&lt;THIS->data &lt;&lt; endl; }	//
+void Add(Data* THIS, int num) { THIS->data += num; }								//
 int main(void)
 {
 	Data obj1 = { 15, ShowData,Add };
@@ -46,9 +46,20 @@ int main(void)
 	return 0;
 }
 </code></pre>
-<tr><th>구성 요소</th></tr>
-  <tr><td>obj1 객체</td></tr>
-  <tr><td>data = 15</td></tr>
-  <tr><td>void(*ShowData)(Data*)</td></tr>
-  <tr><td>void(*Add)(Data*, int)</td></tr>
+Data obj1 = { 15, ShowData,Add };
+			data = 15
+			void (*ShowData)(Data*)	----> 	void ShowData(Data*THIS){}
+			VOID (*Add)(Data*,int)	---->	void Add(Data*THIS,int num){THIS->data+=num;}
+
+Data obj2 = { 7, ShowData,Add };
+			data = 7
+   			void (*ShowData)(Data*)	----> 	void ShowData(Data*THIS){}
+			VOID (*Add)(Data*,int)	---->	void Add(Data*THIS,int num){THIS->data+=num;}
+
+[obj1과 obj2의 구성]
+
+위의 핵심은 두 개의 구조체 변수(객체)가 함수를 공유하고 있다는 사실이다. C++의 객체와 멤버함수는 이러한 관계를 갖는다.
+<strong>객체가 생성되면 멤버변수는 객체 내에 존재하지만, 멤버함수는 메모리의 한 공간에 별도로 위치하고선 이 함수가 정의된 클래스의 모든 객체가 이를 공유하는 형태를 취한다.</strong>
+
+
 </details>
