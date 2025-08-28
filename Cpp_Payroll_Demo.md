@@ -702,8 +702,9 @@ void EmployeeHandler::ShowTotalSalaryInfo()const
 }
 
 EmployeeHandler::~EmployeeHandler()
-{
-	delete[]empList;
+{	
+	for (int i = 0; i &lt; empNum; i++)
+		delete[]empList;
 }
 //	EmployeeHandler.cpp
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
