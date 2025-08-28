@@ -513,14 +513,14 @@ public:
 <pre><code class="language-cpp" style="font-size:16px;">
 #define _CRT_SECURE_NO_WARNINGS
 #include "Employee.h"
-#include %ltcstring>
-#include%ltiostream>
+#include &ltcstring>
+#include&ltiostream>
 using namespace std;
 Employee::Employee(char*name){strcpy(this->name, name);}
 
 void Employee::ShowNameInfo()const
 {
-	cout %lt%lt "이름: " %lt%lt name %lt%lt endl;
+	cout &lt&lt "이름: " &lt&lt name &lt&lt endl;
 } // Employee.cpp
 </code></pre>
 
@@ -539,7 +539,7 @@ public:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "PermanentWorker.h"
 #include"Employee.h"
-#include%ltiostream>
+#include&ltiostream>
 using namespace std;
 
 PermanentWorker::PermanentWorker(char* name, int money)
@@ -548,7 +548,7 @@ PermanentWorker::PermanentWorker(char* name, int money)
 int PermanentWorker::getPAY()const{return salary;}
 
 void PermanentWorker::ShowSalaryInfo()const
-{cout %lt%lt "salary: " %lt%lt getPAY() %lt%lt endl;}
+{cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl;}
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 #include "PermanentWorker.h"
@@ -567,7 +567,7 @@ public:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "SalesWorker.h"
 #include "PermanentWorker.h"
-#include%ltiostream>
+#include&ltiostream>
 using namespace std;
 
 SalesWorker::SalesWorker(char* name, int money, double ratio)
@@ -584,7 +584,7 @@ int SalesWorker::getPAY()const
 void SalesWorker::ShowSalaryInfo()const
 {
 	ShowNameInfo();
-	cout %lt%lt "salary: " %lt%lt getPAY() %lt%lt endl;
+	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl;
 }//SalesWorker.cpp
 	
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
@@ -605,7 +605,7 @@ private:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "ForeignSalesWorker.h"
 #include"SalesWorker.h"
-#include%ltiostream>
+#include&ltiostream>
 using namespace std;
 
 ForeignSalesWorker::ForeignSalesWorker(char* name, int money, double bonus, int risk)
@@ -623,9 +623,9 @@ int ForeignSalesWorker::getPAY()const
 void ForeignSalesWorker::ShowSalaryInfo()const
 {
 	ShowNameInfo();
-	cout %lt%lt"salary: "%lt%ltSalesWorker::getPAY()%lt%lt endl;
-	cout %lt%lt"risk pay: "%lt%ltgetRISK()%lt%lt endl;
-	cout%lt%lt"sum: "%lt%lt getPAY()%lt%lt endl%lt%ltendl;
+	cout &lt&lt"salary: "&lt&ltSalesWorker::getPAY()&lt&lt endl;
+	cout &lt&lt"risk pay: "&lt&ltgetRISK()&lt&lt endl;
+	cout&lt&lt"sum: "&lt&lt getPAY()&lt&lt endl&lt&ltendl;
 }//	ForeignSalesWorker.cpp
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
@@ -644,7 +644,7 @@ public:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include"Employee.h"
 #include "TemporaryWorker.h"
-#include %ltiostream>
+#include &ltiostream>
 using namespace std;
 
 TemporaryWorker::TemporaryWorker(char* name, int pph)
@@ -655,7 +655,7 @@ int TemporaryWorker::getPAY()const {return worktime * payperhour;}
 void TemporaryWorker::ShowSalaryInfo()const
 {
 	ShowNameInfo();
-	cout %lt%lt "salary"%lt%ltTemporaryWorker::getPAY() %lt%lt endl;
+	cout &lt&lt "salary"&lt&ltTemporaryWorker::getPAY() &lt&lt endl;
 }
 
 void TemporaryWorker::AddWorkTime(int wt)
@@ -680,7 +680,7 @@ public:
 
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "EmployeeHandler.h"
-#include%ltiostream>
+#include&ltiostream>
 using namespace std;
 
 EmployeeHandler::EmployeeHandler():empNum(0){}
@@ -690,16 +690,16 @@ void EmployeeHandler::AddEmployee(Employee* emp)
 
 void EmployeeHandler::ShowAllSalaryInfo()const
 {
-	for (int i = 0; i %lt empNum; i++)
+	for (int i = 0; i &lt empNum; i++)
 		empList[i]->ShowSalaryInfo();
 }
 
 void EmployeeHandler::ShowTotalSalaryInfo()const
 {
 	int sum = 0;
-	for (int i = 0; i %lt empNum; i++)
+	for (int i = 0; i &lt empNum; i++)
 		sum += empList[i]->getPAY();
-	cout %lt%lt "sum: " %lt%lt sum %lt%lt endl;
+	cout &lt&lt "sum: " &lt&lt sum &lt&lt endl;
 }
 
 EmployeeHandler::~EmployeeHandler()
