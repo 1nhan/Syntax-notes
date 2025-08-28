@@ -719,27 +719,21 @@ EmployeeHandler::~EmployeeHandler()
 int main(void)
 {
 	EmployeeHandler handler;
-
 	ForeignSalesWorker* fseller1 = new ForeignSalesWorker
 	("HONG", 1000, 0.1, RISK_LEVEL::RISK_A);
 	fseller1->AddSalesResult(7000);
 	handler.AddEmployee(fseller1);
-
 	ForeignSalesWorker* fseller2 = new ForeignSalesWorker
 	("YOON", 1000, 0.1, RISK_LEVEL::RISK_B);
 	fseller2->AddSalesResult(7000);
 	handler.AddEmployee(fseller2);
-
 	ForeignSalesWorker* fseller3 = new ForeignSalesWorker
 	("LEE", 1000, 0.1, RISK_LEVEL::RISK_C);
 	fseller3->AddSalesResult(7000);
 	handler.AddEmployee(fseller3);
-
 	handler.ShowAllSalaryInfo();
 	return 0;
 }
-
-
 	
 </code></pre>
  
