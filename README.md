@@ -33,7 +33,7 @@ typedef struct Data
 	void (*ShowData)(Data*);		// 함수 포인터 변수
 	void(*Add)(Data*, int);			// 함수 포인터 변수
 }Data;
-void ShowData(Data* THIS) { cout<<"Data: "<<THIS->data << endl; }
+void ShowData(Data* THIS) { cout&lt;&lt;"Data: "&lt;&lt;THIS->data &lt;&lt; endl; }
 void Add(Data* THIS, int num) { THIS->data += num; }
 int main(void)
 {
@@ -47,3 +47,9 @@ int main(void)
 }
 </code></pre>
 </details>
+<table>
+ <tr>obj1객체</tr>
+ <tr>data=15</tr>
+ <tr>void(*ShowData)(Data*)</tr>
+ <tr>void (*Add)(Data*,int)</tr>
+</table>
