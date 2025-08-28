@@ -61,5 +61,32 @@ Data obj2 = { 7, ShowData,Add };<br>
 위의 핵심은 두 개의 구조체 변수(객체)가 함수를 공유하고 있다는 사실이다. C++의 객체와 멤버함수는 이러한 관계를 갖는다.
 <strong>객체가 생성되면 멤버변수는 객체 내에 존재하지만, 멤버함수는 메모리의 한 공간에 별도로 위치하고선 이 함수가 정의된 클래스의 모든 객체가 이를 공유하는 형태를 취한다.</strong>
 
-
+<pre><code class="language-cpp" style="font-size:16px;">
+	#include&lt;iostream>
+using namespace std;
+class AAA
+{
+private:
+	int num1;
+public:
+	virtual void Func1() { cout&lt;&lt;"Func1" &lt;&lt; endl; }
+	virtual void Func2() { cout&lt;&lt;"Func2" &lt;&lt; endl; }
+};
+class BBB :public AAA
+{
+private:
+	int num2;
+public:
+	virtual void Func1() { cout &lt;&lt;"BBB::Func1" &lt;&lt; endl; }
+	void Func3() { cout &lt;&lt;"Func3" &lt;&lt; endl; }
+};
+int main(void)
+{
+	AAA* aptr = new AAA();
+	aptr->Func1();
+	BBB* bptr = new BBB();
+	bptr->Func1();
+	return 0;
+}
+</code></pre>
 </details>
