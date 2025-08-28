@@ -491,3 +491,256 @@ int main(void)
 
 </code></pre>
 </details><!--급여관리 시스템 4 끝-->
+
+<details><!--급여관리 시스템 5 -->
+<summary>급여관리 시스템 5 </summary>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+class Employee
+{
+private:
+	char name[100];
+public:
+	Employee(char*);
+	virtual int getPAY()const = 0;
+	virtual void ShowSalaryInfo()const = 0;
+	void ShowNameInfo()const;
+};//Employee.H
+</code></pre>
+
+<strong>순수 가상함수로 getPAY(), ShowSalaryInfo()를 선언했다. 순서 가상함수란 함수의 몸체가 정의되지 않는 함수를 의미한다. 위에서 보이듯 '0의 대입'을 표시하면 된다. 단순히 0을 대입한다는 의미가 아니고, 명시적으로 몸체를 정의하지 않았음을 컴파일러에게 알리는 것이다.</strong><br> 그리고 아래처럼 .cpp부분에서는 생략해도 된다.
+<pre><code class="language-cpp" style="font-size:16px;">
+#define _CRT_SECURE_NO_WARNINGS
+#include "Employee.h"
+#include %ltcstring>
+#include%ltiostream>
+using namespace std;
+Employee::Employee(char*name){strcpy(this->name, name);}
+
+void Employee::ShowNameInfo()const
+{
+	cout %lt%lt "이름: " %lt%lt name %lt%lt endl;
+} // Employee.cpp
+</code></pre>
+
+<pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+#include"Employee.h"
+class PermanentWorker:public Employee
+{
+private:
+	int salary;
+public:
+	PermanentWorker(char* name, int money);
+	int getPAY()const;
+	void ShowSalaryInfo()const;
+};//PermanentWorker.h
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#include "PermanentWorker.h"
+#include"Employee.h"
+#include%ltiostream>
+using namespace std;
+
+PermanentWorker::PermanentWorker(char* name, int money)
+	:Employee(name), salary(money){}
+
+int PermanentWorker::getPAY()const{return salary;}
+
+void PermanentWorker::ShowSalaryInfo()const
+{cout %lt%lt "salary: " %lt%lt getPAY() %lt%lt endl;}
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+#include "PermanentWorker.h"
+
+class SalesWorker:public PermanentWorker
+{
+private:
+	double bonus;
+	int SalesResult;
+public:
+	SalesWorker(char*name, int money, double ratio);
+	int getPAY()const;
+	void ShowSalaryInfo()const;
+	void AddSalesResult(int value);
+};//SalesWorker.h
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#include "SalesWorker.h"
+#include "PermanentWorker.h"
+#include%ltiostream>
+using namespace std;
+
+SalesWorker::SalesWorker(char* name, int money, double ratio)
+	:PermanentWorker(name, money), SalesResult(0), bonus(ratio) { }
+
+void SalesWorker::AddSalesResult(int value){SalesResult += value;}
+
+int SalesWorker::getPAY()const
+{
+	return PermanentWorker::getPAY()
+		+ (int)(SalesResult * bonus);
+}
+
+void SalesWorker::ShowSalaryInfo()const
+{
+	ShowNameInfo();
+	cout %lt%lt "salary: " %lt%lt getPAY() %lt%lt endl;
+}//SalesWorker.cpp
+	
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+#include"SalesWorker.h"
+
+class ForeignSalesWorker :public SalesWorker
+{
+private:
+	const int risk_level;
+;public:
+	ForeignSalesWorker(char* name, int money, double bonus, int risk);
+	int getPAY()const;
+	void ShowSalaryInfo()const;
+	int getRISK()const;
+}; //ForeignSalesWorker.h
+
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#include "ForeignSalesWorker.h"
+#include"SalesWorker.h"
+#include%ltiostream>
+using namespace std;
+
+ForeignSalesWorker::ForeignSalesWorker(char* name, int money, double bonus, int risk)
+	:SalesWorker(name,money,bonus),risk_level(risk){}
+
+int ForeignSalesWorker::getRISK()const
+{
+	return (int)((SalesWorker::getPAY()) * ((risk_level) / 100.0));
+}
+
+int ForeignSalesWorker::getPAY()const
+{
+	return SalesWorker::getPAY()+getRISK();
+}
+void ForeignSalesWorker::ShowSalaryInfo()const
+{
+	ShowNameInfo();
+	cout %lt%lt"salary: "%lt%ltSalesWorker::getPAY()%lt%lt endl;
+	cout %lt%lt"risk pay: "%lt%ltgetRISK()%lt%lt endl;
+	cout%lt%lt"sum: "%lt%lt getPAY()%lt%lt endl%lt%ltendl;
+}//	ForeignSalesWorker.cpp
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+#include"Employee.h"
+class TemporaryWorker:public Employee
+{
+private:
+	int worktime;
+	int payperhour;
+public:
+	TemporaryWorker(char* name, int pph);
+	int getPAY()const;
+	void ShowSalaryInfo()const;
+	void AddWorkTime(int wt);
+};//TemporaryWorker.h
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#include"Employee.h"
+#include "TemporaryWorker.h"
+#include %ltiostream>
+using namespace std;
+
+TemporaryWorker::TemporaryWorker(char* name, int pph)
+	:Employee(name),worktime(0),payperhour(pph){}
+
+int TemporaryWorker::getPAY()const {return worktime * payperhour;}
+
+void TemporaryWorker::ShowSalaryInfo()const
+{
+	ShowNameInfo();
+	cout %lt%lt "salary"%lt%ltTemporaryWorker::getPAY() %lt%lt endl;
+}
+
+void TemporaryWorker::AddWorkTime(int wt)
+{worktime += wt;}
+//TemporaryWorker.cpp
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+#include"Employee.h"
+
+class EmployeeHandler
+{
+private:
+	Employee* empList[50];
+	int empNum;
+public:
+	EmployeeHandler();
+	void AddEmployee(Employee* emp);
+	void ShowAllSalaryInfo()const;
+	void ShowTotalSalaryInfo()const;
+	~EmployeeHandler();
+}; //EmployeeHandler.h
+
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#include "EmployeeHandler.h"
+#include%ltiostream>
+using namespace std;
+
+EmployeeHandler::EmployeeHandler():empNum(0){}
+
+void EmployeeHandler::AddEmployee(Employee* emp)
+{empList[empNum++] = emp;}
+
+void EmployeeHandler::ShowAllSalaryInfo()const
+{
+	for (int i = 0; i %lt empNum; i++)
+		empList[i]->ShowSalaryInfo();
+}
+
+void EmployeeHandler::ShowTotalSalaryInfo()const
+{
+	int sum = 0;
+	for (int i = 0; i %lt empNum; i++)
+		sum += empList[i]->getPAY();
+	cout %lt%lt "sum: " %lt%lt sum %lt%lt endl;
+}
+
+EmployeeHandler::~EmployeeHandler()
+{
+	delete[]empList;
+}
+//	EmployeeHandler.cpp
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#include"Employee.h"
+#include"PermanentWorker.h"
+#include"TemporaryWorker.h"
+#include"SalesWorker.h"
+#include"EmployeeHandler.h"
+#include"ForeignSalesWorker.h"
+#include"RISK_LEVEL.h"
+
+int main(void)
+{
+	EmployeeHandler handler;
+
+	ForeignSalesWorker* fseller1 = new ForeignSalesWorker
+	("HONG", 1000, 0.1, RISK_LEVEL::RISK_A);
+	fseller1->AddSalesResult(7000);
+	handler.AddEmployee(fseller1);
+
+	ForeignSalesWorker* fseller2 = new ForeignSalesWorker
+	("YOON", 1000, 0.1, RISK_LEVEL::RISK_B);
+	fseller2->AddSalesResult(7000);
+	handler.AddEmployee(fseller2);
+
+	ForeignSalesWorker* fseller3 = new ForeignSalesWorker
+	("LEE", 1000, 0.1, RISK_LEVEL::RISK_C);
+	fseller3->AddSalesResult(7000);
+	handler.AddEmployee(fseller3);
+
+	handler.ShowAllSalaryInfo();
+	return 0;
+}
+
+
+	
+</code></pre>
+ 
+</details>
