@@ -122,10 +122,10 @@ int main(void)
 +용어<br>
 <talbe>
 <tr>
-	<th>상위 클래스</th> <th>&lt----></th> <th>하위 클래스(derived class)</th>
+	<th>상위 클래스</th> <th>&lt;----></th> <th>하위 클래스(derived class)</th>
 </tr>
 <tr>
-	<th>기초 클래스(base class)</th> <th>&lt----></th> <th>유도 클래스(derived class)</th>
+	<th>기초 클래스(base class)</th> <th>&lt;----></th> <th>유도 클래스(derived class)</th>
 </tr>
 </table>
 
@@ -205,8 +205,8 @@ public:
 <pre><code class="language-cpp" style="font-size:16px;">
 #define _CRT_SECURE_NO_WARNINGS
 #include "Employee.h"
-#include&ltcstring>
-#include&ltiostream>
+#include&lt;cstring>
+#include&lt;iostream>
 using namespace std;
 
 Employee::Employee(char* name)
@@ -215,14 +215,14 @@ Employee::Employee(char* name)
 }
 void Employee::showNAME()const
 {
-	cout &lt&lt"이름: "&lt&ltname &lt&lt endl;
+	cout &lt;&lt;"이름: "&lt;&lt;name &lt;&lt; endl;
 }//Employee.cpp
 </code></pre>
 
 <pre><code class="language-cpp" style="font-size:16px;">
 #include "PermanentWorker.h"
-#include &ltcstring>
-#include &ltiostream>
+#include &lt;cstring>
+#include &lt;iostream>
 using namespace std;
 
 PermanentWorker::PermanentWorker(char* name, int money)
@@ -235,14 +235,14 @@ int PermanentWorker::getPAY()const
 void PermanentWorker::showSALARYinfo()const
 {
 	showNAME();
-	cout &lt&lt "SALARY: " &lt&lt getPAY() &lt&lt endl&lt&ltendl;
+	cout &lt;&lt; "SALARY: " &lt;&lt; getPAY() &lt;&lt; endl&lt;&lt;endl;
 }//PermanentWorker.cpp
 </code></pre>
 
 <pre><code class="language-cpp" style="font-size:16px;">
 #include "EmployeeHandler.h"
-#include&ltcstring>
-#include&ltiostream>
+#include&lt;cstring>
+#include&lt;iostream>
 using namespace std;
 EmployeeHandler::EmployeeHandler():empNUM(0)
 {}
@@ -252,19 +252,19 @@ void EmployeeHandler::AddEmployee(Employee* emp)
 }
 void EmployeeHandler::ShowAllSalaryiInfo()const
 {
-	//for (int i = 0; i &lt empNUM; i++)
+	//for (int i = 0; i &lt; empNUM; i++)
 	//	empLIST[i]->showSALARYinfo();
 }
 void EmployeeHandler::ShowTotalSalary()const
 {
 	int sum = 0;
-	//for (int i = 0; i &lt empNUM; i++)
+	//for (int i = 0; i &lt; empNUM; i++)
 	//	sum+=empLIST[i]->getPAY();
-	cout &lt&lt "salary sum: " &lt&lt sum &lt&lt endl;
+	cout &lt;&lt; "salary sum: " &lt;&lt; sum &lt;&lt; endl;
 }
 EmployeeHandler::~EmployeeHandler()
 {
-	for (int i = 0; i &lt empNUM; i++)
+	for (int i = 0; i &lt; empNUM; i++)
 		delete empLIST[i];
 }//EmployeeHandler.cpp
 </code></pre>
@@ -359,7 +359,7 @@ public:
 <pre><code class="language-cpp" style="font-size:16px;">
 /*SalesWorker*/
 #include "SalesWorker.h"
-#include&ltiostream>
+#include&lt;iostream>
 using namespace std;
 
 SalesWorker::SalesWorker(char* name, int money, double ratio)
@@ -375,7 +375,7 @@ int SalesWorker::getPAY()const											//Access Function getter
 void SalesWorker::ShowSalaryInfo()const									//오버라이딩된 함수
 {
 	showNAME();															//BaseClass에 showName()함수 호출후 출력(showName은 출력함수)
-	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl &lt&lt endl;		//클래스내 getPAY()출력
+	cout &lt;&lt; "salary: " &lt;&lt; getPAY() &lt;&lt; endl &lt;&lt; endl;		//클래스내 getPAY()출력
 }//SalesWorker.cpp
 
 </code></pre>
@@ -383,7 +383,7 @@ void SalesWorker::ShowSalaryInfo()const									//오버라이딩된 함수
 <pre><code class="language-cpp" style="font-size:16px;">
 /*TemporaryWorker*/
 #include "TemporaryWorker.h"	
-#include&ltiostream>
+#include&lt;iostream>
 using namespace std;
 
 TemporaryWorker::TemporaryWorker(char* name, int pay)					//TemporaryWorker클래스는 PermanentWorker 클래스와 유사함.
@@ -396,7 +396,7 @@ int TemporaryWorker::getPAY()const{return worktime * payperhour;}
 void TemporaryWorker::ShowSalaryInfo()const
 {
 	showNAME();
-	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl &lt&lt endl;
+	cout &lt;&lt; "salary: " &lt;&lt; getPAY() &lt;&lt; endl &lt;&lt; endl;
 }
 
 </code></pre>
@@ -447,7 +447,7 @@ Employee::Employee(char* name)
 { strcpy(this->name, name); }
 
 void Employee::ShowNAME()const 							
-{ cout &lt&lt "이름: " &lt&lt name &lt&lt endl; }
+{ cout &lt;&lt; "이름: " &lt;&lt; name &lt;&lt; endl; }
 
 int Employee::getPAY() const 							// Employee 클래스에서는 의미없는 값을 저장해도 된다. 순수 가상함수로 선언하는 것도 방법이다.
 { return 0; }
@@ -513,14 +513,14 @@ public:
 <pre><code class="language-cpp" style="font-size:16px;">
 #define _CRT_SECURE_NO_WARNINGS
 #include "Employee.h"
-#include &ltcstring>
-#include&ltiostream>
+#include &lt;cstring>
+#include&lt;iostream>
 using namespace std;
 Employee::Employee(char*name){strcpy(this->name, name);}
 
 void Employee::ShowNameInfo()const
 {
-	cout &lt&lt "이름: " &lt&lt name &lt&lt endl;
+	cout &lt;&lt; "이름: " &lt;&lt; name &lt;&lt; endl;
 } // Employee.cpp
 </code></pre>
 
@@ -539,7 +539,7 @@ public:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "PermanentWorker.h"
 #include"Employee.h"
-#include&ltiostream>
+#include&lt;iostream>
 using namespace std;
 
 PermanentWorker::PermanentWorker(char* name, int money)
@@ -548,7 +548,7 @@ PermanentWorker::PermanentWorker(char* name, int money)
 int PermanentWorker::getPAY()const{return salary;}
 
 void PermanentWorker::ShowSalaryInfo()const
-{cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl;}
+{cout &lt;&lt; "salary: " &lt;&lt; getPAY() &lt;&lt; endl;}
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
 #include "PermanentWorker.h"
@@ -567,7 +567,7 @@ public:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "SalesWorker.h"
 #include "PermanentWorker.h"
-#include&ltiostream>
+#include&lt;iostream>
 using namespace std;
 
 SalesWorker::SalesWorker(char* name, int money, double ratio)
@@ -584,7 +584,7 @@ int SalesWorker::getPAY()const
 void SalesWorker::ShowSalaryInfo()const
 {
 	ShowNameInfo();
-	cout &lt&lt "salary: " &lt&lt getPAY() &lt&lt endl;
+	cout &lt;&lt; "salary: " &lt;&lt; getPAY() &lt;&lt; endl;
 }//SalesWorker.cpp
 	
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
@@ -605,7 +605,7 @@ private:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "ForeignSalesWorker.h"
 #include"SalesWorker.h"
-#include&ltiostream>
+#include&lt;iostream>
 using namespace std;
 
 ForeignSalesWorker::ForeignSalesWorker(char* name, int money, double bonus, int risk)
@@ -623,9 +623,9 @@ int ForeignSalesWorker::getPAY()const
 void ForeignSalesWorker::ShowSalaryInfo()const
 {
 	ShowNameInfo();
-	cout &lt&lt"salary: "&lt&ltSalesWorker::getPAY()&lt&lt endl;
-	cout &lt&lt"risk pay: "&lt&ltgetRISK()&lt&lt endl;
-	cout&lt&lt"sum: "&lt&lt getPAY()&lt&lt endl&lt&ltendl;
+	cout &lt;&lt;"salary: "&lt;&lt;SalesWorker::getPAY()&lt;&lt; endl;
+	cout &lt;&lt;"risk pay: "&lt;&lt;getRISK()&lt;&lt; endl;
+	cout&lt;&lt;"sum: "&lt;&lt; getPAY()&lt;&lt; endl&lt;&lt;endl;
 }//	ForeignSalesWorker.cpp
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
@@ -644,7 +644,7 @@ public:
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include"Employee.h"
 #include "TemporaryWorker.h"
-#include &ltiostream>
+#include &lt;iostream>
 using namespace std;
 
 TemporaryWorker::TemporaryWorker(char* name, int pph)
@@ -655,7 +655,7 @@ int TemporaryWorker::getPAY()const {return worktime * payperhour;}
 void TemporaryWorker::ShowSalaryInfo()const
 {
 	ShowNameInfo();
-	cout &lt&lt "salary"&lt&ltTemporaryWorker::getPAY() &lt&lt endl;
+	cout &lt;&lt; "salary"&lt;&lt;TemporaryWorker::getPAY() &lt;&lt; endl;
 }
 
 void TemporaryWorker::AddWorkTime(int wt)
@@ -680,7 +680,7 @@ public:
 
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include "EmployeeHandler.h"
-#include&ltiostream>
+#include&lt;iostream>
 using namespace std;
 
 EmployeeHandler::EmployeeHandler():empNum(0){}
@@ -690,16 +690,16 @@ void EmployeeHandler::AddEmployee(Employee* emp)
 
 void EmployeeHandler::ShowAllSalaryInfo()const
 {
-	for (int i = 0; i &lt empNum; i++)
+	for (int i = 0; i &lt; empNum; i++)
 		empList[i]->ShowSalaryInfo();
 }
 
 void EmployeeHandler::ShowTotalSalaryInfo()const
 {
 	int sum = 0;
-	for (int i = 0; i &lt empNum; i++)
+	for (int i = 0; i &lt; empNum; i++)
 		sum += empList[i]->getPAY();
-	cout &lt&lt "sum: " &lt&lt sum &lt&lt endl;
+	cout &lt;&lt; "sum: " &lt;&lt; sum &lt;&lt; endl;
 }
 
 EmployeeHandler::~EmployeeHandler()
