@@ -708,6 +708,12 @@ EmployeeHandler::~EmployeeHandler()
 }
 //	EmployeeHandler.cpp
 </code></pre><pre><code class="language-cpp" style="font-size:16px;">
+#pragma once
+namespace RISK_LEVEL
+{
+	enum{RISK_A=30,RISK_B=20,RISK_C=10};
+}//RISK_LEVEL.h
+</code></pre><pre><code class="language-cpp" style="font-size:16px;">
 #include"Employee.h"
 #include"PermanentWorker.h"
 #include"TemporaryWorker.h"
