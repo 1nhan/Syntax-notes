@@ -493,7 +493,7 @@ int main(void)
 </details><!--급여관리 시스템 4 끝-->
 
 <details><!--급여관리 시스템 5 -->
-<summary>급여관리 시스템 5 </summary>
+<summary><strong>급여관리 시스템 5</strong></summary>
 
 <pre><code class="language-cpp" style="font-size:16px;">
 #pragma once
