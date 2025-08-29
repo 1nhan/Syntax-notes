@@ -3,7 +3,7 @@
 >Google Docs      https://docs.google.com/document/d/1Lf5LPqnNvNzQABAKtOLZ1DJLLt6IWisBUlVqftEDTgM/edit?tab=t.v1diwsp23tj9 <br>
 >Google Sheets    ? <br>
  ------------
-<details><summary>학습 일지</summary>
+<details><summary><strong>학습 일지</strong></summary>
 2025-08-22 const 함수에 대해
 2025-08-23 상속(Inheritance) <br>
 상속에 들어가기에 앞서, 상속의 문법적인 이해 <br>
@@ -27,7 +27,10 @@ protected 선언과 세 가지 형태의 상속, 상속을 위한 조건, OOP �
 멤버함수의 동작원리를 설명하는 C예제가 아직 이해가 좀 안된다. 함수포인터에 대한 복습이 필요해보인다. 사실 함수포인터는 한 5번넘게 공부했는데도 아직까지 명확하지 않은 부분이 있다.
  다중상속이 머릿속으로는 이해가 되는데 막상 출력될때나 예제문의 코딩을 보면 헤깔리는 구석이 많았다. 모호성에 대한 짧은 예제, 가상 상속에 대한 그림설명이 좀 더 과정적인 면이 있었으면 좋았을 것 같았다. 
 
-</details><br>
+</details><br><details><summary><strong>2025-08-29 연산자 오버로딩 1</strong></summary> 
 
- 
+</details><br><details><summary><strong>2025-08-30 연산자 오버로딩 2</strong></summary> 
+
+</details><br><details><summary><strong>2025-08-30 연산자 오버로딩 2</strong></summary> 
+</details>
 </details>
