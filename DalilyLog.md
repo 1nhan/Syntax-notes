@@ -31,6 +31,6 @@ protected 선언과 세 가지 형태의 상속, 상속을 위한 조건, OOP �
 
 </details><br><details><summary><strong>2025-08-30 연산자 오버로딩 2</strong></summary> 
 
-</details><br><details><summary><strong>2025-08-30 연산자 오버로딩 2</strong></summary> 
+</details><br><details><summary><strong>2025-08-31</strong></summary> 
 </details>
 </details>
