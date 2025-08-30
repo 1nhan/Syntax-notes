@@ -31,7 +31,8 @@
 
 </details><br><details><summary><strong>2025-08-29 연산자 오버로딩 1</strong></summary> 
 기본적인 참조자, 복사생성자에 대한 복습이 필요하다고 느껴졌다. 연산자 오버로딩중 후위연산의 과정, 흐름을 알아가는 과정에서 복사생성자랄지 참조자에 대한 완벽한 이해가 없으면 아리송하게 이어지고 있는 이해마저 흐트러져버리는 느낌을 받았다. 
-</details><br><details><summary><strong>2025-08-30 연산자 오버로딩 2</strong></summary> 
+</details><br><details><summary><strong>2025-08-30 레퍼런스 & 복사생성자 </strong></summary> 
+
 
 </details><br><details><summary><strong>2025-08-31</strong></summary> 
 </details>
