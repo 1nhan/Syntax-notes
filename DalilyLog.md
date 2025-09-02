@@ -36,6 +36,7 @@
 
 </details><br><details><summary><strong>2025-08-31 일요일</strong></summary> 
 </details></details><br><details><summary><strong>2025-09-01 객체</strong></summary> 
+하루종일 와이파이가 터지지 않아 깃허브를 이용하는데 애를 먹었다. 객체를 이해하는데 스택, 힙에 대해 입체적 사고에 익숙해지지 않으면 계속 어려움을 겪을 것 같다. 이럴땐 계속 해보는 것이 방법이지 않을까.
 </details></details><br><details><summary><strong>2025-09-02</strong></summary> 
 </details></details><br><details><summary><strong>2025-09-03 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-04 </strong></summary> 
