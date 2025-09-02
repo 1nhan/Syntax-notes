@@ -34,7 +34,7 @@
 </details><br><details><summary><strong>2025-08-30 레퍼런스 & 복사생성자 </strong></summary> 
 원래 계획대로라면 연산자 오버로딩을 마무리 지으려고 했는데 래퍼런스와 복사생성자의 개념이 부실한 상태에서 진도를 나가는 것이 의미가 없을 것 같아서 한번 복습을 하기로 했다. 
 
-</details><br><details><summary><strong>2025-08-31 일요일</strong></summary> 
+</details><br><details><summary><strong>2025-08-31 일요일-복습의 주간-</strong></summary> 
 </details></details><br><details><summary><strong>2025-09-01 객체</strong></summary> 
 하루종일 와이파이가 터지지 않아 깃허브를 이용하는데 애를 먹었다. 객체를 이해하는데 스택, 힙에 대해 입체적 사고에 익숙해지지 않으면 계속 어려움을 겪을 것 같다. 이럴땐 계속 해보는 것이 방법이지 않을까.
 </details></details><br><details><summary><strong>2025-09-02</strong></summary> 
