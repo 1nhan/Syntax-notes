@@ -37,8 +37,11 @@
 </details><br><details><summary><strong>2025-08-31 일요일-복습의 주간-</strong></summary> 
 </details></details><br><details><summary><strong>2025-09-01 객체</strong></summary> 
 하루종일 와이파이가 터지지 않아 깃허브를 이용하는데 애를 먹었다. 객체를 이해하는데 스택, 힙에 대해 입체적 사고에 익숙해지지 않으면 계속 어려움을 겪을 것 같다. 이럴땐 계속 해보는 것이 방법이지 않을까.
-</details></details><br><details><summary><strong>2025-09-02</strong></summary> 
-</details></details><br><details><summary><strong>2025-09-03 </strong></summary> 
+</details></details><br><details><summary><strong>2025-09-02 복습 The CPP Programming Language 4th Edition</strong></summary> 
+원문 번역에 복습까지 하려니 시간이 많이 소요가 되고 있는데 내용이 너무 알차고 아리송했던 부분들이 이해가 잘된다.
+1366p 분량인데 이 책을 다 읽게 되면 이보다 두꺼운 책을 또 보게될까?
+</details></details><br><details><summary><strong>2025-09-03 기본개념</strong></summary>
+ 기본 개념 정리가 너무 중요하다는게 요즘 계속 느끼고 있는 부분이다. 기본 개념들이 정리가 착착 되있으면 새로운 지식정보 흡수가 잘된다. 
 </details></details><br><details><summary><strong>2025-09-04 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-05 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-06 </strong></summary> 
