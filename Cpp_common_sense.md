@@ -1,4 +1,4 @@
-#Cpp Word
+#Cpp common sense
 Cpp에 용어와 상식(!?)을 아주 간략하게 정리하는 노트.<br>
 
 << 연산자는 두 번째 인자를 첫 번째 인자에 “넣는(put to)” 역할<br><br>
