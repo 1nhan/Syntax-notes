@@ -106,11 +106,11 @@ A : </details>
 A : </details>
 <details><sumaary>Q : 실행 파일(executable)이란 무엇인가요?</summary>
 A : </details>
-Q : IDE란 무엇이며, 어떤 기능을 제공하나요?</summary>
+<details><sumaary>Q : IDE란 무엇이며, 어떤 기능을 제공하나요?</summary>
 A : </details>
-Q : 컴파일된 프로그램을 실행하려면 어떻게 해야 하나요?</summary>
+<details><sumaary>Q : 컴파일된 프로그램을 실행하려면 어떻게 해야 하나요?</summary>
 A : </details>
-Q : 주석(comment)이란 무엇인가요?</summary>
+<details><sumaary>Q : 주석(comment)이란 무엇인가요?</summary>
 A : </details>
 </details>
 </details>
