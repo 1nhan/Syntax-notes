@@ -85,7 +85,7 @@ IDE는 일반적으로 다음과 같은 기능을 포함합니다:<br>
 
 <details><summary>질문과 대답 1</summary>
 <details><sumaary>Q : "Hello, World!" 프로그램의 목적은 무엇인가요?</summary>
-A : </details></details>
+A : </details>
 <details><sumaary>Q : 함수의 네 가지 구성 요소를 말해보세요.</summary>
 A : </details>
 <details><sumaary>Q : 모든 C++ 프로그램에 반드시 포함되어야 하는 함수는 무엇인가요?</summary>
