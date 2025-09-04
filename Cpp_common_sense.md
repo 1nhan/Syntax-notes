@@ -69,3 +69,47 @@ C++에서는 integer 대신 약어 int를 사용해야 합니다. integer는 C++
 
 컴파일러가 발견하는 오류는 컴파일 타임 오류(compile-time errors), 링커가 발견하는 오류는 링크 타임 오류(link-time errors), 프로그램 실행 중에 발견되는 오류는 런타임 오류(run-time errors) 또는 논리 오류(logic errors)라고 합니다. 일반적으로 컴파일 타임 오류는 링크 타임 오류보다 이해하고 수정하기 쉬우며, 링크 타임 오류는 런타임 오류보다 찾고 해결하기 쉽습니다.<br>
 </details>
+
+<details><summary>프로그래밍 환경(Programming environments)</summary>
+프로그래밍을 하기 위해 우리는 프로그래밍 언어(programming language)를 사용합니다. 또한, 소스 코드를 오브젝트 코드(object code)로 번역하기 위해 컴파일러(compiler)를 사용하고, 오브젝트 코드를 실행 가능한 프로그램(executable program)으로 결합하기 위해 링커(linker)를 사용합니다.<br>
+이 외에도, 소스 코드 텍스트를 컴퓨터에 입력하고 편집하기 위한 프로그램이 필요합니다. 이들은 모두 프로그래머의 도구 상자(tool chest) 또는 프로그램 개발 환경(program development environment)을 구성하는 가장 기본적이고 중요한 도구들입니다.<br>
+명령줄(command-line) 환경에서 작업한다면, 컴파일 및 링크 명령을 직접 입력해야 합니다. IDE(통합 개발 환경, Integrated Development Environment 또는 대화형 개발 환경, Interactive Development Environment)를 사용할 경우, 버튼 클릭 한 번으로 컴파일과 링크 작업을 수행할 수 있습니다.<br>
+IDE는 일반적으로 다음과 같은 기능을 포함합니다:<br>
+<strong>편집기(editor): 주석, 키워드, 기타 코드 요소를 구분하기 위한 색상 구분(color coding) 기능<br>
+디버깅 도구(debugging tools): 오류를 찾고 수정하는 데 도움을 줌<br>
+컴파일 및 실행 기능: 코드 작성 후 바로 실행 가능<br></strong>
+프로그램의 오류는 흔히 버그(bug)라고 불리며, 이로 인해 “디버깅”이라는 용어가 생겼습니다. 이 용어의 유래는 초기 컴퓨터 시스템에서 실제 곤충(insect)이 컴퓨터 내부에 들어가 프로그램이 실패한 사건에서 비롯되었습니다. <br>
+</details>
+
+프로그래밍에서 반복과 실습(repetition and practice)은 기술을 개발하는 데 필수적입니다.<br>
+
+<details><summary>질문과 대답 1</summary>
+Q : "Hello, World!" 프로그램의 목적은 무엇인가요?<br>
+A : <br><br>
+Q : 함수의 네 가지 구성 요소를 말해보세요.<br>
+A : <br><br>
+Q : 모든 C++ 프로그램에 반드시 포함되어야 하는 함수는 무엇인가요?main<br>
+A : <br><br>
+Q : "Hello, World!" 프로그램에서 return 0;의 목적은 무엇인가요?시스템의 정상 종료를 알립니다.<br>
+A : <br><br>
+Q : 컴파일러의 역할은 무엇인가요?
+A : <br><br>
+Q : import 문장의 목적은 무엇인가요?
+A : <br><br>
+Q : #include 지시문의 목적은 무엇인가요?
+A : <br><br>
+Q : 파일 이름 끝의 .cpp 확장자는 C++에서 무엇을 의미하나요?
+A : <br><br>
+Q : 링커(linker)는 프로그램에서 어떤 역할을 하나요?
+A : <br><br>
+Q : 소스 파일(source file)과 오브젝트 파일(object file)의 차이는 무엇인가요?
+A : <br><br>
+Q : 실행 파일(executable)이란 무엇인가요?
+A : <br><br>
+Q : IDE란 무엇이며, 어떤 기능을 제공하나요?
+A : <br><br>
+Q : 컴파일된 프로그램을 실행하려면 어떻게 해야 하나요?
+A : <br><br>
+Q : 주석(comment)이란 무엇인가요?
+A : <br><br>
+</details>
