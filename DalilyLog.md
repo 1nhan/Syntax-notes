@@ -42,7 +42,8 @@
 1366p 분량인데 이 책을 다 읽게 되면 이보다 두꺼운 책을 또 보게될까?
 </details></details><br><details><summary><strong>2025-09-03 기본개념</strong></summary>
  기본 개념 정리가 너무 중요하다는게 요즘 계속 느끼고 있는 부분이다. 기본 개념들이 정리가 착착 되있으면 새로운 지식정보 흡수가 잘된다. 
-</details></details><br><details><summary><strong>2025-09-04 </strong></summary> 
+</details></details><br><details><summary><strong>2025-09-04 기본개념2</strong></summary> 
+ 기본 개념서인 The C++ Programming Language 4th Edition Bjarne Stroustrup를 보던 중 Programming  Principles and Practice Using C++을 알게 되었는데 무려 2000p가 넘는 분량의 기본서였다. 하지만 여태 배웠던 내용에 추가된 부분의 내용도 많고 인과에 대한 전문 지식을 배울 수 있는 기회인 것 같아 우선 The C++ Programming Language 4th Edition을 덮어두고 Programming  Principles and Practice Using C++을 먼저 보기로 했다. 근데 양이 너무 많아서 조금 부담되지만 이 책을 다보고 The C++ Programming Language 4th Edition을 보면 C++를 훨씬 잘 알게되지 않을까?
 </details></details><br><details><summary><strong>2025-09-05 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-06 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-07 </strong></summary> 
