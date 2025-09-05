@@ -149,6 +149,117 @@ debugging : 디버깅. 버그를 찾아내고 수정하는 과정.
 
 <details><summary>Day 2</summary>
 
+객체란 특정 타입(type)을 가진 메모리 영역(region of memory)이며, 그 타입은 해당 객체에 어떤 종류의 정보가 저장될 수 있는지를 지정합니다. 이러한 객체에 이름(name)이 붙어 있으면, 우리는 그것을 변수(variable)라고 부릅니다.<br>
+```cpp
+// 이름을 입력받고 출력하는 프로그램
+#include "PPP.h"
+int main()
+{
+    cout << "Please enter your first name (followed by \"enter\"):\n";
+    string first_name;       // first_name은 string 타입의 변수
+    cin >> first_name;       // 키보드로부터 문자열을 읽어 first_name에 저장
+    cout << "Hello, " << first_name << "!\n";
+}
+```
+<details><summary>프롬프트(prompt)</summary>
+
+```cpp
+cout << "Please enter your first name (followed by 'enter'):\n";
+```
+main() 함수의 첫 번째 줄은 사용자에게 이름을 입력하라는 메시지를 출력합니다. 이러한 메시지는 일반적으로 프롬프트(prompt)라고 불리며, 사용자가 행동을 취하도록 유도하는 역할을 합니다.
+</details>
+
+<details><summary>정의문(definition)</summary>
+
+```cpp
+string first_name; // first_name은 string 타입의 변수
+```
+이 문장은 문자열을 저장할 수 있는 메모리 공간을 확보하고, 그 공간에 first_name이라는 이름을 부여합니다. 변수에 이름을 부여하고 메모리를 할당하는 문장(statement)을 정의문(definition)이라고 합니다.
+</details>
+
+<details><summary>cin(Standard Input Stream)</summary>
+
+```cpp
+cin >> first_name; // 키보드 입력을 first_name에 저장
+```
+ cin은 표준 입력 스트림(standard input stream)을 의미하며, “see-in”으로 발음됩니다. 이는 character input의 약어입니다. cin은 C++ 표준 라이브러리(standard library)에 정의되어 있습니다.<br>
+>> 연산자는 “어디로부터 가져온다(get from)”는 의미를 가지며, 두 번째 피연산자(여기서는 first_name)는 입력된 값이 저장될 위치를 지정합니다.<br>
+</details>
+
+줄 바꿈(newline)은 컴퓨터의 입력 처리를 시작하게 만드는 신호입니다. 사용자가 Enter 키를 누르기 전까지, 컴퓨터는 단지 문자들을 수집할 뿐입니다. 이 “지연(delay)” 덕분에 사용자는 입력을 수정하거나 삭제할 수 있는 기회를 갖게 됩니다. 입력된 줄 바꿈 문자는 메모리에 저장되는 문자열에는 포함되지 않습니다.<br>
+
+<details><summary>변수(variable)</summary>
+데이터를 저장하는 공간을 우리는 객체(object)라고 부릅니다. 객체에 접근하려면 이름(name)이 필요하며, 이름이 붙은 객체를 변수(variable)라고 합니다.<br>
+변수는 특정한 타입(type)을 가지며, 이 타입은 다음을 결정합니다:<br>
+어떤 값을 저장할 수 있는가, 예: 123은 int에 저장 가능, "Hello, World!\n"은 string에 저장 가능<br>
+어떤 연산을 수행할 수 있는가, 예: int는 * 연산자로 곱셈 가능, string은 <= 연산자로 비교 가능<br>
+변수에 저장되는 데이터 항목은 값(value)이라고 합니다.<br>
+변수를 정의하는 문장은 정의문(definition)이라고 하며, 정의문은 초기값(initial value)을 제공할 수 있고, 제공하는 것이 바람직합니다.<br>
+
+```cpp
+string name = "Inhan";
+int number_of_steps = 20;
+```
+여기서 = 뒤에 오는 값은 초기화자(initializer)라고 부릅니다.
+</details>
+    
+<details><summary>double(double-precision floating point)</summary>
+“배정밀도 부동소수(double-precision floating point)”의 줄임말입니다. 부동소수점(floating point)은 컴퓨터가 실수(real number) 개념을 근사하여 표현하는 방식입니다.
+</details>
+
+<details><summary>고유한 리터럴(literal) 스타일</summary>
+
+```cpp
+39           // int: 정수
+3.5          // double: 부동소수점 숫자
+'.'          // char: 홑따옴표로 감싼 개별 문자
+"Annemarie"  // string: 큰따옴표로 감싼 문자열
+true         // bool: true 또는 false
+```
+숫자만으로 이루어진 문자열(예: 1234, 2, 976)은 정수(int)를 나타냅니다.<br>
+홑따옴표로 감싼 단일 문자(예: '1', '@', 'x')는 문자(char)를 나타냅니다.<br>
+소수점이 포함된 숫자(예: 1.234, 0.12, .98)는 부동소수점(double) 값을 나타냅니다.<br>
+큰따옴표로 감싼 문자 시퀀스(예: "1234", "Howdy!", "Annemarie")는 문자열(string)을 나타냅니다.<br>
+</details>
+
+<details><summary>type-sensitive</summary>
+입력 연산자 >>(“get from”)는 타입에 민감합니다. 입력된 값은 읽어들이는 변수의 타입에 따라 해석됩니다.<br>
+
+```cpp
+int main() // 이름과 나이를 입력받음
+{
+    cout << "Please enter your first name and age\n";
+    string first_name = "???"; // string 변수 ("???"는 이름을 모른다는 의미)
+    int age = -1;              // int 변수 (-1은 나이를 모른다는 의미)
+    cin >> first_name >> age;  // 문자열 다음에 정수를 입력받음
+    cout << "Hello, " << first_name << " (age " << age << ")\n";
+}
+```
+위 프로그램에서 Inhan 20를 입력하면, >> 연산자는 "Inhan"를 first_name에, 20를 age에 저장하고 다음과 같은 출력을 생성합니다:
+```출력결과
+Hello, Inhan (age 20)
+```
+그렇다면 왜 "Inhan 20" 전체가 first_name에 들어가지 않을까요? 그 이유는 문자열 입력은 공백(whitespace)에서 종료되는 것이 관례이기 때문입니다. 공백에는 스페이스(space), 줄 바꿈(newline), 탭(tab) 문자가 포함됩니다. 반면, >>는 기본적으로 공백을 무시하고 건너뜁니다. <br>
+출력 연산자 &lt;&lt;도 >>처럼 타입에 민감합니다. 만약 사용자가 20 Inhan를 입력한다면, 
+
+```출력결과
+Hello, 20 (age -1)
+```
+왜 이런 일이 발생할까요?<br>
+20는 문자 시퀀스이므로 first_name에 저장됩니다.<br>
+Inhan는 정수가 아니므로 age에 저장되지 않습니다.<br>
+따라서 age는 초기값인 -1을 그대로 유지합니다.<br>
+즉, 입력이 타입에 맞지 않으면 해당 변수는 값을 받지 못하고 초기값을 유지하게 됩니다.<br>
+</details>
+
+<details><summary></summary>
+</details>
+
+<details><summary></summary>
+</details>
+
+<details><summary></summary>
+</details>
 
 
 
