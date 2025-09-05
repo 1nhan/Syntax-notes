@@ -114,7 +114,6 @@ A : 오브젝트 파일들을 하나로 연결할 링커를 실행시킨 후 성
 <details><summary>Q : 주석(comment)이란 무엇인가요?</summary>
 A : 주석은 컴파일러에게 전달하는 말이 아닌 프로그래머에게 전달할 수 있는 메세지기능힙니다. //두개를 사용하거나 /**/를 이용해서 소스코드가 어떤 목적으로 만들어졌는지 혹은 도움이 되는 메세지를 전달할 수 있습니다.</details>
 </details>
-</details>
 
 <details><summary>용어집(glossary)</summary>
     
