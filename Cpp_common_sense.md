@@ -1,6 +1,6 @@
 # Programs Common Sense (CPP)
-[!note]
-<details><summary>Day 1</summary>
+>[!note]
+><details><summary>Day 1</summary>
 프로그래밍에서는 이러한 약어(abbreviation)가 흔히 사용됩니다.<br>
 
 ```cpp
