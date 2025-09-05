@@ -144,7 +144,7 @@ command line : 명령줄 인터페이스. 텍스트 기반으로 명령을 입�
 bug : 버그. 프로그램 내의 오류 또는 결함.
 debugging : 디버깅. 버그를 찾아내고 수정하는 과정.
 </details>
-</details>
+</details><!-- Day 1 /details -->
 
 <details><summary>Day 2</summary>
 
@@ -305,10 +305,151 @@ string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 
 |less than|<|<|<|<|<|
 |less than or equal|<=|<=|<=|<=|<=|
 
-빈 칸(blank square)은 해당 타입에 대해 직접적인 연산이 정의되어 있지 않음을 의미합니다. 
+빈 칸(blank square)은 해당 타입에 대해 직접적인 연산이 정의되어 있지 않음을 의미합니다.  
+같음(equal)을 비교할 때는 ==를 사용하며, =는 대입(assign)을 의미합니다.  
+모든 연산이 연산자로 표현되는 것은 아닙니다. 예를 들어, 제곱근(square root)을 구하는 연산은 sqrt()라는 함수(function)로 표현됩니다.  
+</details>
+<details><summary>문자열 비교(string comparison)</summary>
+문자열은 비교 연산자(comparison operators)도 지원합니다:
+    
+```cpp
+int main() // 이름 비교
+{
+    cout << "Please enter two names\n";
+    string first;
+    string second;
+    cin >> first >> second; // 두 문자열 입력
+    if (first == second)
+        cout << "that's the same name twice\n";
+    if (first < second)
+        cout << first << " is alphabetically before " << second << '\n';
+    if (first > second)
+        cout << first << " is alphabetically after " << second << '\n';
+}
+```
 </details>
 
+
+<details><summary>대입 연산자(assignment operator)</summary>
+C++에서는 = 기호로 표현되며, 변수에 새로운 값을 할당(assign)합니다.  
+
+```cpp
+int a = 3;
+a = 4;
+int b = a;
+b = a + 3;
+a = a + 7;
+```
+마지막 대입문은 주목할 만합니다. 무엇보다도, =는 “같음(equal)”을 의미하지 않는다는 점을 분명히 보여줍니다—분명히 a는 a + 7과 같지 않죠. =는 대입(assignment)을 의미하며, 이는 변수에 새로운 값을 넣는 것입니다.
+
+유사하지만 논리적으로는 구별되는 두 가지 연산을 구분한다:  
+초기화(initialization): 변수에 최초의 값을 부여하는 것  
+대입(assignment): 변수에 새로운 값을 부여하는 것  
+논리적으로 초기화와 대입은 서로 다르다. 원칙적으로 초기화는 항상 변수가 비어 있는 상태에서 시작된다. 반면, 대입은 기존 값을 제거한 후 새로운 값을 넣는 과정이 필요하다.  
+<details><summary>문법 검사기(grammar checker)</summary>
+대입 연산은 객체에 새 값을 넣고자 할 때 필요합니다. 생각해보면, 대입은 반복적인 작업을 수행할 때 가장 유용합니다. 즉, 다른 값으로 다시 무언가를 수행하고자 할 때 대입이 필요합니다.
+다음은 단어 시퀀스에서 인접한 중복 단어를 감지하는 프로그램입니다. 이런 코드는 대부분의 문법 검사기(grammar checker)에서 사용됩니다:
+
+```cpp
+int main()
+{
+    string previous; // 이전 단어; 기본값은 ""
+    string current;  // 현재 단어
+    while (cin >> current) { // 단어 스트림을 읽음
+        if (previous == current) // 이전 단어와 같으면
+            cout << "repeated word: " << current << '\n';
+        previous = current; // 현재 단어를 이전 단어로 저장
+    }
+}
+```
+
+```cpp
+string current; // 현재 단어
+```
+string 타입은 기본적으로 빈 문자열("")로 초기화되므로, 명시적으로 초기값을 줄 필요는 없습니다.
+
+```cpp
+while (cin >> current)
+```
+이 구문은 while 문(while-statement)이라고 합니다.  
+while 문은 cin >> current가 성공하는 동안 다음 문장을 반복 실행합니다. cin >> current는 표준 입력으로부터 공백으로 구분된 단어를 읽어들이며, 입력 스트림에 더 이상 읽을 문자가 없을 때 실패합니다.  
+입력 종료(end-of-input)는 다음 키 조합으로 수행할 수 있습니다:  
+Windows: Ctrl + Z → Enter  
+Linux/macOS: Ctrl + D  
+
+```cpp
+if (previous == current)
+    cout << "repeated word: " << current << '\n';
+
+previous = current;
+```
+이제 프로그램의 핵심 동작을 살펴보면:  
+1.current에 단어를 입력받음  
+2.previous와 비교  
+3.같으면 중복 단어로 간주하고 출력  
+4.previous = current로 다음 비교를 준비  
+이 구조는 모든 경우를 처리할 수 있습니다. 단, 첫 번째 단어는 비교 대상이 없기 때문에 예외입니다.  
+이 문제는 다음 정의로 해결됩니다:  
+
+```cpp
+string previous; // 이전 단어; 초기값은 ""
+```
+
+빈 문자열은 실제 단어가 아니므로, 첫 번째 반복에서 previous == current는 false가 되어, 중복 단어로 잘못 인식되지 않습니다.  
+</details><!-- 문법 검사기 /details-->
+</details><!-- 대입연선자 /details-->
+<details><summary>복합 대입 연산자(Composite assignment operators)</summary>
+변수에 1을 더하는 작업(incrementing)은 프로그램에서 매우 자주 사용되므로, C++에서는 이를 위한 특별한 문법(special syntax)을 제공합니다:
+    
+```cpp
+++counter; // counter = counter + 1 과 동일
+```
+일반적으로, 이항 연산자(binary operator) oper에 대해 다음 규칙이 성립합니다:   
+```
+a oper= b  ≡  a = a oper b
+```
+이 규칙을 통해 다음과 같은 연산자들을 사용할 수 있습니다:   
++= (덧셈 후 대입)   
+-= (뺄셈 후 대입)   
+*= (곱셈 후 대입)   
+/= (나눗셈 후 대입)   
+%= (나머지 후 대입)   
+이러한 표기법은 간결하고 직관적이며, 특히 *=와 /=는 많은 분야에서 스케일링(scaling) 연산으로 사용됩니다.   
+
+<details><summary>중복 단어 감지 프로그램</summary>
+
+```cpp
+int main()
+{
+    int number_of_words = 0;
+    string previous; // 이전 단어; 초기값은 ""
+    string current;
+
+    while (cin >> current) {
+        ++number_of_words; // 단어 수 증가
+        if (previous == current)
+            cout << "word number " << number_of_words << " repeated: " << current << '\n';
+        previous = current;
+    }
+}
+```
+단어 카운터는 0에서 시작합니다.   
+단어를 하나 읽을 때마다 ++number_of_words로 카운터를 증가시킵니다.   
+첫 번째 단어는 1번, 두 번째는 2번… 이런 식으로 번호가 매겨집니다.   
+다음과 같이 작성해도 같은 결과를 얻을 수 있습니다:   
+```cpp
+number_of_words += 1;
+```
+혹은:   
+```cpp  
+number_of_words = number_of_words + 1;
+```
+하지만 ++number_of_words는 더 짧고, 증가(increment)의 의미를 직접적으로 표현합니다.   
+</details><!-- 중복 단어 감지 프로그램/details -->
+</details><!--복합대입연산자 /details-->
+
+
+</details><!-- Day 2 /details -->
 > [!TIP]
-> Helpful advice for doing things better or more easily.
+> 프로그래밍 재사용은 매우 흔한 기법입니다.새로운 문제를 해결할 때, 유사한 문제에 대한 기존 해결책을 찾아 수정하여 사용합니다. 정말 필요한 경우가 아니라면 처음부터 새로 시작하지 마세요. 기존 프로그램을 기반으로 수정하는 방식은 시간 절약에 매우 효과적이며, 원래 프로그램에 들인 노력의 혜택을 그대로 이어받을 수 있습니다.
 
-</details>
