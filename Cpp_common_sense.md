@@ -1,5 +1,6 @@
 # Programs Common Sense (CPP)
 
+<details><summary>Day 1</summary>
 프로그래밍에서는 이러한 약어(abbreviation)가 흔히 사용됩니다.<br>
 
 ```cpp
@@ -144,4 +145,12 @@ std : 표준 네임스페이스(namespace). C++ 표준 라이브러리의 기능
 command line : 명령줄 인터페이스. 텍스트 기반으로 명령을 입력하고 실행하는 환경.
 bug : 버그. 프로그램 내의 오류 또는 결함.
 debugging : 디버깅. 버그를 찾아내고 수정하는 과정.
+</details>
+</details>
+
+<details><summary>Day 2</summary>
+
+
+
+
 </details>
