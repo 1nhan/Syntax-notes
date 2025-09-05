@@ -279,11 +279,14 @@ string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 
 “오류(error)”란, 컴파일러가 문자열끼리의 뺄셈 연산을 시도하는 프로그램을 거부(reject)한다는 뜻입니다.<br>
 </details>
 <details><summary>연산자(operator)</summary>
-<table>
-    <th>
-        <tr>Operation</tr><tr>bool</tr><tr>char</tr><tr>int</tr><tr>double</tr><tr>string</tr>
-    </th>
-</table>
+| Operator | bool | char | int | double | string |
+|-------|-------|-------|-------|-------|-------|
+| A1    | A2    | A3    | A4    | A5    | A6    |
+| B1    | B2    | B3    | B4    | B5    | B6    |
+| C1    | C2    | C3    | C4    | C5    | C6    |
+| D1    | D2    | D3    | D4    | D5    | D6    |
+| E1    | E2    | E3    | E4    | E5    | E6    |
+
 </details>
 
 
