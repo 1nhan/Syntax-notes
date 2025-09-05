@@ -271,10 +271,19 @@ int main()
 또한, first와 second 변수에는 초기값이 명시되어 있지 않지만, C++에서는 string 타입의 변수는 기본적으로 빈 문자열("")로 초기화됩니다.<br>    
 </details>
 
-<details><summary></summary>
+<details><summary>문자열 이어붙임(concatenate)</summary>
+```cpp
+string n1 = name + " 이 "; // +는 문자열을 이어붙임(concatenate)
+string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 있지 않음
+```
+“오류(error)”란, 컴파일러가 문자열끼리의 뺄셈 연산을 시도하는 프로그램을 거부(reject)한다는 뜻입니다.<br>
 </details>
-
-<details><summary></summary>
+<details><summary>연산자(operator)</summary>
+<table>
+    <th>
+        <tr>Operation</tr><tr>bool</tr><tr>char</tr><tr>int</tr><tr>double</tr><tr>string</tr>
+    </th>
+</table>
 </details>
 
 
