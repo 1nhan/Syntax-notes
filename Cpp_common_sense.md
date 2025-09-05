@@ -1,8 +1,8 @@
 # Programs Common Sense (CPP)
 <details><summary>Day 1</summary>
 
->[!WARNING]
->프로그래밍에서는 이러한 약어(abbreviation)가 흔히 사용됩니다.<br>
+> [!WARNING]
+> 프로그래밍에서는 이러한 약어(abbreviation)가 흔히 사용됩니다.<br>
 
 ```cpp
 // 이 프로그램은 "Hello, World!" 메시지를 모니터에 출력합니다
