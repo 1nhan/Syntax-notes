@@ -700,7 +700,7 @@ A : </details>
 <details><summary>Q : int 타입에 적용할 수 있는 연산자(operator)에는 어떤 것들이 있는가?</summary>
 A : </details>
 <details><summary>Q : 다음 이름 중 C++에서 합법적인 이름은 무엇이며, 그렇지 않은 경우 그 이유는 무엇인가?
-이름 목록: This_little_pig, This_1_is, fine, 2_For_1_special, latest thing, George@home, _this_is_ok, MineMineMine, number, correct?, stroustrup.com, $PATH
+<br>이름 목록: This_little_pig,<br> This_1_is,<br> fine,<br> 2_For_1_special,<br> latest thing,<br> George@home,<br> _this_is_ok,<br> MineMineMine,<br> number,<br> correct?,<br> stroustrup.com,<br> $PATH<br>
 </summary>
 A : </details>
 <details><summary>Q : 혼란을 유발할 수 있으므로 사용하지 말아야 할 합법적인 이름 다섯 가지를 제시하시오.</summary>
