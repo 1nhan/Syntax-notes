@@ -1,5 +1,6 @@
 # Programs Common Sense (CPP)
 <details><summary>Day 1</summary>
+
 >[!WARNING]
 >프로그래밍에서는 이러한 약어(abbreviation)가 흔히 사용됩니다.<br>
 
@@ -12,12 +13,11 @@ int main() // C++ 프로그램은 main 함수부터 실행됩니다
     return 0;
 }
 ```
->[!NOTE]
->\n은 줄 바꿈을 나타내는 특수 문자(special character)<br>
->문자열 리터럴(string literal)은 큰따옴표(")로 감싸며, "Hello, World!\n"은 문자들의 집합입니다.<br>
->cout은 표준 출력 스트림(standard output stream)을 의미<br>
->cout은 “see-out”으로 발음되며, “character output stream”의 약어입니다.<br>
->std::cout에서 std::는 cout이 표준 라이브러리(standard library)에 속해 있음을 나타냅니다.<br>
+\n은 줄 바꿈을 나타내는 특수 문자(special character)<br>
+문자열 리터럴(string literal)은 큰따옴표(")로 감싸며, "Hello, World!\n"은 문자들의 집합입니다.<br>
+cout은 표준 출력 스트림(standard output stream)을 의미<br>
+cout은 “see-out”으로 발음되며, “character output stream”의 약어입니다.<br>
+std::cout에서 std::는 cout이 표준 라이브러리(standard library)에 속해 있음을 나타냅니다.<br>
 
 <details><summary>주석에 대하여</summary>
 //(슬래시 두 번) 이후에 작성된 내용은 컴파일러가 무시하며, 코드를 읽는 프로그래머를 위한 설명입니다. <br>
