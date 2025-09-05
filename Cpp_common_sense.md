@@ -282,11 +282,33 @@ string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 
 
 | Operator | bool | char | int | double | string |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|Assighment|    =    |    =    |    =    |    =    |    =    |
-|addition| B2    | B3    | B4    | B5    | B6    |
-| C1    | C2    | C3    | C4    | C5    | C6    |
-| D1    | D2    | D3    | D4    | D5    | D6    |
-| E1    | E2    | E3    | E4    | E5    | E6    |
+|Assighment|  =  |    =    |    =    |    =    |    =    |
+|addition|     |     | +    | +    |     |
+|concatenation|||||+|
+|subtraction|||-|-||
+|multiplication|||*|*||
+|division|||/|/||
+|reminder(modulo)|||%||
+|increment by 1|||++|++||
+|decrement by 1|||--|--||
+
+|increment by n|||+=n|+=n||
+|decrement by n|||-=n|-=n||
+|add to end|||||+=|
+|multiply and assign|||*=n|*=n||
+|divide and assign|||/=n|/=n||
+|read from s into x|s>>x|s>>x|s>>x|s>>x|s>>x|
+|write x to s|s>>x|s>>x|s>>x|s>>x|s>>x|
+|equals|==|==|==|==|==|
+|not equals|!=|!=|!=|!=|!=|
+|greater than|>|>|>|>|>|
+|greater than or equal|>=|>=|>=|>=|>=|
+|less than|<|<|<|<|<|
+|less than or equal|<=|<=|<=|<=|<=|
+
+
+
+
 
 </details>
 
