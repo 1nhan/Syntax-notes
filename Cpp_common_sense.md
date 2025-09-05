@@ -271,6 +271,7 @@ int main()
 </details>
 
 <details><summary>문자열 이어붙임(concatenate)</summary>
+
 ```cpp
 string n1 = name + " 이 "; // +는 문자열을 이어붙임(concatenate)
 string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 있지 않음
@@ -304,8 +305,8 @@ string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 
 |less than|<|<|<|<|<|
 |less than or equal|<=|<=|<=|<=|<=|
 
-> [!WARNING]
-> 빈 칸(blank square)은 해당 타입에 대해 직접적인 연산이 정의되어 있지 않음을 의미합니다. 
+[!WARNING]
+빈 칸(blank square)은 해당 타입에 대해 직접적인 연산이 정의되어 있지 않음을 의미합니다. 
 
 </details>
 
