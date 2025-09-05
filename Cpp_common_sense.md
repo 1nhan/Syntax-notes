@@ -282,7 +282,7 @@ string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 
 
 | Operator | bool | char | int | double | string |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|Assighment|  =  |    =    |    =    |    =    |    =    |
+|assignment|  =  |    =    |    =    |    =    |    =    |
 |addition|     |     | +    | +    |     |
 |concatenation|||||+|
 |subtraction|||-|-||
