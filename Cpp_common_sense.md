@@ -146,7 +146,6 @@ debugging : 디버깅. 버그를 찾아내고 수정하는 과정.
 </details>
 </details>
 
-[!note]
 <details><summary>Day 2</summary>
 
 객체란 특정 타입(type)을 가진 메모리 영역(region of memory)이며, 그 타입은 해당 객체에 어떤 종류의 정보가 저장될 수 있는지를 지정합니다. 이러한 객체에 이름(name)이 붙어 있으면, 우리는 그것을 변수(variable)라고 부릅니다.<br>
