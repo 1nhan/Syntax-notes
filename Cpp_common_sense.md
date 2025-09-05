@@ -85,32 +85,63 @@ IDE는 일반적으로 다음과 같은 기능을 포함합니다:<br>
 
 <details><summary>질문과 대답 1</summary>
 <details><summary>Q : "Hello, World!" 프로그램의 목적은 무엇인가요?</summary>
-A : </details>
+A : 컴파일러(compiler)를 통해 기계 명령(machine instructions)으로 번역하는 과정, 그리고 그 명령을 실행(execute)하는 과정을 소개합니다. 문자열 출력과 개행, 표준 출력 스트림과 이를 위한 표준 라이브러리에 대해 알려줍니다. 또한 주석을 사용하는 방법을 소개합니다.</details>
 <details><summary>Q : 함수의 네 가지 구성 요소를 말해보세요.</summary>
-A : </details>
+A : 반환 타입(return type), 이름(name), 매개변수 목록(parameter list), 함수 본문(function body)</details>
 <details><summary>Q : 모든 C++ 프로그램에 반드시 포함되어야 하는 함수는 무엇인가요?</summary>
-A : </details>
+A : main함수</details>
 <details><summary>Q : "Hello, World!" 프로그램에서 return 0;의 목적은 무엇인가요?</summary>
-A : </details>
+A : 프로그램이 정상적으로 종료되었음을 의미합니다.</details>
 <details><summary>Q : 컴파일러의 역할은 무엇인가요?</summary>
-A : </details>
+A : 프로그램을 실행하려면 먼저 사람이 읽을 수 있는 형태(human-readable form)에서 컴퓨터가 “이해할 수 있는” 형태로 번역(translation)해야 합니다. 이 번역 작업은 컴파일러(compiler)라는 프로그램이 수행합니다.</details>
 <details><summary>Q : import 문장의 목적은 무엇인가요?</summary>
-A : </details>
+A : 모듈 가져오기(module import) 문입니다. 컴퓨터에게 std라는 모듈에서 기능을 가져오도록(import) 지시합니다.</details>
 <details><summary>Q : #include 지시문의 목적은 무엇인가요?</summary>
-A : </details>
+A : 소스코드를 포함시키는 </details>
 <details><summary>Q : 파일 이름 끝의 .cpp 확장자는 C++에서 무엇을 의미하나요?</summary>
-A : </details>
+A : C++의 소스코드 확장자입니다.</details>
 <details><summary>Q : 링커(linker)는 프로그램에서 어떤 역할을 하나요?</summary>
-A : </details>
+A : 여러 오브젝트 코드 파일을 하나의 실행 가능한 프로그램으로 결합시키는데 이 작업을 수행하는 프로그램을 링커라고 합니다.</details>
 <details><summary>Q : 소스 파일(source file)과 오브젝트 파일(object file)의 차이는 무엇인가요?</summary>
-A : </details>
+A : 컴파일이 되기 전과 된 후의 차이입니다.</details>
 <details><summary>Q : 실행 파일(executable)이란 무엇인가요?</summary>
-A : </details>
+A : 실행 파일은 윈도우 환경에서 .exe확장자를 갖고, 소스코드 파일을 컴파일러가 컴파일해 오브젝트 파일로 만든 후 여러 오브젝트 파일을 묶는 역할을 하는 링커의 일이 끝나면 .exe확장자파일을 갖습니다.</details>
 <details><summary>Q : IDE란 무엇이며, 어떤 기능을 제공하나요?</summary>
-A : </details>
+A : 편집기, 디버깅, 컴파일 및 실행 기능을 제공합니다.</details>
 <details><summary>Q : 컴파일된 프로그램을 실행하려면 어떻게 해야 하나요?</summary>
-A : </details>
+A : 오브젝트 파일들을 하나로 연결할 링커를 실행시킨 후 성공적으로 마치면 .exe를 갖게 됩니다.</details>
 <details><summary>Q : 주석(comment)이란 무엇인가요?</summary>
-A : </details>
+A : 주석은 컴파일러에게 전달하는 말이 아닌 프로그래머에게 전달할 수 있는 메세지기능힙니다. //두개를 사용하거나 /**/를 이용해서 소스코드가 어떤 목적으로 만들어졌는지 혹은 도움이 되는 메세지를 전달할 수 있습니다.</details>
 </details>
+</details>
+
+<details><summary>용어집(glossary)</summary>
+    
+// : 주석(comment)을 시작하는 기호. 해당 줄의 나머지 부분은 컴파일러가 무시함.
+executable : 실행 파일. 컴파일과 링크 과정을 거쳐 생성된, 실제로 실행 가능한 프로그램 파일.
+main() : 모든 C++ 프로그램의 시작점(entry point)이 되는 함수.
+<< : 출력 연산자(output operator). 데이터를 출력 스트림에 전달할 때 사용.
+function : 함수. 이름이 붙은 명령 집합으로, 특정 작업을 수행함.
+object code : 오브젝트 코드. 컴파일된 기계어 코드로, 실행 파일 생성에 사용됨.
+C++ : 이 책에서 사용하는 프로그래밍 언어. 고성능과 추상화를 동시에 지원함.
+header file : 헤더 파일. 함수 선언과 상수 정의 등을 포함하며, #include로 불러옴.
+output : 출력. 프로그램이 사용자나 다른 시스템에 정보를 전달하는 행위.
+comment : 주석. 코드에 대한 설명을 작성하며, 컴파일러는 이를 무시함.
+IDE : 통합 개발 환경(Integrated Development Environment). 코드 작성, 컴파일, 디버깅 등을 하나의 인터페이스에서 수행할 수 있게 해줌.
+program : 프로그램. 컴퓨터가 수행할 수 있도록 작성된 명령 집합.
+compiler : 컴파일러. 소스 코드를 오브젝트 코드로 번역하는 도구.
+import : 모듈 가져오기 문장. 특정 모듈의 기능을 사용할 수 있도록 설정함.
+source code : 소스 코드. 사람이 읽을 수 있는 형태로 작성된 프로그램 코드.
+compile-time : 컴파일 시간. 컴파일러가 코드를 분석하고 번역하는 시점.
+error : 오류. 프로그램이 의도대로 작동하지 않게 만드는 문제.
+library : 라이브러리. 재사용 가능한 코드 집합으로, 다른 프로그램에서 호출 가능.
+statement : 문장. 프로그램 내에서 하나의 동작을 지정하는 코드 단위.
+cout : 표준 출력 스트림. 화면에 텍스트를 출력할 때 사용.
+linker : 링커. 여러 오브젝트 파일을 하나의 실행 파일로 결합하는 도구.
+module : 모듈. 기능을 캡슐화한 코드 집합으로, import를 통해 불러옴.
+#include : 헤더 포함 지시문. 외부 파일의 선언을 현재 코드에 포함시킴.
+std : 표준 네임스페이스(namespace). C++ 표준 라이브러리의 기능들이 정의된 공간.
+command line : 명령줄 인터페이스. 텍스트 기반으로 명령을 입력하고 실행하는 환경.
+bug : 버그. 프로그램 내의 오류 또는 결함.
+debugging : 디버깅. 버그를 찾아내고 수정하는 과정.
 </details>
