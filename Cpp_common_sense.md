@@ -237,12 +237,14 @@ int main() // 이름과 나이를 입력받음
 ```
 위 프로그램에서 Inhan 20를 입력하면, >> 연산자는 "Inhan"를 first_name에, 20를 age에 저장하고 다음과 같은 출력을 생성합니다:
 ```출력결과
+출력결과
 Hello, Inhan (age 20)
 ```
 그렇다면 왜 "Inhan 20" 전체가 first_name에 들어가지 않을까요? 그 이유는 문자열 입력은 공백(whitespace)에서 종료되는 것이 관례이기 때문입니다. 공백에는 스페이스(space), 줄 바꿈(newline), 탭(tab) 문자가 포함됩니다. 반면, >>는 기본적으로 공백을 무시하고 건너뜁니다. <br>
 출력 연산자 &lt;&lt;도 >>처럼 타입에 민감합니다. 만약 사용자가 20 Inhan를 입력한다면, 
 
 ```출력결과
+출력결과
 Hello, 20 (age -1)
 ```
 왜 이런 일이 발생할까요?<br>
@@ -252,7 +254,21 @@ Inhan는 정수가 아니므로 age에 저장되지 않습니다.<br>
 즉, 입력이 타입에 맞지 않으면 해당 변수는 값을 받지 못하고 초기값을 유지하게 됩니다.<br>
 </details>
 
-<details><summary></summary>
+<details><summary>>>를 사용한 문자열 입력</summary>
+>>를 사용한 문자열 입력은 기본적으로 공백에서 종료되므로 한 단어만 읽습니다. 하지만 때로는 여러 단어를 입력받고 싶을 때도 있습니다. 이를 위한 방법은 여러 가지가 있으며, 그 중 하나는 다음과 같습니다:
+
+```cpp
+int main()
+{
+    cout << "Please enter your first and second names\n";
+    string first;
+    string second;
+    cin >> first >> second; // 두 개의 문자열을 입력받음
+    cout << "Hello, " << first << " " << second << '\n';
+}
+```
+여기서는 >>를 두 번 사용하여 각각의 이름을 입력받습니다. 출력 시에는 이름 사이에 공백을 직접 삽입해야 합니다.
+또한, first와 second 변수에는 초기값이 명시되어 있지 않지만, C++에서는 string 타입의 변수는 기본적으로 빈 문자열("")로 초기화됩니다.<br>    
 </details>
 
 <details><summary></summary>
