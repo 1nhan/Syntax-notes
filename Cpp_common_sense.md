@@ -291,10 +291,9 @@ string n1 = name - " 이 "; // 오류: 문자열에는 - 연산이 정의되어 
 |reminder(modulo)|||%||
 |increment by 1|||++|++||
 |decrement by 1|||--|--||
-
 |increment by n|||+=n|+=n||
-|decrement by n|||-=n|-=n||
 |add to end|||||+=|
+|decrement by n|||-=n|-=n||
 |multiply and assign|||*=n|*=n||
 |divide and assign|||/=n|/=n||
 |read from s into x|s>>x|s>>x|s>>x|s>>x|s>>x|
