@@ -448,6 +448,281 @@ number_of_words = number_of_words + 1;
 </details><!-- 중복 단어 감지 프로그램/details -->
 </details><!--복합대입연산자 /details-->
 
+<details><summary>이름(Names)</summary>
+변수에 이름(name)을 붙입니다. 이름을 붙이는 이유는 기억하기 쉽고, 프로그램의 다른 부분에서 참조(reference)할 수 있도록 하기 위함입니다.  
+C++ 프로그램에서 이름은 다음 규칙을 따릅니다:  
+문자로 시작해야 하며, 문자(letter), 숫자(digit), 밑줄(underscore)만 포함할 수 있습니다.  
+
+다음은 유효하지 않은 이름(invalid names)입니다:
+
+```cpp
+2x              // 오류: 숫자로 시작할 수 없음
+time@to@market  // 오류: '@'는 허용되지 않는 문자
+Start menu      // 오류: 공백(space)은 허용되지 않음
+```
+“유효하지 않다”는 말은, C++ 컴파일러가 해당 이름을 받아들이지 않는다는 뜻입니다.
+
+ 시스템 코드나 자동 생성된 코드(machine-generated code)를 보면, 이름이 밑줄(_)로 시작하는 경우가 있습니다. 예: _foo 이런 이름은 구현체나 시스템 내부 용도로 예약(reserved)되어 있으므로, 직접 작성하지 마세요.  
+밑줄로 시작하는 이름을 피하면, 여러분이 만든 이름이 시스템에서 자동 생성한 이름과 충돌할 가능성을 줄일 수 있습니다.  
+C++에서 이름은 대소문자를 구분(case-sensitive)합니다. 즉, x와 X는 서로 다른 이름입니다.  
+다음 프로그램은 최소 네 가지 오류를 포함하고 있습니다:  
+
+```cpp
+import std;
+int Main()
+{
+    STRING s = "Goodbye, cruel world! ";
+    cOut << S << '\n';
+}
+```
+1. Main → C++에서는 main이어야 함 (대소문자 구분)  
+2. STRING → C++에는 string 타입이 존재하지만, 대문자 STRING은 정의되지 않음  
+3. cOut → 올바른 출력 스트림은 cout  
+4. S → 변수는 s로 선언되었으므로, S는 정의되지 않음
+
+C++ 언어는 많은 이름을 키워드(keyword)로 예약해두었습니다. 예:
+```코드
+if, else, class, int, module
+```
+이러한 키워드는 변수, 타입, 함수 등의 이름으로 사용할 수 없습니다.
+예:
+```cpp
+int if = 7; // 오류: if는 키워드
+```
+또한, C++ 표준 라이브러리의 이름(예: string)을 사용자 정의 변수 이름으로 사용하는 것도 피해야 합니다. 이런 이름을 재사용하면, 표준 라이브러리를 사용하려 할 때 충돌이 발생할 수 있습니다.  
+변수, 함수, 타입 등에 이름을 붙일 때는 의미 있는 이름(meaningful names)을 선택하세요. 즉, 프로그램을 이해하는 데 도움이 되는 이름을 사용해야 합니다.  
+
+짧은 이름은 관례적으로 사용될 때 의미가 있습니다:  
+x는 지역 변수(local variable) 또는 매개변수(parameter)로 사용  
+i는 반복문 인덱스(loop index)로 사용  
+
+모두 대문자로 된 이름(ALL_CAPITAL_LETTERS)은 사용하지 않습니다. 이런 스타일은 일반적으로 매크로(macros)에 예약되어 있으며 우리는 매크로 사용을 지양합니다.
+
+정의하는 타입에는 첫 글자를 대문자로 사용합니다:  
+예: Square, Graph  
+단어 사이를 밑줄(_)로 구분하는 방식입니다:  
+예: element_count  
+
+</details><!-- 이름(Names)/details -->
+
+<details><summary>타입(type)과 객체(object)</summary>
+타입(type)이라는 개념은 C++뿐만 아니라 대부분의 프로그래밍 언어에서 중심적인 역할을 합니다. 이제 타입에 대해 조금 더 기술적으로 깊이 있는 시각으로 살펴보겠습니다:
+타입(type)은 객체에 대해 어떤 값(value)들이 들어갈 수 있는지, 어떤 연산(operation)들이 적용될 수 있는지를 정의합니다.  
+객체(object)는 특정 타입의 값을 저장하는 메모리 공간(memory)입니다.  
+값(value)은 메모리에 저장된 비트(bit)들의 집합이며 해당 타입에 따라 해석됩니다.  
+변수(variable)는 이름이 붙은 객체입니다.  
+선언문(declaration)은 객체에 이름과 타입을 지정하는 문장입니다.  
+정의문(definition)은 선언문 중에서도 메모리를 실제로 할당하는 문장입니다.  
+
+```cpp
+int a = 7;
+int b = 9;
+char c = 'a';
+double x = 1.2;
+string s1 = "hello";
+string s2 = "1.2";
+```
+문자열(string)의 표현 방식은 정수(int)보다 조금 더 복잡합니다. 그 이유는 문자열이 자신이 포함하는 문자 수를 추적하기 때문입니다.  
+문자 리터럴(character literal)과 문자열 리터럴(string literal)을 감싸는 따옴표(quote)는 메모리에 저장되지 않습니다.  
+-int는 4바이트(32비트)  
+-bool과 char는 1바이트(8비트)  
+-double은 8바이트(64비트)  
+메모리에 저장된 비트(bit)의 의미는 접근할 때 사용하는 타입에 전적으로 의존합니다.  
+이처럼 타입에 따라 객체가 차지하는 메모리 공간의 크기가 다릅니다.  
+다르게 말하면:  
+-컴퓨터 메모리 자체는 타입을 알지 못합니다.  
+-메모리는 단지 비트의 집합일 뿐이며,  
+-우리가 어떻게 해석할지를 결정할 때 비로소 의미가 부여됩니다.  
+이것은 우리가 일상에서 숫자를 사용할 때와 비슷합니다:  
+-12.5라는 숫자는 단독으로는 의미가 없습니다.  
+-그것이 $12.5, 12.5cm, 12.5갤런인지에 따라 의미가 달라집니다.  
+-단위를 제공해야만 숫자에 의미가 생깁니다.  
+예를 들어:  
+-메모리의 동일한 비트 집합이  
+-int로 보면 120이라는 정수로 해석되고, 
+-char로 보면 문자 'x'로 해석될 수 있습니다.  
+이를 string으로 해석하려 하면 말이 되지 않으며, 실제로 그렇게 사용하려 하면 런타임 오류(run-time error)가 발생합니다.  
+
+</details><!-- 타입(type)과 객체(object)/details -->
+<details><summary>타입 안전성(Type safety)</summary>
+모든 객체는 정의될 때 타입(type)이 부여되며, 그 타입은 절대 변경되지 않습니다.  
+프로그램(또는 프로그램의 일부)이 타입 안전(type-safe)하다는 것은, 모든 객체가 자신의 타입 규칙에 따라 올바르게 사용되고 있다는 것을 의미합니다.  
+완전한 타입 안전성(complete type safety)은 C++의 이상적인 목표이자 일반적인 규칙입니다. 하지만 현실적으로, C++ 컴파일러는 임의의 코드에 대해 완전한 타입 안전성을 보장할 수 없습니다. 따라서 우리는 위험한 기법(unsafe techniques)을 피해야 하며, 타입 안전성을 확보하기 위한 코딩 규칙(coding rules)을 반드시 따라야 합니다.  
+현대 C++과 정적 분석 도구(static analysis tools)를 활용하면, 대부분의 C++ 코드에 대해 타입 안전성을 검증할 수 있습니다.  
+이상적인 방식은, 프로그램이 실행되기 전에 타입 안전성이 입증될 수 없는 언어 기능을 사용하지 않는 것입니다. 이를 정적 타입 안전성(static type safety)이라고 합니다.  
+
+예를 들어, 초기화되지 않은 변수(uninitialized variable)를 사용하는 것은 타입 안전하지 않습니다:
+
+```cpp
+int main()
+{
+    double x;           // 초기화를 "잊음": x의 값은 정의되지 않음
+    double y = x;       // y의 값도 정의되지 않음
+    double z = 2.0 + x; // + 연산의 의미와 z의 값도 정의되지 않음
+}
+```
+항상 변수를 초기화하세요!  
+string과 vector 같은 타입은 기본 초기화(default initialization)가 보장됩니다.  
+컴파일러 경고를 활성화하는 방법을 알아보세요.  
+예: -Wall 옵션을 사용하면 대부분의 경고를 표시할 수 있습니다.  
+</details><!-- 타입 안전성(Type safety)/details -->
+
+<details><summary>변환(Conversions)</summary>
+char 타입끼리 직접 덧셈을 하거나 double과 int를 직접 비교할 수 없다는 것을 배웠습니다. 하지만 C++에서는 이러한 작업을 간접적으로 수행할 수 있는 방법을 제공합니다.
+표현식에서 필요할 경우:
+char는 int로 변환(promoted)되고
+int는 double로 변환(promoted)됩니다.
+예를 들어:
+    
+```cpp
+char c = 'x';
+int i1 = c;           // i1은 c의 정수값을 받음
+int i2 = c + 1000;    // i2는 c의 정수값에 1000을 더한 값
+double d = i2 + 7.3;  // d는 i2에 7.3을 더한 부동소수점 값
+```
+    
+여기서 i1은 120이라는 값을 갖습니다. 이는 'x'라는 문자의 ASCII 코드값(8비트 문자 집합)입니다. 이 방식은 문자의 숫자 표현(numeric representation)을 얻는 간단한 방법입니다.  
+i2의 경우, 덧셈은 정수 연산(integer arithmetic)으로 수행되며, 결과는 1120입니다. 즉, char는 덧셈 전에 int로 승격(promoted)됩니다.  
+마찬가지로, double과 int가 혼합된 연산에서는 int가 double로 승격되어 예상 가능한 결과(unexpected surprises 없는 결과)를 제공합니다. 따라서 d는 1127.3이라는 값을 갖습니다.  
+변환은 두 가지 종류로 나뉩니다:
+    
+|종류|설명|
+|:-:|:-:|
+|확장 변환(widening)|정보를 보존하는 변환. 예: char → int|
+|축소 변환(narrowing)|정보를 손실할 수 있는 변환. 예: int → char|
+
+확장 변환(widening conversion)은 값을 동일한 값 또는 가장 근접한 값으로 변환하며, 대개 프로그래머에게 유익하고 코드 작성도 간편하게 해줍니다.  
+
+불행히도, C++에서는 암시적 축소 변환(implicit narrowing conversion)도 허용됩니다. 축소 변환(narrowing)이란, 값이 다른 타입으로 변환되면서 원래 값과 같지 않게 되는 경우를 말합니다.  
+예를 들어:  
+char → int 변환은 축소 문제 없이 안전합니다.  
+하지만 char는 작은 정수값만 저장 가능합니다.  
+일반적으로:  
+-char는 1바이트(8비트)  
+-int는 4바이트(32비트)  
+따라서 int 값을 char로 변환하면 값이 잘릴 수 있으며, 이로 인해 예상치 못한 결과나 오류가 발생할 수 있습니다.  
+
+우리는 char에 1000 같은 큰 숫자를 넣을 수 없습니다. 이러한 변환은 축소 변환(narrowing conversion)이라고 하며, 값을 너무 작은 객체(“좁은” 공간)에 넣으려는 시도를 의미합니다.  
+문제는, double → int, int → char 같은 축소 변환이 대부분의 컴파일러에서 기본적으로 허용된다는 점입니다. 왜 문제가 될까요?  
+그 이유는, 축소 변환이 일어나고 있다는 사실을 종종 인지하지 못하기 때문입니다.  
+예를 들어:  
+
+```cpp
+double x = 2.7;
+// ... 많은 코드 ...
+int y = x; // y는 2가 됨
+```
+이 시점에서 우리는 x가 double이었다는 사실을 잊었을 수도 있고, double → int 변환이 소수점 이하를 버리는(truncates) 방식이라는 것도 잊었을 수 있습니다. (즉, 0 방향으로 내림, 일반적인 반올림 규칙과 다름)  
+y = x;는 정의된 동작(well-defined behavior)이지만, 정보(.7)가 손실된다는 사실을 코드가 알려주지 않습니다.  
+
+역사적, 실용적 이유로 인해 C++에서는 네 가지 초기화 표기법(initialization syntax)을 제공합니다:  
+```cpp
+int x0 = 7.8;     // 축소 변환 발생, 일부 컴파일러는 경고
+int x1 {7.8};     // 오류: {}는 축소 변환을 허용하지 않음
+int x2 = {7.8};   // 오류: ={}도 축소 변환을 허용하지 않음
+int x3 (7.8);     // 축소 변환 발생, 일부 컴파일러는 경고
+```
+= 및 ={} 표기법은 C 초기 시절부터 사용된 방식입니다.  
+우리는 = 표기법을 단순 복사 초기화(copy initialization)에 사용하고, {} 및 ={} 표기법은 복잡한 초기화 또는 축소 방지 목적에 사용합니다.  
+</details><!-- 변환(Conversions) -->
+
+<details><summary>타입 유추: auto(Type deduction: auto)</summary>
+예를 들어:  
+
+```cpp
+int x = 7;
+double d = 7.7;
+```
+우리는 7이 정수이고 7.7이 부동소수점 숫자라는 것을 알고 있으며, 컴파일러도 그 사실을 알고 있습니다.  
+그렇다면 왜 굳이 int와 double을 명시해야 할까요? 사실, 명시하지 않아도 됩니다. 초기화 값(initializer)의 타입을 기반으로 컴파일러가 타입을 유추(deduce)할 수 있습니다:  
+
+```cpp
+auto x = 7;     // x는 int (7이 정수이므로)
+auto d = 7.7;   // d는 double (7.7이 부동소수이므로)
+```
+auto를 사용한 버전은 명시적 타입을 사용한 것과 정확히 동일한 의미를 갖습니다. 우리는 다음과 같은 경우에만 auto를 사용합니다:  
+*초기화 값으로부터 타입이 명확하게 유추될 수 있을 때  
+*타입 변환(conversion)을 원하지 않을 때  
+특히, 긴 타입 이름을 사용할 때나 제네릭 프로그래밍(generic programming)에서는 auto의 표기 간결성(notational convenience)이 매우 유용합니다.
+
+예:
+```cpp
+auto z = complex<double>{1.3, 3.4};
+auto p = make_unique<Pair<string, int>>{"Harlem", 10027}; // unique_ptr<Pair<string,int>>
+auto b = lst.begin(); // lst.begin은 vector<int>::iterator
+```
+</details><!-- 타입 유추: auto(Type deduction: auto) -->
+
+<details><summary>질문과 대답 2</summary>
+<details><summary>Q : prompt라는 용어는 무엇을 의미하는가?</summary>
+A : </details>
+<details><summary>Q : 객체를 초기화할 수 있는 표기법에는 어떤 것들이 있는가?</summary>
+A : </details>
+<details><summary>Q : 사용자로부터 정수 값을 입력받아 변수 number에 저장하려면, 어떤 두 줄의 코드를 작성할 수 있는가?</summary>
+A : </details>
+<details><summary>Q : \n은 무엇이라 불리며, 어떤 역할을 하는가?</summary>
+A : </details>
+<details><summary>Q : 문자열(string) 입력은 무엇에 의해 종료되는가?</summary>
+A : </details>
+<details><summary>Q : 정수(integer) 입력은 무엇에 의해 종료되는가?</summary>
+A : </details>
+<details><summary>Q : 다음 세 줄을 한 줄로 작성하면 어떻게 되는가?
+
+```cpp
+cout << "Hello, ";  
+cout << first_name;  
+cout << "!\n";
+```  
+</summary>
+A : </details>
+<details><summary>Q : 객체(object)란 무엇인가?</summary>
+A : </details>
+<details><summary>Q : 리터럴(literal)이란 무엇인가?</summary>
+A : </details>
+<details><summary>Q : 리터럴에는 어떤 종류들이 있는가?</summary>
+A : </details>
+<details><summary>Q : 변수(variable)란 무엇인가?</summary>
+A : </details>
+<details><summary>Q : char, int, double의 일반적인 크기는 얼마인가?</summary>
+A : </details>
+<details><summary>Q : 메모리에서 int나 string과 같은 작은 단위의 크기를 측정할 때 사용하는 기준은 무엇인가?</summary>
+A : </details>
+
+<details><summary>Q : =와 ==의 차이는 무엇인가?</summary>
+A : </details>
+<details><summary>Q : 정의(definition)란 무엇인가?</summary>
+A : </details>
+<details><summary>Q : 초기화(initialization)란 무엇이며, 대입(assignment)과 어떻게 다른가?</summary>
+A : </details>
+
+<details><summary>Q : 문자열 연결(string concatenation)이란 무엇이며, C++에서는 어떻게 구현하는가?</summary>
+A : </details>
+<details><summary>Q : int 타입에 적용할 수 있는 연산자(operator)에는 어떤 것들이 있는가?</summary>
+A : </details>
+<details><summary>Q : 다음 이름 중 C++에서 합법적인 이름은 무엇이며, 그렇지 않은 경우 그 이유는 무엇인가?
+이름 목록: This_little_pig, This_1_is, fine, 2_For_1_special, latest thing, George@home, _this_is_ok, MineMineMine, number, correct?, stroustrup.com, $PATH
+</summary>
+A : </details>
+<details><summary>Q : 혼란을 유발할 수 있으므로 사용하지 말아야 할 합법적인 이름 다섯 가지를 제시하시오.</summary>
+A : </details>
+<details><summary>Q : 좋은 이름을 선택하기 위한 규칙에는 어떤 것들이 있는가?</summary>
+A : </details>
+<details><summary>Q : 타입 안전성(type safety)이란 무엇이며, 왜 중요한가?</summary>
+A : </details>
+
+<details><summary>Q : double에서 int로의 변환이 문제가 될 수 있는 이유는 무엇인가?</summary>
+A : </details>
+
+<details><summary>Q : 한 타입에서 다른 타입으로의 변환이 안전한지 여부를 판단하기 위한 규칙을 정의하시오.</summary>
+A : </details>
+
+<details><summary>Q : 바람직하지 않은 변환을 피하기 위한 방법에는 어떤 것들이 있는가?</summary>
+A : </details>
+
+<details><summary>Q : auto의 용도는 무엇인가?</summary>
+A : </details>
+
+</details><!-- 질문과 대답 2 -->
 
 </details><!-- Day 2 /details -->
 
