@@ -44,7 +44,11 @@
  기본 개념 정리가 너무 중요하다는게 요즘 계속 느끼고 있는 부분이다. 기본 개념들이 정리가 착착 되있으면 새로운 지식정보 흡수가 잘된다. 
 </details></details><br><details><summary><strong>2025-09-04 기본개념2</strong></summary> 
  기본 개념서인 The C++ Programming Language 4th Edition Bjarne Stroustrup를 보던 중 Programming  Principles and Practice Using C++을 알게 되었는데 무려 2000p가 넘는 분량의 기본서였다. 하지만 여태 배웠던 내용에 추가된 부분의 내용도 많고 인과에 대한 전문 지식을 배울 수 있는 기회인 것 같아 우선 The C++ Programming Language 4th Edition을 덮어두고 Programming  Principles and Practice Using C++을 먼저 보기로 했다. 근데 양이 너무 많아서 조금 부담되지만 이 책을 다보고 The C++ Programming Language 4th Edition을 보면 C++를 훨씬 잘 알게되지 않을까?
-</details></details><br><details><summary><strong>2025-09-05 </strong></summary> 
+</details></details><br><details><summary><strong>2025-09-05 Programming  Principles and Practice Using Cpp</strong></summary>
+요즘 Programming  Principles and Practice Using Cpp책을 보고 있는데 이 책 심상치 않습니다.
+cpp관련 기본서이고, 프로그래밍을 접하는 사람들에게 반드시 권유해보고 싶은 책이면서 나만보고 싶은 책이기도 합니다.
+읽을거리가 풍부해서 좋고 프로그래머가 갖춰야할 철학까지 다루고 있습니다. 생각하는 방법에 대해서도 어려움을 느끼는 태도에 대해서도 알려주고 있습니다. 단지 영어라는 점이 좀 불편합니다.
+ 
 </details></details><br><details><summary><strong>2025-09-06 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-07 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-08 </strong></summary> 
