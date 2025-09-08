@@ -50,7 +50,7 @@ cpp관련 기본서이고, 프로그래밍을 접하는 사람들에게 반드�
 읽을거리가 풍부해서 좋고 프로그래머가 갖춰야할 철학까지 다루고 있습니다. 생각하는 방법에 대해서도 어려움을 느끼는 태도에 대해서도 알려주고 있습니다. 단지 영어라는 점이 좀 불편합니다.
  
 </details></details><br><details><summary><strong>2025-09-06 </strong></summary> 
-</details></details><br><details><summary><strong>2025-09-07 </strong></summary> 
+</details></details><br><details><summary><strong>2025-09-07 일요일</strong></summary> 
 </details></details><br><details><summary><strong>2025-09-08 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-08 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-09 </strong></summary> 
