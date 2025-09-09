@@ -1320,7 +1320,9 @@ push_back() 호출 구문을 관찰해보면 이는 멤버 함수 호출(member 
 멤버 함수 호출(member-function-call): 객체 이름(object-name) . 멤버 함수 이름(member-function-name)(인자 목록(argument-list))<br>
 벡터의 크기(size)는 vector(벡터)의 또 다른 멤버 함수인 size()를 호출함으로써 얻을 수 있습니다. 처음에 v.size()는 0이었으며, 두 번째 push_back() 호출 이후 v.size()는 2가 되었습니다.<br>
 
+
 </details><!-- 벡터 확장(Growing a vector) -->
+
 
 </details><!-- 벡터(vector) -->
 
