@@ -1265,8 +1265,63 @@ int square(int x) // square 함수의 정의
 |:-:|:-:|:-:|:-:|:-:|:-:|
 |5|7|9|4|6|8|
 
-v[0] = 5, v[1] = 7, v[2] = 9, v[3] = 4, v[4] = 6, v[5] = 8; <br>
-    
+다음과 같이 벡터를 생성할 수 있다:
+```cpp
+vector<int> v = {5, 7, 9, 4, 6, 8}; // 6개의 int형 요소를 가진 벡터
+```
+요소의 타입과 초기 요소 집합을 명시한다. 요소 타입은 vector 뒤의 꺾쇠 괄호(< >) 안에 명시되며, 여기서는 <int>이다. 다음은 또 다른 예시이다:
+```cpp
+vector<string> philosopher = {"Kant", "Plato", "Hume", "Kierkegaard"}; // 4개의 string형 요소를 가진 벡터
+```
+당연히, 벡터는 선언된 요소 타입에 해당하는 값만 허용한다:
+```cpp
+philosopher[2] = 99; // 오류: int 값을 string에 할당하려 함
+v[2] = "Hume"; // 오류: string 값을 int에 할당하려 함
+```
+요소 값을 명시하지 않고, 특정 크기의 벡터를 정의할 수도 있다. 이 경우에는 (n) 표기법을 사용하며, n은 요소의 개수이고, 각 요소는 해당 타입의 기본값으로 초기화된다. 예를 들어:
+```cpp
+vector<int> vi(6); // 6개의 int형 요소를 가진 벡터, 각 요소는 0으로 초기화됨
+vector<string> vs(4); // 4개의 string형 요소를 가진 벡터, 각 요소는 ""로 초기화됨
+```
+문자열 ""은 아무 문자도 포함하지 않는 문자열로, 이를 빈 문자열(empty string) 이라고 한다.
+다음 사항에 유의하라: 존재하지 않는 벡터 요소를 참조할 수는 없다.
+```cpp
+vi[20000] = 44; // 실행 시간 오류(run-time error)
+```
+<details><summary>벡터 순회(Traversing a vector)</summary>
+벡터는 자신의 크기를 "알고" 있으므로, 다음과 같이 벡터의 요소들을 출력할 수 있다:
+
+```cpp
+vector<int> v = {5, 7, 9, 4, 6, 8};  
+for (int i = 0; i < v.size(); ++i)  
+    cout << v[i] << '\n';
+```
+v.size() 호출은 벡터 v의 요소 개수를 반환한다. 일반적으로 v.size()는 벡터의 요소에 접근할 때, 범위를 벗어난 요소를 실수로 참조하는 일을 방지해준다. 벡터 v의 유효 범위는 [0:v.size())이며, 이는 수학적 표기법으로 반열림 시퀀스(half-open sequence)를 의미한다. v의 첫 번째 요소는 v[0]이고, 마지막 요소는 v[v.size()−1]이다. 만약 v.size() == 0이라면, v는 아무 요소도 가지지 않는 빈 벡터(empty vector)이다. 이러한 반열림 시퀀스의 개념은 C++ 및 C++ 표준 라이브러리 전반에 걸쳐 사용된다.<br>    
+C++ 언어는 반열림 시퀀스 개념을 활용하여, 벡터와 같은 시퀀스(sequence)의 모든 요소를 간단하게 순회할 수 있는 루프를 제공한다. 예를 들어:
+
+```cpp
+vector<int> v = {5, 7, 9, 4, 6, 8};  
+for (int x : v) // v의 각 x에 대해  
+    cout << x << '\n';
+```
+이러한 루프는 범위 기반 for 루프(range-for-loop)라고 불린다. 여기서 "범위(range)"라는 용어는 종종 "요소의 시퀀스(sequence of elements)"와 같은 의미로 사용된다. for (int x : v)는 "v의 각 int x에 대해(for each int x in v)"라고 읽으며, 이 루프의 의미는 인덱스를 기반으로 한 루프 [0:v.size())와 정확히 동일하다.<br>
+범위 기반 for 루프는 시퀀스의 모든 요소를 하나씩 순회하는 단순한 루프에 적합하다. 반면, 벡터의 세 번째 요소마다 접근하거나, 벡터의 후반부만을 순회하거나, 두 벡터의 요소를 비교하는 등 보다 복잡한 루프는 일반적으로 더 복잡하고 일반적인 전통적인 for 문(traditional for-statement)을 사용하는 것이 바람직하다<br>
+</details><!-- 벡터 순회(Traversing a vector)-->
+
+<details><summary>벡터 확장(Growing a vector)</summary>
+ 벡터를 빈 상태(empty)로 시작한 뒤, 필요한 데이터를 읽거나 계산하면서 점차 원하는 크기로 확장(grow)하는 경우가 많습니다. 이때 핵심이 되는 연산은 바로 push_back()입니다. → 이 함수는 새로운 요소를 벡터의 끝에 추가합니다. → 추가된 요소는 벡터의 마지막 요소(last element)가 됩니다.
+
+```cpp
+vector<double> v;	// 텅빈 double형 v 백터, 요소가 없다. size = 0
+v.push_back(2.7);	// 요소 2.7을 맨 뒤인 v[0]에 더한다. size =1
+v.push_back(5.6);	// 요소 5.6을 맨 뒤인 v[1]에 더한다. size = 2
+```
+push_back() 호출 구문을 관찰해보면 이는 멤버 함수 호출(member function call)이라고 하며, push_back()은 vector(벡터)의 멤버 함수이므로 다음과 같은 점(dot) 표기법을 사용하여 호출해야 합니다:<br>
+멤버 함수 호출(member-function-call): 객체 이름(object-name) . 멤버 함수 이름(member-function-name)(인자 목록(argument-list))<br>
+벡터의 크기(size)는 vector(벡터)의 또 다른 멤버 함수인 size()를 호출함으로써 얻을 수 있습니다. 처음에 v.size()는 0이었으며, 두 번째 push_back() 호출 이후 v.size()는 2가 되었습니다.<br>
+
+</details><!-- 벡터 확장(Growing a vector) -->
+
 </details><!-- 벡터(vector) -->
 
 </details><!-- 문장(Statements) -->
