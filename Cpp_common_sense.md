@@ -1219,7 +1219,52 @@ int v4 = square("two"); // 오류: 인자 타입이 잘못됨; int형이 필요�
 function-definition: type-identifier function-identifier ( parameter-list ) function-body<br>
 즉, 반환 타입(type)이 먼저 나오고, 그 뒤에 함수 이름(identifier), 괄호 안에 매개변수 목록(parameter-list), 그리고 함수 본문(function-body)이 이어진다. 함수가 요구하는 인자 목록을 매개변수 목록(parameter list)이라 하며, 그 구성 요소를 매개변수(parameter) 또는 형식 인자(formal arguments)라고 한다. 매개변수 목록은 비어 있을 수도 있으며, 반환값이 필요하지 않은 경우에는 반환 타입으로 void(“없음”을 의미)를 지정한다. <br>
 
+<details><summary>왜 함수를 사용하는가? (Why bother with functions?) </summary>
+어떤 계산을 별도의 이름으로 분리하고자 할 때 함수를 정의한다. 그렇게 하는 이유는 다음과 같다:<br>
+계산을 논리적으로 분리할 수 있다.<br>
+계산에 이름을 붙임으로써 프로그램의 텍스트가 더 명확해진다.<br>
+프로그램 내 여러 위치에서 해당 함수를 재사용할 수 있다.<br>
+테스트가 쉬워진다.<br>
+왜 최초의 문제에서 단순히 ii 대신 square(i)를 사용했을까?<br>
+함수의 목적 중 하나는 복잡한 계산을 이름 있는 함수로 분리하여 코드의 단순화를 꾀하는 것이다.<br>
+
+</details><!-- 왜 함수를 사용하는가? (Why bother with functions?)  -->
+<details><summary>함수 선언(Function declarations)</summary>
+예를 들어:
+    
+```cpp
+int square(int x)
+```
+이 정의만으로도 다음과 같이 사용할 수 있다:
+
+```cpp
+int x = square(44);
+```
+
+C++에서는 이러한 정보를 전체 함수 정의와는 별도로 제공할 수 있는 방법을 제공한다. 이를 함수 선언(function declaration) 이라고 한다:<br>
+
+```cpp
+int square(int); // square 함수의 선언
+double sqrt(double); // sqrt 함수의 선언
+```
+세미콜론(;)으로 끝나는 점에 주목하라. 함수 선언에서는 대응되는 함수 정의와 달리 본문 대신 세미콜론을 사용한다:
+```cpp
+int square(int x) // square 함수의 정의
+{
+    return x * x;
+}
+```
+</details><!-- 함수 선언(Function declarations) -->
 </details><!-- 함수(Functions) -->
+
+<details><summary>벡터(vector)</summary>
+데이터를 저장하는 다양한 방법(데이터 컨테이너의 다양한 형태;)을 살펴보게 될 것이다. 여기서는 가장 단순하면서도 아마도 가장 유용한 데이터 저장 방식 중 하나인 벡터(vector) 를 소개한다.
+단순히 인덱스를 통해 접근할 수 있는 요소들의 순차적 집합이다. 예를 들어, 다음은 v라는 이름의 벡터이다:
+|5|7|9|4|6|8|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+v[0] = 5, v[1] = 7, v[2] = 9, v[3] = 4, v[4] = 6, v[5] = 8; <br>
+    
+</details><!-- 벡터(vector) -->
 
 </details><!-- 문장(Statements) -->
 </details><!-- Day 3 -->
