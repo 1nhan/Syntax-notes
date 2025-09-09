@@ -52,8 +52,8 @@ cpp관련 기본서이고, 프로그래밍을 접하는 사람들에게 반드�
 </details></details><br><details><summary><strong>2025-09-06 import std;</strong></summary>
  내 컴퓨터 개발환경에서 정상적으로 작동하지 않는다. 프로젝트 속성에서 언어 + 모듈 설정을 추가했음에도 작동하지 않아, 재설치 + 리붓 여러 방면에서 시도했지만 안되다가 우연히 #import를 한채로 std를 했던걸 발견했다. 한참 찾았는데.. 오히려 좋아.
 </details></details><br><details><summary><strong>2025-09-07 일요일</strong></summary> 
-</details></details><br><details><summary><strong>2025-09-08 </strong></summary> 
-</details></details><br><details><summary><strong>2025-09-08 </strong></summary> 
+</details></details><br><details><summary><strong>2025-09-08 학습시간</strong></summary>
+ 하루 8시간정도 CPP를 학습하고 있는데 순수하게 8시간이라고 말하기는 그런부분이 있지만 거의 8시간 정도 하는 것 같다. 좀 속도가 많이 늦지만 구석구석 꼼꼼하게 하는게 나중에 상속이나, 템플릿, 오퍼레이터를 이해하는데 좋은것 같다. CPP 몇번을 봤지만 이해가 안되는 부분도 상당히 있고 아는 것도 확실히 해두는게 좋겠다 싶다. 앞으로 삼국지 관련 게임을 좀 만들어보려고 한다. 원래 만드려고 했던 게임은 조금 더 구체화해볼 필요가 있다.
 </details></details><br><details><summary><strong>2025-09-09 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-10 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-11 </strong></summary> 
