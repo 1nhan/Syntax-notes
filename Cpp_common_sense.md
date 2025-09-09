@@ -821,7 +821,109 @@ I/O라는 약어는 입출력(input/output)을 의미합니다. 이 경우, 코�
  분할 정복(Divide-and-conquer): 큰 문제를 여러 개의 작은 문제로 나누어 해결하는 방식이다. 예를 들어, 사전을 구축해야 하는 경우, 그 작업을 세 단계로 나눌 수 있다: 데이터를 읽기, 데이터를 정렬하기, 데이터를 출력하기. 이렇게 나누어진 각 문제는 원래의 문제보다 훨씬 작고 다루기 쉬워진다.<br>
 </details><!-- 분할(break up) -->
 <details><summary>표현식(Expressions)</summary>
-    
+ 프로그램을 구성하는 가장 기본적인 단위는 표현식(expression)이다. 표현식은 여러 피연산자(operand)로부터 하나의 값을 계산한다. 가장 단순한 표현식은 리터럴(literal) 값 자체이며, <br>예를 들어 10, 'a', 3.14, "Norah" 등이 있다.<br>변수의 이름 또한 표현식이다. 변수는 그 이름이 붙은 객체(object)를 나타낸다.<br>
+변수의 이름 또한 표현식이다. 변수는 그 이름이 붙은 객체(object)를 나타낸다. 다음 예를 보자:
+
+```cpp
+int length = 20;     // 정수 리터럴을 사용한 초기화
+int width = 40;
+int area = length * width; // 곱셈 표현식
+```
+여기서 20과 40이라는 리터럴은 각각 length와 width 변수의 초기화에 사용됩니다. 그 다음, length와 width의 값을 곱하여 area를 계산합니다. 이때 length는 “length라는 이름이 붙은 객체에 저장된 값”을 의미하는 약칭(shorthand)입니다.
+<br>또 다른 예:
+
+```cpp
+length = 99; // length에 99를 대입
+```
+여기서 length는 대입문의 왼쪽 피연산자(left-hand operand)로 사용되며, “length라는 이름이 붙은 객체”를 의미합니다. 따라서 이 표현식은 다음과 같이 읽을 수 있습니다:<br>
+“99를 length라는 이름의 객체에 넣어라.”<br>
+우리는 length의 사용 위치에 따라 다음과 같이 구분합니다:<br>
+lvalue: 대입 또는 초기화의 왼쪽에서 사용될 때 → “length라는 이름의 객체”<br>
+rvalue: 대입 또는 초기화의 오른쪽에서 사용될 때 → “length라는 이름의 객체에 저장된 값”, 또는 간단히 “length의 값”
+<br>
+필요할 경우 괄호(parentheses)를 사용하여 표현식을 그룹화할 수 있다:
+
+```cpp
+int perimeter = (length + width) * 2; // 덧셈 후 곱셈
+```
+괄호 없이 작성하면 다음과 같이 해야 한다:
+
+```cpp
+int perimeter = length * 2 + width * 2;
+```
+이 방식은 번거롭고, 다음과 같은 실수를 저지를 수도 있다:
+
+```cpp
+int perimeter = length + width * 2; // length에 width*2를 더함
+```
+괄호 사용에 대한 첫 번째 규칙은 “의심스러우면 괄호를 사용하라”는 것이다. 
+
+<details><summary>상수 표현식(Constant Expressions)</summary>
+상수에는 의미 있는 이름(meaningful name)을 사용하는 것이 바람직합니다. 예: pi를 사용한 것처럼, 단순히 3.14159라고 쓰지 않았습니다. 또한, 이러한 상수를 실수로 변경하지 않도록 해야 합니다. 이를 위해 C++은 기호 상수(symbolic constant) 개념을 제공합니다. 즉, 초기화 후에는 값을 변경할 수 없는 이름이 붙은 객체(named object)입니다.<br>
+
+예:
+```cpp
+constexpr double pi = 3.14159;
+pi = 7;               // 오류: 상수에 대입 불가
+double c = 2 * pi * r; // OK: pi를 읽기만 함, 변경하지 않음
+```
+이러한 상수는 코드의 가독성(readability)을 유지하는 데 매우 유용합니다. 
+```cpp
+constexpr double pi = 3.14159265359;
+```
+우리는 대부분의 코드에서 리터럴(literal) 사용을 지양합니다.<br>
+<details><summary>매직 상수(magic constant)</summary>
+대부분의 코드에서 리터럴(literal) 사용을 지양합니다. (단, 0과 1처럼 매우 명백한 경우는 예외) 대신, 설명적인 이름을 가진 상수(constants with descriptive names)를 사용합니다. 정의되지 않은 위치에서 사용된 불명확한 리터럴(non-obvious literals)은 매직 상수(magic constant)라고 불리며, 이는 비판적으로 사용을 지양해야 할 표현입니다. 참고로, 299792458은 우주의 기본 상수 중 하나로, 진공에서의 빛의 속도(speed of light in vacuum)를 나타내며, 단위는 미터/초(m/s)입니다. 이 값을 즉시 알아보지 못했다면, 다른 코드에 숨겨진 리터럴들도 혼란과 지연(confusion and slowdown)을 초래할 수 있습니다. 매직 상수는 피하십시오.
+</details><!-- 매직 상수(magic constant) -->
+
+constexpr로 정의된 기호 상수(symbolic constant)는 컴파일 시간에 값이 알려져 있어야 합니다 → 상수 표현식(constant expression)
+예:
+```cpp
+constexpr int max = 100;
+int n;
+cin >> n;
+constexpr int c1 = max + 7; // OK: c1은 107
+constexpr int c2 = n + 7;   // 오류: n의 값은 컴파일 시점에 알 수 없음
+```
+만약 초기화 시점에는 값이 알려져 있지 않지만, 이후 절대 변경되지 않는 상수가 필요하다면, C++은 두 번째 형태의 상수를 제공합니다 → const
+예:
+```cpp
+int n;
+cin >> n;
+const int c3 = n; // OK: 초기화 후 변경되지 않음
+c3 = 7;           // 오류: c3는 const
+```
+이러한 const 변수(const variable)는 두 가지 이유로 매우 흔하게 사용됩니다:<br>
+C++98에는 constexpr이 없었기 때문에, const를 사용해야 했습니다.<br>
+컴파일 시간에는 값이 알려지지 않지만, 초기화 이후 변경되지 않는 변수는 그 자체로 매우 유용합니다.<br>
+</details><!-- 상수 표현식(Constant Expressions) -->
+<details><summary>연산자(operator)</summary>
+
+|Example|Name|Comment|
+|:---:|:---:|:---:|
+|lval=a|assignment|not to be confusedwith ==|
+|++lval|preincrement|increment and use the increment value|
+|--lval|predecrement|decremnet and use the decrement value|
+|!a|not|result bool|
+|-a|unary minus||
+|a*b|multiply||
+|a/b|divide||
+|a%b|modulo(reminder)|only for integer types|
+|a+b|add||
+|a-b|subtract||
+|out<<b|write b to out|where out is an ostream|
+|in>>b|read from in into b|where in is an istream|
+|lval*=a|compound assignment|lval=laval*a; also for /, *, +, -|
+|f(a)|function call|pass (a) to f as an argument|
+|f<t>(a)|function template call|pass (a) to f<t> as an argument|
+|[](a){s}|lambda expression|create a function object taking (a) as  an argument|
+
+
+
+
+
+
+</details><!-- 연산자(operator) -->
 </details><!-- 표현식(Expressions) -->
 
 </details>
