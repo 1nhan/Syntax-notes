@@ -915,7 +915,7 @@ C++98에는 constexpr이 없었기 때문에, const를 사용해야 했습니다
 |in>>b|read from in into b|where in is an istream|
 |lval*=a|compound assignment|lval=laval*a; also for /, *, +, -|
 |f(a)|function call|pass (a) to f as an argument|
-|f<t>(a)|function template call|pass (a) to f<t> as an argument|
+|f&lt;t>(a)|function template call|pass (a) to f<t> as an argument|
 |[](a){s}|lambda expression|create a function object taking (a) as  an argument|
 
 
