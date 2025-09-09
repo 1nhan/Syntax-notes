@@ -918,16 +918,194 @@ C++98에는 constexpr이 없었기 때문에, const를 사용해야 했습니다
 |f&lt;t>(a)|function template call|pass (a) to f<t> as an argument|
 |[](a){s}|lambda expression|create a function object taking (a) as  an argument|
 
-
-
-
-
-
+ lval은 lvalue의 약어로, 대입문의 왼쪽에 올 수 있는 값을 의미합니다. 즉, 연산자가 피연산자를 수정(modify)할 때 사용됩니다.<br>
+ 
+<details><summary>a &lt; b &lt; c라는 표현</summary>
+ a &lt; b &lt; c라는 표현은 실제로는 (a &lt; b) &lt; c로 해석됩니다. 즉, a &lt; b는 불리언 값(boolean value)인 true 또는 false를 반환하며, 그 결과는 다시 c와 비교됩니다.
+따라서 a &lt; b &lt; c는 true &lt; c 또는 false &lt; c와 동일하게 평가됩니다. 이 표현은 많은 사람이 “b가 a와 c 사이에 있는가?”라는 의미로 받아들이지만, 실제로는 그렇지 않으며, 그런 의미로 사용되는 것은 잘못된 해석입니다.
+결론적으로, a &lt; b &lt; c는 쓸모없는 표현(useless expression)입니다. 두 개의 비교 연산자(comparison operator)를 연속으로 사용하는 표현은 작성하지 마십시오. 다른 사람의 코드에서 이런 표현을 발견했다면, 오류일 가능성이 매우 높으므로 의심해보는 것이 좋습니다.
+</details><!-- a &lt; b &lt; c라는 표현 -->
 </details><!-- 연산자(operator) -->
+<details>연산의 표기법<summary></summary>
+증가 연산(increment)은 최소한 다음 세 가지 방식으로 표현할 수 있습니다:
+
+```cpp
+++a
+a += 1
+a = a + 1
+```
+어떤 표기법을 사용하는 것이 좋을까요? 왜일까요?<br>
+ ++a를 선호합니다. 그 이유는 이 방식이 증가시키고자 하는 의도(incrementing)를 가장 직접적으로 표현하기 때문입니다.
+++a는 “a를 증가시켜라”라는 의도 자체를 표현합니다. 반면, a = a + 1은 “a에 1을 더한 값을 다시 a에 저장하라”는 절차적 설명(how to do it)에 가깝습니다. 일반적으로, 프로그램에서 어떤 개념을 표현할 때는 의도를 더 직접적으로 표현하는 방식이 더 낫습니다. 그 결과는 더 간결하고(concise), 독자가 이해하기도 더 쉬워집니다.<br>
+</details><!-- 연산의 표기법 -->
 </details><!-- 표현식(Expressions) -->
 
-</details>
+<details><summary>문장(Statements)</summary>
+ 여러 값을 생성하고자 할 때는 어떻게 해야 할까? 어떤 작업을 여러 번 반복하고자 할 때는? 여러 선택지 중 하나를 선택하고자 할 때는? 입력을 받거나 출력을 하고자 할 때는? C++에서는 많은 프로그래밍 언어들과 마찬가지로 이러한 동작을 표현하기 위해 문장(statement)이라는 언어 구성 요소(language construct)를 사용한다.<br>
+문장으로 만들기 위해서는 끝에 세미콜론이 필요하다. 그렇다면 왜 세미콜론이 필요한가?
 
+```cpp
+a = b
+++c; // 문법 오류: 세미콜론 누락
+```
+세미콜론이 없으면 컴파일러는 우리가 a = b++; c;를 의미하는지, 아니면 a = b; ++c;를 의미하는지 알 수 없다. <br>
+
+표현식 문장은 대개 할당문(assignment), 입출력문(I/O statement), 또는 함수 호출(function call), 빈 문장(empty statement)가 있다. <br>
+```cpp
+if (x == 5);
+y = 3;
+```
+불행히도, 이는 C++에서 합법적인 구문이다. 이는 아무런 동작도 하지 않는 문장인 “빈 문장(empty statement)”이라 불린다. 
+
+<details><summary>선택 (Selection)</summary>
+C++에서는 선택을 if 문(if-statement) 또는 switch 문(switch-statement)을 사용하여 수행한다.
+<details><summary>if 문 (if-statements)</summary>
+가장 단순한 형태의 선택은 if 문이다.
+예를 들어:
+    
+```cpp
+int a = 0;
+int b = 0;
+cout << "Please enter two integers\n";
+cin >> a >> b;
+if (a < b) // 조건
+    cout << a << " is smaller than " << b << '\n'; // 첫 번째 대안 (조건이 참일 경우)
+else
+    cout << a << " is larger than or equal to " << b << '\n'; // 두 번째 대안 (조건이 거짓일 경우)
+```
+if 문은 두 가지 대안 중 하나를 선택한다. 조건이 참이면 첫 번째 문장이 실행되고, 그렇지 않으면 두 번째 문장이 실행된다.<br>
+
+ “신호등이 초록색이면 건너라” 그리고 “신호등이 빨간색이면 기다려라.” C++에서는 이를 다음과 같이 표현할 수 있다:
+```cpp
+if (traffic_light == green)
+    go();
+
+if (traffic_light == red)
+    wait();
+```
+
+if 문의 일반적인 형태는 다음과 같다:
+```cpp
+if (expression)
+    statement
+else
+    statement
+```
+
+즉, if 다음에 괄호로 둘러싸인 표현식이 오고, 그 뒤에 문장이 오며, else 다음에도 문장이 온다. 우리는 if 문을 else 부분에 다시 사용한 것이다:
+```cpp
+if (expression)
+    statement
+else if (expression)
+    statement
+else
+    statement
+```
+</details><!-- if 문 (if-statements) -->
+<details><summary> switch 문 기술적 사항(Switch technicalities)</summary>
+switch 문에 대한 기술적 제약 사항입니다:<br>
+switch에 사용할 수 있는 값은 반드시 정수형(integer), 문자형(char), 또는 열거형(enum)이어야 합니다. → 문자열(string)이나 부동소수점(floating-point) 값은 사용할 수 없습니다.<br>
+case 레이블에 사용되는 값은 반드시 상수 표현식(constant expression)이어야 합니다. → 변수는 사용할 수 없습니다.<br>
+동일한 값을 두 개의 case 레이블에 사용할 수 없습니다.<br>
+하나의 case에 여러 case 레이블을 사용할 수 있습니다.<br>
+각 case는 반드시 break로 종료해야 합니다. → 컴파일러가 이를 경고하지 않을 수도 있으므로 주의하십시오.<br>
+
+예시:
+```cpp
+cout << "Do you like fish?\n";
+string s;
+cin >> s;
+
+switch (s) { // 오류: switch 값은 정수형, 문자형, 열거형이어야 함
+case "no":
+    // ...
+    break;
+case "yes":
+    // ...
+    break;
+}
+```
+문자열(string)을 기준으로 선택하려면 if 문(if-statement) 또는 map 자료구조를 사용해야 합니다.<br>
+
+switch 문은 상수 집합에 대한 비교를 최적화된 코드로 생성합니다. → 많은 상수와 비교할 때는 if 문보다 더 효율적인 코드가 생성됩니다.<br>
+하지만 이를 위해서는 다음 조건이 충족되어야 합니다:<br>
+case 레이블의 값은 상수이며 서로 달라야 함(distinct and constant)<br>
+예:
+```cpp
+int y = 'y'; // 문제가 될 수 있음
+constexpr char n = 'n';
+
+cout << "Do you like fish?\n";
+char a = 0;
+cin >> a;
+
+switch (a) {
+case n:
+    // ...
+    break;
+case y: // 오류: 변수는 case 레이블에 사용할 수 없음
+    // ...
+    break;
+case 'n': // 오류: 중복된 case 레이블 (n의 값은 'n')
+    // ...
+    break;
+default:
+    // ...
+    break;
+}
+```
+같은 동작을 여러 값에 대해 반복하고 싶을 때, 각 case마다 문장을 반복하는 것은 지루하고 비효율적입니다.
+이럴 때는 여러 case 레이블을 하나의 문장에 연결할 수 있습니다:
+```cpp
+cout << "Please enter a digit\n";
+char a = 0;
+cin >> a;
+
+switch (a) {
+case '0': case '2': case '4': case '6': case '8':
+    cout << "is even\n";
+    break;
+case '1': case '3': case '5': case '7': case '9':
+    cout << "is odd\n";
+    break;
+default:
+    cout << "is not a digit\n";
+    break;
+}
+
+switch 문에서 가장 흔한 오류는 각 case를 break로 종료하는 것을 잊는 것입니다.
+예:
+```cpp
+switch (unit) {
+case 'i':
+    cout << length << "in == " << length * cm_per_inch << "cm\n";
+case 'c':
+    cout << length << "cm == " << length / cm_per_inch << "in\n";
+}
+```
+이 코드는 컴파일러가 오류 없이 받아들입니다. 하지만 'i'에 해당하는 case가 끝나면 자동으로 다음 case인 'c'로 넘어갑니다(fall through).
+
+드물게, 의도적으로 다음 case로 넘어가고 싶을 때는 그 의도를 명시적으로 표현해야 합니다.
+예:
+```cpp
+switch (check) {
+case checked:
+    if (val < 0)
+        val = 0;
+    [[fallthrough]];
+case unchecked:
+    // ... val 사용 ...
+    break;
+}
+```
+[[fallthrough]]는 의도를 명확히 표현하는 속성(attribute)입니다.
+</details><!--  switch 문 기술적 사항(Switch technicalities) -->
+</details><!-- 선택 (Selection) -->
+<details><summary>반복(Iteration)</summary>
+
+</details><!-- 반복(Iteration) -->
+</details><!-- 문장(Statements) -->
+</details><!-- Day 3 -->
 
 > [!TIP]
 > 프로그래밍 재사용은 매우 흔한 기법입니다.새로운 문제를 해결할 때, 유사한 문제에 대한 기존 해결책을 찾아 수정하여 사용합니다. 정말 필요한 경우가 아니라면 처음부터 새로 시작하지 마세요. 기존 프로그램을 기반으로 수정하는 방식은 시간 절약에 매우 효과적이며, 원래 프로그램에 들인 노력의 혜택을 그대로 이어받을 수 있습니다.
