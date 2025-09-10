@@ -340,39 +340,501 @@ int main(void)
 ```
 
  </details>
-<details><summary></summary>
+<details><summary>문자열을 입력받고, 입력된 각 문자에 대해 해당 문자와 그 문자의 정수 값을 한 줄씩 출력하는 프로그램을 작성하세요.
+</summary>
+
+```cpp
+import std;
+using namespace std;
+
+int main(void)
+{
+	string words;
+	cin >> words;
+	for (char x : words)
+		cout << x << ' ' << (int)x << '\n';
+
+	return 0;
+}
+```
+ </details>
+<details><summary>수열의 중앙값(median)을 “수열에서 그 앞에 오는 요소의 개수와 뒤에 오는 요소의 개수가 정확히 같은 값”으로 정의한다면, 
+
+```cpp
+int main()
+// 평균 및 중앙값 계산
+{
+    vector<double> temps;
+    for (double temp; cin >> temp;)
+        temps.push_back(temp);
+
+    // 평균 계산
+    double sum = 0;
+    for (double x : temps)
+        sum += x;
+    cout << "Average temperature: " << sum / temps.size() << '\n';
+
+    // 중앙값 계산
+    ranges::sort(temps); // 정렬
+    cout << "Median temperature: " << temps[temps.size() / 2] << '\n';
+}
+```
+의 프로그램을 수정하여 항상 중앙값을 출력하도록 하세요. 힌트: 중앙값은 수열의 요소일 필요는 없습니다.
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>double 값들의 수열을 벡터(vector)로 입력받으세요. 각 값은 도시 간 거리라고 생각합니다. 전체 거리(모든 거리의 합)를 계산하고 출력하세요. 인접한 도시 간의 최소 거리와 최대 거리도 출력하세요. 인접한 도시 간 평균 거리도 계산하여 출력하세요.
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>숫자 맞히기 게임 프로그램을 작성하세요. 사용자가 1부터 100 사이의 숫자를 생각하면, 프로그램이 질문을 통해 그 숫자를 알아내야 합니다. 예: “당신이 생각한 숫자는 50보다 작습니까?” 프로그램은 최대 7번의 질문으로 숫자를 알아내야 합니다.
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>아주 간단한 계산기 프로그램을 작성하세요. 덧셈, 뺄셈, 곱셈, 나눗셈의 네 가지 기본 연산을 두 개의 입력값에 대해 수행할 수 있어야 합니다. 사용자에게 두 개의 double 값과 연산을 나타내는 문자 하나를 입력받도록 하세요. 예: 입력값이 35.6, 24.1, '+'이면 출력은 “The sum of 35.6 and 24.1 is 59.7”<br> +문제“미니 계산기”를 수정하여, 한 자리 숫자를 숫자 형태 또는 영어 단어 형태로 입력받을 수 있도록 하세요.
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>문자열 "zero"부터 "nine"까지 10개의 값을 담은 벡터를 만드세요. 이 벡터를 사용하여 숫자를 해당하는 영어 단어로 변환하는 프로그램을 작성하세요. 예: 입력 7 → 출력 "seven" 같은 입력 루프를 사용하여 영어 단어를 숫자로 변환하는 기능도 추가하세요. 예: 입력 "seven" → 출력 7
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>체스를 발명한 사람이 황제에게 보상을 요구한 고전 이야기가 있습니다. 첫 번째 칸에는 쌀 한 톨, 두 번째에는 두 톨, 세 번째에는 네 톨… 이렇게 64칸까지 매번 두 배로 늘어납니다. 이 이야기를 바탕으로, 다음을 계산하는 프로그램을 작성하세요:<br>
+최소 1,000 톨을 받기 위해 필요한 칸 수
+<br>최소 1,000,000 톨을 받기 위해 필요한 칸 수
+<br>최소 1,000,000,000 톨을 받기 위해 필요한 칸 수 반복문을 사용하고, 현재 칸 번호, 해당 칸의 쌀 수, 누적 쌀 수를 추적하는 변수를 사용하세요. 각 반복마다 변수 값을 출력하여 진행 상황을 확인하세요.
+<br>또한 발명자가 요구한 총 쌀 수를 계산해보세요. 이 수는 너무 커서 int나 double로 정확히 표현할 수 없습니다. 값이 너무 커졌을 때 int와 double에서 어떤 일이 발생하는지 관찰하세요.
+int로 정확히 계산 가능한 최대 칸 수는?
+double로 근사 계산 가능한 최대 칸 수는?
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>“가위, 바위, 보” 게임을 구현하세요. 게임을 모른다면 웹에서 검색해보세요. 프로그래머에게는 조사(research)도 중요한 작업입니다. 이 문제는 switch 문을 사용하여 해결하세요. 컴퓨터는 무작위로 가위, 바위, 보 중 하나를 선택해야 합니다. 진짜 난수는 어렵기 때문에, 미리 값들을 담은 벡터를 만들어 사용하세요. 벡터를 프로그램에 고정하면 항상 같은 게임이 되므로, 사용자에게 값을 입력받는 방식도 고려하세요. 사용자가 컴퓨터의 다음 선택을 예측하기 어렵도록 다양한 변형을 시도해보세요.
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>1부터 100 사이의 모든 소수(prime number)를 찾는 프로그램을 작성하세요. 방법: 소수인지 확인하는 함수를 작성하고, 소수들을 담은 벡터를 사용하여 작은 소수로 나눠지는지 검사하세요. 예: primes[0]==2, primes[1]==3, primes[2]==5 등 1부터 100까지 반복하면서 소수인지 확인하고, 소수는 벡터에 저장하세요. 저장된 소수를 출력하는 루프도 작성하세요. 결과를 기존 소수 목록과 비교하여 검증해보세요. 참고: 2는 첫 번째 소수입니다.
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>1부터 100 사이의 모든 소수를 찾는 프로그램을 작성하세요. 고전적인 방법인 “에라토스테네스의 체(Sieve of Eratosthenes)”를 사용하세요. 이 방법을 모른다면 웹에서 검색해보세요. 해당 방법을 사용하여 프로그램을 작성하세요.
+</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>입력값 n을 받아, 처음 n개의 소수를 찾는 프로그램을 작성하세요.</summary>
  
  </details>
-<details><summary></summary>
+<details><summary>수열에서 가장 많이 등장하는 값은 최빈값(mode)이라고 합니다. 양의 정수 집합에서 최빈값을 찾는 프로그램을 작성하세요.
+</summary>
  
  </details>
-<details><summary></summary>
+
+<details><summary>수열에서 가장 많이 등장하는 값은 최빈값(mode)이라고 합니다. 양의 정수 집합에서 최빈값을 찾는 프로그램을 작성하세요.
+</summary>
+ 
+ </details>
+<details><summary>이차방정식(quadratic equation)을 푸는 프로그램을 작성하세요. 형태: ax² + bx + c = 0 이 방정식을 푸는 공식을 모른다면 조사해보세요. 문제 해결 방법을 알아내는 것은 프로그래머가 컴퓨터에게 문제 해결을 가르치기 위한 필수 과정입니다. 사용자 입력값 a, b, c는 double로 처리하세요. 해는 두 개이므로 x₁, x₂를 모두 출력하세요.
+
+</summary>
+ 
+ </details>
+<details><summary>이름과 값 쌍(name-value pair)을 입력받는 프로그램을 작성하세요. 예: Joe 17, Barbara 22 각 이름은 names 벡터에, 각 값은 scores 벡터에 같은 위치로 저장하세요. 예: names[7] == "Joe"이면 scores[7] == 17 입력 종료 조건: NoName 0 이름이 중복되면 오류 메시지를 출력하고 종료하세요. 모든 (이름, 점수) 쌍을 한 줄씩 출력하세요.<br>프로그램을 수정하여, 이름과 값 쌍을 입력한 후 루프를 통해 이름을 입력하면 해당 점수를 출력하거나 "name not found"를 출력하세요.<br>프로그램을 수정하여, 이름과 값 쌍을 입력한 후 루프를 통해 점수를 입력하면 해당 점수를 가진 모든 이름을 출력하거나 "score not found"를 출력하세요.
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
+ 
+ </details>
+<details><summary>
+</summary>
  
  </details>
