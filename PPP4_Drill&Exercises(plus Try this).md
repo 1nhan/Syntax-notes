@@ -275,16 +275,16 @@ int main(void)
 }
 ```
  </details><!-- Ex2_11 -->
-<details><summary>[1]while 루프를 사용해 두 개의 int를 입력받고 출력.
-[2]더 작은 값과 더 큰 값을 각각 출력.
-[3]두 값이 같을 경우 "the numbers are equal" 출력
-[4]int 대신 double 사용
-[5]두 값의 차이가 1.0 / 100보다 작으면 "numbers are almost equal" 출력
-[6]한 번에 하나의 double 입력.지금까지 본 가장 작은 / 큰 값 추적 및 출력
-[7]단위(unit)를 함께 입력 : cm, m, in, ft 허용.변환 기준 : 1m = 100cm, 1in = 2.54cm, 1ft = 12in
-[8]단위가 없거나 잘못된 단위(y, yard, meter, km, gallons)는 거부
-[9]입력된 값의 합계, 최소값, 최대값, 개수 출력.합계는 meter 기준
-[10]입력된 모든 값을 meter로 변환하여 vector에 저장
+<details><summary>Drill<br>[1]while 루프를 사용해 두 개의 int를 입력받고 출력.<br>
+[2]더 작은 값과 더 큰 값을 각각 출력.<br>
+[3]두 값이 같을 경우 "the numbers are equal" 출력<br>
+[4]int 대신 double 사용<br>
+[5]두 값의 차이가 1.0 / 100보다 작으면 "numbers are almost equal" 출력<br>
+[6]한 번에 하나의 double 입력.지금까지 본 가장 작은 / 큰 값 추적 및 출력<br>
+[7]단위(unit)를 함께 입력 : cm, m, in, ft 허용.변환 기준 : 1m = 100cm, 1in = 2.54cm, 1ft = 12in<br>
+[8]단위가 없거나 잘못된 단위(y, yard, meter, km, gallons)는 거부<br>
+[9]입력된 값의 합계, 최소값, 최대값, 개수 출력.합계는 meter 기준<br>
+[10]입력된 모든 값을 meter로 변환하여 vector에 저장<br>
 [11]벡터를 정렬한 후 값들을 출력(오름차순)</summary>
 
 ```cpp
