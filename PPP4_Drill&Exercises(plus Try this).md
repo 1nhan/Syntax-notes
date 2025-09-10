@@ -381,11 +381,78 @@ int main()
 ```
 의 프로그램을 수정하여 항상 중앙값을 출력하도록 하세요. 힌트: 중앙값은 수열의 요소일 필요는 없습니다.
 </summary>
- 
+
+```cpp
+#include <algorithm>
+import std;
+using namespace std;
+
+int main()
+// 평균 및 중앙값 계산
+{
+    vector<double> temps;
+    for (double temp; cin >> temp;)
+        temps.push_back(temp);
+
+    // 평균 계산
+    double sum = 0;
+    for (double x : temps)
+        sum += x;
+    cout << "Average temperature: " << sum / temps.size() << '\n';
+
+    // 중앙값 계산
+    ranges::sort(temps); // 정렬
+    if (temps.size() % 2 == 1) cout << "Median temperature: " << temps[temps.size() / 2] << '\n';
+    else cout << "Median temperature: " << (temps[((temps.size() - 1) / 2)] + temps[(temps.size() / 2)])/2 << '\n';
+}
+``` 
  </details>
 <details><summary>double 값들의 수열을 벡터(vector)로 입력받으세요. 각 값은 도시 간 거리라고 생각합니다. 전체 거리(모든 거리의 합)를 계산하고 출력하세요. 인접한 도시 간의 최소 거리와 최대 거리도 출력하세요. 인접한 도시 간 평균 거리도 계산하여 출력하세요.
 </summary>
- 
+
+```cpp
+#include <algorithm>
+import std;
+using namespace std;
+double my_abs(double val);
+
+int main(void)
+{
+	vector<double> city;
+	double sum = 0;
+	/*double 값들의 수열을 벡터(vector)로 입력*/
+	for (double distance; cin >> distance;) //각 값은 도시 간 거리
+	{
+		if (distance > 0)city.push_back(distance);
+		else cout << "reject" << '\n';
+	}
+
+	/*전체 거리(모든 거리의 합)를 계산*/
+	for (double x : city) sum += x;
+	cout << "모든 거리의 합 : " << sum << '\n';
+
+
+	/*거리 계산시 -산출시 절대값*/
+	
+	// 인접한 도시 간의 최소 거리와 최대 거리도 출력하세요.
+	double min_distance = my_abs(city[1] - city[0]),
+		max_distance = min_distance;
+	for (int x = 0; x < city.size() - 1; ++x)
+	{
+		if(min_distance > my_abs(city[x + 1] - city[x])) min_distance = my_abs(city[x + 1] - city[x]);
+		else if(max_distance < my_abs(city[x + 1] - city[x])) max_distance = my_abs(city[x + 1] - city[x]);
+	}
+	cout << "최소 거리 : " << min_distance << '\n';
+	cout << "최대 거리 : " << max_distance<< '\n';
+	// 인접한 도시 간 평균 거리도 계산하여 출력하세요.
+	cout << "평균 거리 : " << sum / city.size()-1 << '\n';
+}
+double my_abs(double val)
+{
+	return val > 0 ? val : -val;
+}
+```
+
  </details>
 <details><summary>숫자 맞히기 게임 프로그램을 작성하세요. 사용자가 1부터 100 사이의 숫자를 생각하면, 프로그램이 질문을 통해 그 숫자를 알아내야 합니다. 예: “당신이 생각한 숫자는 50보다 작습니까?” 프로그램은 최대 7번의 질문으로 숫자를 알아내야 합니다.
 </summary>
@@ -393,7 +460,31 @@ int main()
  </details>
 <details><summary>아주 간단한 계산기 프로그램을 작성하세요. 덧셈, 뺄셈, 곱셈, 나눗셈의 네 가지 기본 연산을 두 개의 입력값에 대해 수행할 수 있어야 합니다. 사용자에게 두 개의 double 값과 연산을 나타내는 문자 하나를 입력받도록 하세요. 예: 입력값이 35.6, 24.1, '+'이면 출력은 “The sum of 35.6 and 24.1 is 59.7”<br> +문제“미니 계산기”를 수정하여, 한 자리 숫자를 숫자 형태 또는 영어 단어 형태로 입력받을 수 있도록 하세요.
 </summary>
- 
+
+```cpp
+int main(void)
+{
+	double val1 = -1, val2 = -1;
+	char op = ' ';
+	
+	while (cin >> val1 >> val2 >> op)
+	{
+		if (op == '+')cout << "The sum of " << val1 << " and " << val2 << " is " << val1 + val2 << '\n';
+		else if (op == '-')cout << "The sum of " << val1 << " and " << val2 << " is " << val1 - val2 << '\n';
+		else if (op == '*')cout << "The sum of " << val1 << " and " << val2 << " is " << val1 * val2 << '\n';
+		else if (op == '/')cout << "The sum of " << val1 << " and " << val2 << " is " << val1 / val2 << '\n';
+		else cout << "Reject" << '\n';
+	}
+
+	return 0;
+}
+```
+“미니 계산기”를 수정하여, 한 자리 숫자를 숫자 형태 또는 영어 단어 형태로 입력받을 수 있도록 하세요.
+
+```cpp
+아직
+```
+
  </details>
 <details><summary>문자열 "zero"부터 "nine"까지 10개의 값을 담은 벡터를 만드세요. 이 벡터를 사용하여 숫자를 해당하는 영어 단어로 변환하는 프로그램을 작성하세요. 예: 입력 7 → 출력 "seven" 같은 입력 루프를 사용하여 영어 단어를 숫자로 변환하는 기능도 추가하세요. 예: 입력 "seven" → 출력 7
 </summary>
