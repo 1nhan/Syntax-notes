@@ -762,12 +762,12 @@ auto (자동 타입 유추)  <br>
 </details><!-- Day 2 /details -->
 <details><summary>Day 3</summary>
     
-다음과 같은 주제를 설명합니다:   <br>
-피연산자(operand) 집합으로부터 값을 계산하는 방법 (→ 표현식(expression))   <br>
-여러 대안 중에서 동작을 선택하는 방법 (→ 선택(selection))   <br>
-값의 시퀀스에 대해 계산을 반복하는 방법 (→ 반복(iteration))   <br>
-또한, 특정 계산을 이름을 붙여 별도로 정의하는 방법도 소개합니다 (→ 함수(function)).   <br>
-값의 시퀀스(sequence of values)를 저장하는 vector 타입도 소개합니다.   <br>
+>다음과 같은 주제를 설명합니다:   <br>
+>피연산자(operand) 집합으로부터 값을 계산하는 방법 (→ 표현식(expression))   <br>
+>여러 대안 중에서 동작을 선택하는 방법 (→ 선택(selection))   <br>
+>값의 시퀀스에 대해 계산을 반복하는 방법 (→ 반복(iteration))   <br>
+>또한, 특정 계산을 이름을 붙여 별도로 정의하는 방법도 소개합니다 (→ 함수(function)).   <br>
+>값의 시퀀스(sequence of values)를 저장하는 vector 타입도 소개합니다.   <br>
 
 프로그램이 수행하는 모든 일은 계산(compute)입니다. 즉, 프로그램은 입력(input)을 받아 출력(output)을 생성합니다.   <br>
 
