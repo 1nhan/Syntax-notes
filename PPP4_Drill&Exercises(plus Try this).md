@@ -456,7 +456,44 @@ double my_abs(double val)
  </details>
 <details><summary>숫자 맞히기 게임 프로그램을 작성하세요. 사용자가 1부터 100 사이의 숫자를 생각하면, 프로그램이 질문을 통해 그 숫자를 알아내야 합니다. 예: “당신이 생각한 숫자는 50보다 작습니까?” 프로그램은 최대 7번의 질문으로 숫자를 알아내야 합니다.
 </summary>
- 
+
+```cpp
+import std;
+using namespace std;
+
+int main(void)
+{
+	int low = 1;
+	int high = 100;
+	int mid = (low + high) / 2;
+	char answer = ' ';
+	/*프롬프트*/
+	cout << "1부터 100 사이의 숫자를 생각해주세요... 제가 맞춰볼게요." << '\n';
+
+	for (int count = 7; count > 0; --count)
+	{
+		mid = (high + low) / 2;
+		cout << "당신이 생각한 숫자는" << mid << "보다 작습니까 ?(press y/n) " << '\n';
+		cin >> answer;
+		if (answer == 'y' || answer == 'Y')
+		{
+			cout << "남은 기회: " << count - 1 << '\n';
+			high = mid - 1;
+		}
+		else if (answer == 'n' || answer == 'N')
+		{
+			cout << "남은 기회: " << count - 1 << '\n';
+			low = mid;
+		}
+		else { cout << "again press y/n" << '\n'; count++; }
+
+		if (low == high) { cout << "정답! " << low<< '\n'; break; }
+		else if (low > high ) { cout << "정답! " << mid << '\n'; break; }
+	}
+	return 0;
+}
+```
+정답부분이 출력이 안되는데.. 이유를 잘 모르겠다. 일단 보류
  </details>
 <details><summary>아주 간단한 계산기 프로그램을 작성하세요. 덧셈, 뺄셈, 곱셈, 나눗셈의 네 가지 기본 연산을 두 개의 입력값에 대해 수행할 수 있어야 합니다. 사용자에게 두 개의 double 값과 연산을 나타내는 문자 하나를 입력받도록 하세요. 예: 입력값이 35.6, 24.1, '+'이면 출력은 “The sum of 35.6 and 24.1 is 59.7”<br> +문제“미니 계산기”를 수정하여, 한 자리 숫자를 숫자 형태 또는 영어 단어 형태로 입력받을 수 있도록 하세요.
 </summary>
@@ -488,6 +525,30 @@ int main(void)
  </details>
 <details><summary>문자열 "zero"부터 "nine"까지 10개의 값을 담은 벡터를 만드세요. 이 벡터를 사용하여 숫자를 해당하는 영어 단어로 변환하는 프로그램을 작성하세요. 예: 입력 7 → 출력 "seven" 같은 입력 루프를 사용하여 영어 단어를 숫자로 변환하는 기능도 추가하세요. 예: 입력 "seven" → 출력 7
 </summary>
+
+```cpp
+import std;
+using namespace std;
+
+int main(void)
+{
+	vector<string>eng_numb =
+	{ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+	int val = -1;
+	string eng_val = " ";
+	while(cin >> val >> eng_val)
+	{
+
+		if(val>=0&&val<10)
+		{
+			cout<<eng_numb[val]<<'\n';
+		}
+		for (int x = 0; x < eng_numb.size(); ++x) if (eng_val == eng_numb[x])cout << x << '\n';
+	}
+
+	return 0;
+}
+```
  
  </details>
 <details><summary>체스를 발명한 사람이 황제에게 보상을 요구한 고전 이야기가 있습니다. 첫 번째 칸에는 쌀 한 톨, 두 번째에는 두 톨, 세 번째에는 네 톨… 이렇게 64칸까지 매번 두 배로 늘어납니다. 이 이야기를 바탕으로, 다음을 계산하는 프로그램을 작성하세요:<br>
