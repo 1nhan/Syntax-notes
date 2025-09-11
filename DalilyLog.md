@@ -56,7 +56,8 @@ cpp관련 기본서이고, 프로그래밍을 접하는 사람들에게 반드�
  하루 8시간정도 CPP를 학습하고 있는데 순수하게 8시간이라고 말하기는 그런부분이 있지만 거의 8시간 정도 하는 것 같다. 좀 속도가 많이 늦지만 구석구석 꼼꼼하게 하는게 나중에 상속이나, 템플릿, 오퍼레이터를 이해하는데 좋은것 같다. CPP 몇번을 봤지만 이해가 안되는 부분도 상당히 있고 아는 것도 확실히 해두는게 좋겠다 싶다. 앞으로 삼국지 관련 게임을 좀 만들어보려고 한다. 원래 만드려고 했던 게임은 조금 더 구체화해볼 필요가 있다.
 </details></details><br><details><summary><strong>2025-09-09 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-10 </strong></summary> 
-</details></details><br><details><summary><strong>2025-09-11 </strong></summary> 
+</details></details><br><details><summary><strong>2025-09-11 산의 냄새</strong></summary>
+ 새벽 산을 다니는게 취미지만 오늘따라 산에서 쓰레기냄새가 바람을 타고 올라와 산행을 방해했다. 아주 고약한 냄새였는데 멀미가 나서 어지러웠다.
 </details></details><br><details><summary><strong>2025-09-12 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-13 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-14 </strong></summary> 
