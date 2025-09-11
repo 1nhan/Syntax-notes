@@ -255,7 +255,7 @@ Inhan는 정수가 아니므로 age에 저장되지 않습니다.<br>
 즉, 입력이 타입에 맞지 않으면 해당 변수는 값을 받지 못하고 초기값을 유지하게 됩니다.<br>
 </details>
 
-<details><summary>>>를 사용한 문자열 입력</summary>
+<details><summary> >>를 사용한 문자열 입력</summary>
 >>를 사용한 문자열 입력은 기본적으로 공백에서 종료되므로 한 단어만 읽습니다. 하지만 때로는 여러 단어를 입력받고 싶을 때도 있습니다. 이를 위한 방법은 여러 가지가 있으며, 그 중 하나는 다음과 같습니다:
 
 ```cpp
@@ -926,7 +926,7 @@ C++98에는 constexpr이 없었기 때문에, const를 사용해야 했습니다
 결론적으로, a &lt; b &lt; c는 쓸모없는 표현(useless expression)입니다. 두 개의 비교 연산자(comparison operator)를 연속으로 사용하는 표현은 작성하지 마십시오. 다른 사람의 코드에서 이런 표현을 발견했다면, 오류일 가능성이 매우 높으므로 의심해보는 것이 좋습니다.
 </details><!-- a &lt; b &lt; c라는 표현 -->
 </details><!-- 연산자(operator) -->
-<details>연산의 표기법<summary></summary>
+<details><summary>연산의 표기법</summary>
 증가 연산(increment)은 최소한 다음 세 가지 방식으로 표현할 수 있습니다:
 
 ```cpp
