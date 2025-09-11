@@ -598,7 +598,39 @@ double로 근사 계산 가능한 최대 칸 수는 ?	답: 40<br>
  </details>
 <details><summary>“가위, 바위, 보” 게임을 구현하세요. 게임을 모른다면 웹에서 검색해보세요. 프로그래머에게는 조사(research)도 중요한 작업입니다. 이 문제는 switch 문을 사용하여 해결하세요. 컴퓨터는 무작위로 가위, 바위, 보 중 하나를 선택해야 합니다. 진짜 난수는 어렵기 때문에, 미리 값들을 담은 벡터를 만들어 사용하세요. 벡터를 프로그램에 고정하면 항상 같은 게임이 되므로, 사용자에게 값을 입력받는 방식도 고려하세요. 사용자가 컴퓨터의 다음 선택을 예측하기 어렵도록 다양한 변형을 시도해보세요.
 </summary>
- 
+
+미완성
+```cpp 
+import std;
+using namespace std;
+
+int main(void)
+{
+	vector<string>rpsgame = { "가위","바위","보" };
+	vector<int>order_game = { 1,0,2,2,2,1,1,0,0,0,1,0,2,2,1 };
+	vector<int>shuffled1,shuffled2;
+	int user_input = -1;
+
+	/*가위바위보 게임*/
+	while (cin >> user_input)
+	{
+		switch (user_input)
+		{
+			case 0:	if (		rpsgame[order_game[x]] == 0)cout << "무승부" << '\n';
+					else if (	rpsgame[order_game[x]] == 1)cout << "패배~" << '\n';
+					else if (	rpsgame[order_game[x]] == 2)cout << "승리!" << '\n';
+			case 1:	if (		rpsgame[order_game[x]] == 0)cout << "패배~" << '\n';
+					else if (	rpsgame[order_game[x]] == 1)cout << "무승부" << '\n';
+					else if (	rpsgame[order_game[x]] == 2)cout << "승리!" << '\n';
+
+			case 2:	if		(rpsgame[order_game[x]] == 0)cout << "승리!" << '\n';
+					else if (rpsgame[order_game[x]] == 1)cout << "패배~" << '\n';
+					else if (rpsgame[order_game[x]] == 2)cout << "무승부" << '\n';;
+		}
+	}
+	return 0;
+}
+```
  </details>
 <details><summary>1부터 100 사이의 모든 소수(prime number)를 찾는 프로그램을 작성하세요. 방법: 소수인지 확인하는 함수를 작성하고, 소수들을 담은 벡터를 사용하여 작은 소수로 나눠지는지 검사하세요. 예: primes[0]==2, primes[1]==3, primes[2]==5 등 1부터 100까지 반복하면서 소수인지 확인하고, 소수는 벡터에 저장하세요. 저장된 소수를 출력하는 루프도 작성하세요. 결과를 기존 소수 목록과 비교하여 검증해보세요. 참고: 2는 첫 번째 소수입니다.
 </summary>
@@ -626,7 +658,27 @@ int main(void)
  </details>
 <details><summary>1부터 100 사이의 모든 소수를 찾는 프로그램을 작성하세요. 고전적인 방법인 “에라토스테네스의 체(Sieve of Eratosthenes)”를 사용하세요. 이 방법을 모른다면 웹에서 검색해보세요. 해당 방법을 사용하여 프로그램을 작성하세요.
 </summary>
- 
+수학적 사고가 저처럼 없으시면 난이도가 상당한 문제
+
+```cpp
+import std;
+using namespace std;
+
+int main(void)
+{
+	int num = 100;
+	vector<bool>isprime(num + 1, true);
+
+	for (int x = 2; x * x <= num; ++x)
+		if (isprime[x])
+			for (int y = x * x; y <= num; y += x)
+				isprime[y] = false;
+	for (int x = 2; x <= num; ++x)
+		if (isprime[x]) cout << x << '\n';
+	return 0;
+}
+```
+
  </details>
 <details><summary>입력값 n을 받아, 처음 n개의 소수를 찾는 프로그램을 작성하세요.</summary>
  
