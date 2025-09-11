@@ -559,6 +559,41 @@ int main(void)
 int로 정확히 계산 가능한 최대 칸 수는?
 double로 근사 계산 가능한 최대 칸 수는?
 </summary>
+
+```cpp
+import std;
+using namespace std;
+
+int main(void)
+{
+	int val_int = 1;
+	int total_int = val_int;
+	double val_double = 1;
+	double total_double = val_double;
+
+	for (int x = 1; x <= 40; ++x)
+	{
+		if (total_int > 1000) cout << "1000톨을 넘은 칸(int): " <<				x << '\n';
+		if (total_int > 1000000) cout << "1000000톨을 넘은 칸(int): " <<			x << '\n';
+		if (total_int > 1000000000) cout << "1000000000톨을 넘은 칸(int): " <<	x << '\n';
+		if (total_double > 1000) cout << "1000톨을 넘은 칸(double): " <<				x << '\n';
+		if (total_double > 1000000) cout << "1000000톨을 넘은 칸(double): " <<		x << '\n';
+		if (total_double > 1000000000) cout << "1000000000톨을 넘은 칸(double): " <<	x << '\n';
+		
+		val_int *= 2;
+		val_double *= 2;
+
+		total_int += val_int;
+		total_double += val_double;
+		cout << "현재 방칸의 쌀의 갯수(int): " << val_int << '\n';
+		cout << "현재 방칸의 쌀의 갯수(double): " << val_double << '\n';
+	}
+	return 0;
+}
+```
+값이 너무 커졌을 때 int와 double에서 어떤 일이 발생하는지 관찰하세요. int는 음수로 출력한 뒤 0으로 출력이 되는 현상이 일어난다. double의 경우 반복문이 40칸일때 정지가 되고 41칸부터는 출력되지 않았다.
+int로 정확히 계산 가능한 최대 칸 수는 ?	답: 30<br>
+double로 근사 계산 가능한 최대 칸 수는 ?	답: 40<br>
  
  </details>
 <details><summary>“가위, 바위, 보” 게임을 구현하세요. 게임을 모른다면 웹에서 검색해보세요. 프로그래머에게는 조사(research)도 중요한 작업입니다. 이 문제는 switch 문을 사용하여 해결하세요. 컴퓨터는 무작위로 가위, 바위, 보 중 하나를 선택해야 합니다. 진짜 난수는 어렵기 때문에, 미리 값들을 담은 벡터를 만들어 사용하세요. 벡터를 프로그램에 고정하면 항상 같은 게임이 되므로, 사용자에게 값을 입력받는 방식도 고려하세요. 사용자가 컴퓨터의 다음 선택을 예측하기 어렵도록 다양한 변형을 시도해보세요.
@@ -567,6 +602,26 @@ double로 근사 계산 가능한 최대 칸 수는?
  </details>
 <details><summary>1부터 100 사이의 모든 소수(prime number)를 찾는 프로그램을 작성하세요. 방법: 소수인지 확인하는 함수를 작성하고, 소수들을 담은 벡터를 사용하여 작은 소수로 나눠지는지 검사하세요. 예: primes[0]==2, primes[1]==3, primes[2]==5 등 1부터 100까지 반복하면서 소수인지 확인하고, 소수는 벡터에 저장하세요. 저장된 소수를 출력하는 루프도 작성하세요. 결과를 기존 소수 목록과 비교하여 검증해보세요. 참고: 2는 첫 번째 소수입니다.
 </summary>
+
+```cpp
+import std;
+using namespace std;
+
+int main(void)
+{
+	vector<int> prime_vector;
+
+	for (int x = 2; x <= 100; ++x)
+	{
+		int i;
+		for (i = 2; i < x; ++i)
+			if (x % i == 0) { break; }
+		if(x==i){cout << x << '\n'; prime_vector.push_back(x);}
+	}
+
+	return 0;
+}
+```
  
  </details>
 <details><summary>1부터 100 사이의 모든 소수를 찾는 프로그램을 작성하세요. 고전적인 방법인 “에라토스테네스의 체(Sieve of Eratosthenes)”를 사용하세요. 이 방법을 모른다면 웹에서 검색해보세요. 해당 방법을 사용하여 프로그램을 작성하세요.
