@@ -658,8 +658,7 @@ int main(void)
  </details>
 <details><summary>1부터 100 사이의 모든 소수를 찾는 프로그램을 작성하세요. 고전적인 방법인 “에라토스테네스의 체(Sieve of Eratosthenes)”를 사용하세요. 이 방법을 모른다면 웹에서 검색해보세요. 해당 방법을 사용하여 프로그램을 작성하세요.
 </summary>
-수학적 사고가 저처럼 없으시면 난이도가 상당한 문제
-
+	
 ```cpp
 import std;
 using namespace std;
@@ -678,20 +677,50 @@ int main(void)
 	return 0;
 }
 ```
-
+개인적으로 이해하기 힘든 예제였지만 매달려서 이해하길 잘했다고 생각한 문제
  </details>
 <details><summary>입력값 n을 받아, 처음 n개의 소수를 찾는 프로그램을 작성하세요.</summary>
- 
- </details>
-<details><summary>수열에서 가장 많이 등장하는 값은 최빈값(mode)이라고 합니다. 양의 정수 집합에서 최빈값을 찾는 프로그램을 작성하세요.
-</summary>
- 
- </details>
 
-<details><summary>수열에서 가장 많이 등장하는 값은 최빈값(mode)이라고 합니다. 양의 정수 집합에서 최빈값을 찾는 프로그램을 작성하세요.
-</summary>
+
+```cpp
+import std;
+using namespace std;
+
+int main(void)
+{
+	int num = 100;
+	int input = -1;
+	int count = 0;
+
+	vector<bool>isprime(num + 1, true);
+
+	for (int x = 2; x * x < num; ++x)
+		if (isprime[x])
+			for (int i = x*x; i<num; i += x)
+				isprime[i] = false;
+	cin >> input;
+	for (int x = 2; x < num; ++x)
+	{
+		if (isprime[x])
+		{
+			cout << x << '\n';
+			++count;
+			if(count==input) break;
+		}
+	}
+	return 0;
+}
+
+```
  
  </details>
+<details><summary>수열에서 가장 많이 등장하는 값은 최빈값(mode)이라고 합니다. 양의 정수 집합에서 최빈값을 찾는 프로그램을 작성하세요.
+</summary>
+
+
+ 
+</details>
+
 <details><summary>이차방정식(quadratic equation)을 푸는 프로그램을 작성하세요. 형태: ax² + bx + c = 0 이 방정식을 푸는 공식을 모른다면 조사해보세요. 문제 해결 방법을 알아내는 것은 프로그래머가 컴퓨터에게 문제 해결을 가르치기 위한 필수 과정입니다. 사용자 입력값 a, b, c는 double로 처리하세요. 해는 두 개이므로 x₁, x₂를 모두 출력하세요.
 
 </summary>
