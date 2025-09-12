@@ -55,9 +55,10 @@ cpp관련 기본서이고, 프로그래밍을 접하는 사람들에게 반드�
 </details></details><br><details><summary><strong>2025-09-08 학습시간</strong></summary>
  하루 8시간정도 CPP를 학습하고 있는데 순수하게 8시간이라고 말하기는 그런부분이 있지만 거의 8시간 정도 하는 것 같다. 좀 속도가 많이 늦지만 구석구석 꼼꼼하게 하는게 나중에 상속이나, 템플릿, 오퍼레이터를 이해하는데 좋은것 같다. CPP 몇번을 봤지만 이해가 안되는 부분도 상당히 있고 아는 것도 확실히 해두는게 좋겠다 싶다. 앞으로 삼국지 관련 게임을 좀 만들어보려고 한다. 원래 만드려고 했던 게임은 조금 더 구체화해볼 필요가 있다.
 </details></details><br><details><summary><strong>2025-09-09 </strong></summary> 
-</details></details><br><details><summary><strong>2025-09-10 </strong></summary> 
-</details></details><br><details><summary><strong>2025-09-11 산의 냄새</strong></summary>
- 새벽 산을 다니는게 취미지만 오늘따라 산에서 쓰레기냄새가 바람을 타고 올라와 산행을 방해했다. 아주 고약한 냄새였는데 멀미가 나서 어지러웠다.
+</details></details><br><details><summary><strong>2025-09-10 산의 냄새</strong></summary> 
+ 새벽 산을 다니는게 오늘따라 산에서 쓰레기냄새가 바람을 타고 올라와 산행을 방해했다. 아주 고약한 냄새였는데 멀미가 나서 어지러웠다.
+</details></details><br><details><summary><strong>2025-09-11 성취</strong></summary>
+에라토스테네스의 채를 이용해 cpp 소수를 읽어드리는 방법을 배웠다. 뭔가 혈이 뚫렸다고 해야할지.. 이해가 안될때는 답답했는데 이해하고 나니까 기분이 좋고, 시원하다는 느낌을 받았다. 혼자 해결해보려 한 4시간 붙잡고 있었을때 '아 내 이해도가 여기까지구나' 찰나 한번 다시 스윽 보니까 처음부터 끝까지 이해가되었다. 근데.. 암기가 된걸까? 몇일 뒤에 다시 확인해봐야지 
 </details></details><br><details><summary><strong>2025-09-12 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-13 </strong></summary> 
 </details></details><br><details><summary><strong>2025-09-14 </strong></summary> 
