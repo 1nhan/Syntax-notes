@@ -601,36 +601,36 @@ double로 근사 계산 가능한 최대 칸 수는 ?	답: 40<br>
 
 미완성
 ```cpp 
-import std;
-using namespace std;
 
 int main(void)
 {
-	vector<string>rpsgame = { "가위","바위","보" };
-	vector<int>order_game = { 1,0,2,2,2,1,1,0,0,0,1,0,2,2,1 };
-	vector<int>shuffled1,shuffled2;
+	int round = 0;
+	int computer_pick = round % 3;
 	int user_input = -1;
+	vector<string>rpssuffle = { "가위","바위","보" };
 
-	/*가위바위보 게임*/
+	cout << "press 1(가위),2(바위),3(보)" << '\n';
 	while (cin >> user_input)
 	{
+		if (user_input > 2 || user_input < 0) cout<<"reject" << '\n';
+		round++;
 		switch (user_input)
 		{
-			case 0:	if (		rpsgame[order_game[x]] == 0)cout << "무승부" << '\n';
-					else if (	rpsgame[order_game[x]] == 1)cout << "패배~" << '\n';
-					else if (	rpsgame[order_game[x]] == 2)cout << "승리!" << '\n';
-			case 1:	if (		rpsgame[order_game[x]] == 0)cout << "패배~" << '\n';
-					else if (	rpsgame[order_game[x]] == 1)cout << "무승부" << '\n';
-					else if (	rpsgame[order_game[x]] == 2)cout << "승리!" << '\n';
-
-			case 2:	if		(rpsgame[order_game[x]] == 0)cout << "승리!" << '\n';
-					else if (rpsgame[order_game[x]] == 1)cout << "패배~" << '\n';
-					else if (rpsgame[order_game[x]] == 2)cout << "무승부" << '\n';;
+		case 0:	if		(computer_pick == 0)	{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+				else if (computer_pick == 1)	{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+				else							{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+		case 1:	if		(computer_pick == 0)	{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+				else if (computer_pick == 1)	{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+				else							{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+		case 2:	if		(computer_pick == 0)	{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+				else if (computer_pick == 1)	{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
+				else							{cout << "컴퓨터는 " << rpssuffle[round%3] << "를 내었다!" << '\n';break;}
 		}
 	}
+
+
 	return 0;
-}
-```
+}```
  </details>
 <details><summary>1부터 100 사이의 모든 소수(prime number)를 찾는 프로그램을 작성하세요. 방법: 소수인지 확인하는 함수를 작성하고, 소수들을 담은 벡터를 사용하여 작은 소수로 나눠지는지 검사하세요. 예: primes[0]==2, primes[1]==3, primes[2]==5 등 1부터 100까지 반복하면서 소수인지 확인하고, 소수는 벡터에 저장하세요. 저장된 소수를 출력하는 루프도 작성하세요. 결과를 기존 소수 목록과 비교하여 검증해보세요. 참고: 2는 첫 번째 소수입니다.
 </summary>
