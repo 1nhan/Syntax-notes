@@ -726,13 +726,66 @@ int main(void)
 
  
 </details>
-
-
-
-
 <details><summary>이차방정식(quadratic equation)을 푸는 프로그램을 작성하세요. 형태: ax² + bx + c = 0 이 방정식을 푸는 공식을 모른다면 조사해보세요. 문제 해결 방법을 알아내는 것은 프로그래머가 컴퓨터에게 문제 해결을 가르치기 위한 필수 과정입니다. 사용자 입력값 a, b, c는 double로 처리하세요. 해는 두 개이므로 x₁, x₂를 모두 출력하세요.
 
 </summary>
+
+
+```cpp
+
+
+import std;
+using namespace std;
+
+double my_sqrt(double S)
+{
+	if (S <= 0) return 0 ;
+	double valx = S;
+
+	for (int i = 0; i < 20; ++i)
+		valx = (0.5) * (valx * S / valx);
+	return valx;
+}
+
+int main(void)
+{
+	double a=-1, b=-1, c=-1, d=-1;
+	double valx1=-1, valx2=-1;
+
+	cin >> a>> b>> c;
+	/*판별식*/
+	d = (b * b) - 4 * (a * c);
+
+	/*1차 방정식*/
+	if (a == 0)
+	{
+		if (b != 0) { double valx = (-c) / b; cout <<"x = " << valx << '\n'; }
+		else cout << ((c == 0) ? "무수히 많은 해" : "해 없음") << '\n';
+		return 0;
+	}
+
+	/*2차 방정식*/
+	if (a != 0)
+	{
+		if (d > 0)
+		{
+			valx1 = (-b + my_sqrt(d)) / (2 * a);
+			valx2 = (-b - my_sqrt(d)) / (2 * a);
+			cout <<"X1 = " << valx1 << ", X2 = " << valx2 << '\n';
+		}
+		else if (d == 0)cout<<-b/(2*a) << '\n';
+		else 
+		{ 
+			double valxreal = (-b) / (2 * a);
+			double valximage = (my_sqrt(-d)) / (2 * a);
+			cout<<"X1&X2 = " << valxreal << "±" << valximage << 'i\n';
+		}
+	}
+	return 0;
+}
+
+```
+
  
  </details>
 <details><summary>이름과 값 쌍(name-value pair)을 입력받는 프로그램을 작성하세요. 예: Joe 17, Barbara 22 각 이름은 names 벡터에, 각 값은 scores 벡터에 같은 위치로 저장하세요. 예: names[7] == "Joe"이면 scores[7] == 17 입력 종료 조건: NoName 0 이름이 중복되면 오류 메시지를 출력하고 종료하세요. 모든 (이름, 점수) 쌍을 한 줄씩 출력하세요.<br>프로그램을 수정하여, 이름과 값 쌍을 입력한 후 루프를 통해 이름을 입력하면 해당 점수를 출력하거나 "name not found"를 출력하세요.<br>프로그램을 수정하여, 이름과 값 쌍을 입력한 후 루프를 통해 점수를 입력하면 해당 점수를 가진 모든 이름을 출력하거나 "score not found"를 출력하세요.
