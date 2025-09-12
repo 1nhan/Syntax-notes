@@ -755,6 +755,60 @@ int main(void)
 }
 ```
 
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+int main() {
+    int n;
+    std::cin >> n;                        // 입력 개수
+
+    if (n <= 0) {
+        // 입력이 없을 경우 0을 출력하거나 예외 처리
+        std::cout << 0 << "\n";
+        return 0;
+    }
+
+    std::vector<int> a(n);
+    for (int i = 0; i < n; ++i) {
+        std::cin >> a[i];
+    }
+
+    std::sort(a.begin(), a.end());        // 정렬하여 같은 값끼리 모으기
+
+    int mode = a[0];                      // 최빈값
+    int max_count = 1;                    // 최빈값 빈도
+    int current = a[0];                   // 현재 비교 중인 값
+    int count = 1;                        // current의 현재 빈도
+
+    for (int i = 1; i < n; ++i) {
+        if (a[i] == current) {
+            // 같은 값이 연속될 때
+            ++count;
+        } else {
+            // 값이 바뀌었을 때, 지금까지 센 count와 비교
+            if (count > max_count) {
+                max_count = count;
+                mode = current;
+            }
+            current = a[i];
+            count = 1;
+        }
+    }
+
+    // 마지막 그룹에 대한 처리
+    if (count > max_count) {
+        mode = current;
+    }
+
+    std::cout << mode << "\n";
+    return 0;
+}
+
+
+```
+
  
 </details>
 <details><summary>문자열 시퀀스(sequence of strings)에서 최소값(min), 최대값(max), 최빈값(mode)을 찾는 프로그램(program)을 작성하시오.
@@ -827,8 +881,10 @@ int main(void)
  </details>
 <details><summary>이름과 값 쌍(name-value pair)을 입력받는 프로그램을 작성하세요. 예: Joe 17, Barbara 22 각 이름은 names 벡터에, 각 값은 scores 벡터에 같은 위치로 저장하세요. 예: names[7] == "Joe"이면 scores[7] == 17 입력 종료 조건: NoName 0 이름이 중복되면 오류 메시지를 출력하고 종료하세요. 모든 (이름, 점수) 쌍을 한 줄씩 출력하세요.<br>프로그램을 수정하여, 이름과 값 쌍을 입력한 후 루프를 통해 이름을 입력하면 해당 점수를 출력하거나 "name not found"를 출력하세요.<br>프로그램을 수정하여, 이름과 값 쌍을 입력한 후 루프를 통해 점수를 입력하면 해당 점수를 가진 모든 이름을 출력하거나 "score not found"를 출력하세요.
 </summary>
+
+
  
- </details>
+</details>
 <details><summary>
 </summary>
  
