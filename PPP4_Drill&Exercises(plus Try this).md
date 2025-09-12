@@ -720,6 +720,15 @@ int main(void)
 
  
 </details>
+<details><summary>문자열 시퀀스(sequence of strings)에서 최소값(min), 최대값(max), 최빈값(mode)을 찾는 프로그램(program)을 작성하시오.
+</summary>
+
+
+ 
+</details>
+
+
+
 
 <details><summary>이차방정식(quadratic equation)을 푸는 프로그램을 작성하세요. 형태: ax² + bx + c = 0 이 방정식을 푸는 공식을 모른다면 조사해보세요. 문제 해결 방법을 알아내는 것은 프로그래머가 컴퓨터에게 문제 해결을 가르치기 위한 필수 과정입니다. 사용자 입력값 a, b, c는 double로 처리하세요. 해는 두 개이므로 x₁, x₂를 모두 출력하세요.
 
