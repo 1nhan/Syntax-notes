@@ -718,6 +718,42 @@ int main(void)
 <details><summary>수열에서 가장 많이 등장하는 값은 최빈값(mode)이라고 합니다. 양의 정수 집합에서 최빈값을 찾는 프로그램을 작성하세요.
 </summary>
 
+미완
+```cpp
+import std;
+using namespace std;
+#include<algorithm>
+
+int main(void)
+{
+	int scale_matrix;
+
+	/*specify matrix_int.size()*/
+	cin >> scale_matrix;
+	vector<int> matrix_int(scale_matrix);
+	vector<int>freq;
+	
+	/*add matrix_element*/
+	for (int x = 0; x<scale_matrix;++x)
+		cin >> matrix_int[x];
+
+	/*sort*/
+	ranges::sort(matrix_int);
+
+
+	/*check mode*/
+	int count = 1;
+	for (int x = 1; x < scale_matrix; ++x)
+	{
+		if (matrix_int[x] == matrix_int[x - 1]) count++;
+		else if (matrix_int[x] != matrix_int[x - 1]) { freq.push_back(count); count = 1;}
+	}
+
+	for (int x = 1; x < freq.size(); ++x)
+		if (freq[x] < freq[x - 1]) freq[x] = freq[x - 1];
+	return 0;
+}
+```
 
  
 </details>
