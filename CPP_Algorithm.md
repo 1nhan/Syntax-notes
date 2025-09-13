@@ -4,8 +4,8 @@
 ##알고리즘(Algorithm)
 알고리즘은 ‘문제를 해결하기 위한 일련의 절차(단계)’를 뜻해요. 입력(input)을 받아 출력(output)을 만들어내는 명확한 단계들의 모임, 문제 해결 방식이니, 간단한 계산에서부터 복잡한 그래프 탐색까지 모두 포함해요 알고리즘을 배우면 문제를 구조적으로 이해하고 효율적인 해결책을 설계할 수 있게 됩니다.
 
-<details><summary>###탐색 알고리즘 (Search Algorithms)</summary>
-<details><summary>####Day 1 선형 탐색 (Linear Search)</summary>
+###<details><summary>탐색 알고리즘 (Search Algorithms)</summary>
+####<details><summary>Day 1 선형 탐색 (Linear Search)</summary>
 
 </details><!-- 선형 탐색 (Linear Search) -->
 <details><summary>####이진 탐색 (Binary Search)</summary>
